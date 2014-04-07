@@ -3291,7 +3291,7 @@ class feed {
 				// Ignore any gender as it doesn't matter
 				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `gender` = '%s' AND `email` = '%s' LIMIT 1", $gender, $this->db->real_escape_string($value)));
 			} else {
-				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `gender` = '%s' AND (`username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`)  LIKE '%s') ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", $gender, '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
+				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `gender` = '%s' AND (`join` LIKE '%s' OR `username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`)  LIKE '%s') ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", $gender, '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
 			}
 		} 
 		// If the filter is a date range (digit type)
@@ -3301,7 +3301,7 @@ class feed {
 			if($qt == 1) {
 				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `email` = '%s' LIMIT 1", $this->db->real_escape_string($value)));
 			} else {
-				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`) LIKE '%s' ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
+				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `join` LIKE '%s' OR `username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`) LIKE '%s' ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
 				
 				// Sometimes the query might fail due to the fact that utf8 characters are being passed and the `username` sql field does not allow special chars
 				if(!$query) {

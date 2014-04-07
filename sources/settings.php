@@ -271,6 +271,8 @@ function PageMain() {
 					$TMPL['mba'] = 'selected="selected"';
 				} elseif($userSettings['course'] == '4') {
 					$TMPL['bca'] = 'selected="selected"';
+				}else{
+					$TMPL['none'] = 'selected="selected"';
 				}
 
 
@@ -286,6 +288,8 @@ function PageMain() {
 					$TMPL['it'] = 'selected="selected"';
 				} elseif($userSettings['branch'] == '6') {
 					$TMPL['ce'] = 'selected="selected"';
+				}else{
+					$TMPL['none'] = 'selected="selected"';				
 				}
 				
 				$page .= $skin->make();

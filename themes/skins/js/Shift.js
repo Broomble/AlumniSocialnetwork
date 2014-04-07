@@ -14,9 +14,6 @@ $(function(){
 	var lmTrigger = $("#simple-menu");
 	var countM = 0 ,countE = 0;
 
-
-
-
 /*What hapens when the menu button is clicked*/	
 	  
 lmTrigger.click( function(){

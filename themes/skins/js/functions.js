@@ -1,3 +1,15 @@
+
+$(function () {
+    //$('#branch').hide();
+     $('#course').change(function () {
+         $('#branch').hide();
+         if (this.options[this.selectedIndex].value == 1) {
+             $('#branch').show();
+         }
+     });
+});
+
+
 function autosize() {
 	// auto adjust the height of
 	$('body').on('keyup', 'textarea', function (){

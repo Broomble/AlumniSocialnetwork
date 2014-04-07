@@ -5,25 +5,19 @@
 	<form action="{$url}/index.php?a=settings" method="post">
 	
 	<div class="page-input-container">
-		<div class="page-input-title">{$lng->ttl_first_name}</div>
+		<div class="page-input-title">{$lng->ttl_name}</div>
 		<div class="page-input-content">
 			<input type="text" name="first_name" value="{$currentFirstName}" />
-			<div class="page-input-sub">{$lng->sub_first_name}</div>
+			<input type="text" name="last_name" value="{$currentLastName}" />
+			<div class="page-input-sub">{$lng->sub_name}</div>
 		</div>
 	</div>
 	
 	<div class="page-input-container">
-		<div class="page-input-title">{$lng->ttl_last_name}</div>
-		<div class="page-input-content">
-			<input type="text" name="last_name" value="{$currentLastName}" />
-			<div class="page-input-sub">{$lng->sub_last_name}</div>
-		</div>
-	</div>
-
-	<div class="page-input-container">
 		<div class="page-input-title">{$lng->ttl_course}</div>
 		<div class="page-input-content">
-			<select name="course">
+			<select name="course" id="course">
+				<option value="0">- Select a course -</option>
 				<option value="1" {$btech}>{$lng->btech}</option>
 				<option value="2" {$mca}>{$lng->mca}</option>
 				<option value="3" {$mba}>{$lng->mba}</option>
@@ -33,10 +27,11 @@
 		</div>
 	</div>
 
-	<div class="page-input-container">
+	<div class="page-input-container" id="branch">
 		<div class="page-input-title">{$lng->ttl_branch}</div>
 		<div class="page-input-content">
 			<select name="branch">
+				<option value="0">- Select a branch -</option>
 				<option value="1" {$ece}>{$lng->ece}</option>
 				<option value="2" {$cse}>{$lng->cse}</option>
 				<option value="3" {$mae}>{$lng->mae}</option>

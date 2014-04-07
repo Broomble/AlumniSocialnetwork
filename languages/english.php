@@ -233,11 +233,8 @@ $LNG['user_desc_notifications'] = 'Change notifications settings.';
 $LNG['ttl_background'] = 'Backgrounds';
 $LNG['sub_background'] = 'Pick a background for your profile';
 
-$LNG['ttl_first_name'] = 'First Name';
-$LNG['sub_first_name'] = 'Enter your first name';
-
-$LNG['ttl_last_name'] = 'Last Name';
-$LNG['sub_last_name'] = 'Enter your last name';
+$LNG['ttl_name'] = 'Name';
+$LNG['sub_name'] = 'Enter your name';
 
 $LNG['ttl_course'] = 'Course';
 $LNG['sub_course'] = 'Enter your course name';
