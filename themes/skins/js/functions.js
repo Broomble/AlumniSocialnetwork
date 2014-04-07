@@ -1,6 +1,6 @@
 
 $(function () {
-    //$('#branch').hide();
+    $('#branch').hide();
      $('#course').change(function () {
          $('#branch').hide();
          if (this.options[this.selectedIndex].value == 1) {
