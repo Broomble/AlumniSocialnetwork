@@ -1,0 +1,38 @@
+<div class="message-container">
+	<div class="message-form-content">
+		<div class="message-form-header">
+			<div class="message-form-user"><img src="{$url}/thumb.php?src={$avatar}&t=a" /></div>
+			{$lng->form_title}
+			<div class="message-form-private"></div>
+			<div class="message-loader" id="post-loader9999999999" style="visibility: hidden"><img src="{$url}/{$theme_url}/images/preloader.gif" /></div>
+		</div>
+		
+		<div class="message-form-inner">
+		<form id="imageForm" name="form" action="{$url}/requests/post_message.php" method="POST" enctype="multipart/form-data" >
+			<textarea id="post9999999999" class="message-form" placeholder="{$lng->message_form}" name="message"></textarea>
+		</div>
+		
+		<input type="hidden" name="privacy" id="message-privacy" value="{$private_message}" />
+		
+		<div class="selected-files"><span id="queued-files">0</span> {$lng->files_selected}</div>
+		<div class="message-form-input"><input type="text" name="value" id="form-value" /></div>
+		<div id="values">
+			<div class="button-image">
+				<input name="my_image[]" id="my_file" size="27" type="file" class="inputImage" title="{$lng->label_image}" multiple="multiple" />
+			</div>
+			<input type="radio" name="type" value="video" id="video" /><label for="video" title="{$lng->label_video}"><img src="{$url}/{$theme_url}/images/icons/events/video.png" /></label>
+			<input type="radio" name="type" value="map" id="map" /><label for="map" title="{$lng->label_map}"><img src="{$url}/{$theme_url}/images/icons/events/map.png" /></label>
+			<input type="radio" name="type" value="visited" id="visited" /><label for="visited" title="{$lng->label_visited}"><img src="{$url}/{$theme_url}/images/icons/events/visited.png" /></label>
+			<input type="radio" name="type" value="movie" id="movie" /><label for="movie" title="{$lng->label_movie}"><img src="{$url}/{$theme_url}/images/icons/events/movie.png" /></label>
+			<input type="radio" name="type" value="music" id="music" /><label for="music" title="{$lng->label_music}"><img src="{$url}/{$theme_url}/images/icons/events/music.png" /></label>
+			<input type="radio" name="type" value="game" id="game" /><label for="game" title="{$lng->label_game}"><img src="{$url}/{$theme_url}/images/icons/events/game.png" /></label>
+			<input type="radio" name="type" value="food" id="food" /><label for="food" title="{$lng->label_food}"><img src="{$url}/{$theme_url}/images/icons/events/food.png" /></label>
+		</div>
+		
+		<div type="button" name="action" class="message-btn" value="Post" id="9999999999"><a onclick="startUpload()">{$lng->post}</a></div>
+	
+	</div>
+	<iframe id="my_iframe" name="my_iframe" src="" style="display: none"></iframe></form>
+</div>
+
+<div id="load-content"></div>

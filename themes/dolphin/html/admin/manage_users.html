@@ -1,0 +1,21 @@
+<div class="page-inner"><div class="page-title">{$lng->admin_desc_users}</div></div>
+{$message}
+<div class="message-divider"></div>
+<div class="page-input-container">
+	<div class="page-input-title">{$lng->edit_user}</div>
+	<div class="page-input-content">
+		<form action="{$url}/index.php" method="GET">
+			<input type="hidden" name="a" value="admin">
+			<input type="hidden" name="b" value="users">
+			<input type="hidden" name="e" value="">
+			<input type="text" name="ef" value="" placeholder="{$lng->username_to_edit}"> &nbsp; <input type="submit" value="{$lng->admin_ttl_edit}">
+			<div class="page-input-sub">{$lng->username_to_edit_sub}</div>
+		</form>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="inner-page-list page-inner">
+	<div class="admin-rows"><div class="table-id columns">{$lng->admin_ttl_id}</div><div class="table-user columns">{$lng->admin_ttl_username}</div><div class="table-mail columns">{$lng->admin_ttl_mail}</div><div class="table-edit columns">{$lng->admin_ttl_edit}</div><div class="table-delete columns">{$lng->admin_ttl_delete}</div></div>
+	{$users}
+	<div id="users"></div>
+</div>

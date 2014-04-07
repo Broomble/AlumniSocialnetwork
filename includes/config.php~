@@ -1,0 +1,34 @@
+<?php
+#error_reporting(0);
+error_reporting(E_ALL ^ E_NOTICE);
+
+$CONF = $TMPL = array();
+
+// The MySQL credentials
+$CONF['host'] = 'mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/';
+$CONF['user'] = 'adminlyRGTZ2';
+$CONF['pass'] = 'BtRvS9ipRagh';
+$CONF['name'] = 'niecalumni';
+
+// The Installation URL
+$CONF['url'] = 'http://alumni.dev';
+
+// The Notifications e-mail
+$CONF['email'] = 'notifications@alumni.dev';
+
+// The themes directory
+$CONF['theme_path'] = 'themes';
+
+$action = array('admin'			=> 'admin',
+				'feed'			=> 'feed',
+				'settings'		=> 'settings',
+				'messages'		=> 'messages',
+				'post'			=> 'post',
+				'recover'		=> 'recover',
+				'timeline'		=> 'timeline',
+				'profile'		=> 'profile',
+				'notifications'	=> 'notifications',
+				'search'		=> 'search',
+				'page'			=> 'page'
+				);
+?>

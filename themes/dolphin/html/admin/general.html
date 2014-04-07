@@ -1,0 +1,318 @@
+<div class="page-inner"><div class="page-title">{$lng->admin_desc_general}</div></div>
+{$message}
+<div class="message-divider"></div>
+
+<div class="page-inner">
+	<form action="{$url}/index.php?a=admin" method="post">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_title}</div>
+		<div class="page-input-content">
+			<input type="text" name="title" value="{$currentTitle}" />
+			<div class="page-input-sub">{$lng->admin_sub_title}</div>
+		</div>
+	</div>
+
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_captcha}</div>
+		<div class="page-input-content">
+			<select name="captcha">
+				<option value="0" {$off}>{$lng->off}</option>
+				<option value="1" {$on}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_captcha}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_timestamp}</div>
+		<div class="page-input-content">
+			<select name="time">
+				<option value="0" {$one}>Converted (live)</option>
+				<option value="1" {$two}>Unconverted (live)</option>
+				<option value="2" {$three}>Standard</option>
+				<option value="3" {$four}>Year-month-day</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_timestamp}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_msg_perpage}</div>
+		<div class="page-input-content">
+			<select name="perpage">
+				<option value="10" {$ten}>10</option>
+				<option value="20" {$twenty}>20</option>
+				<option value="25" {$twentyfive}>25</option>
+				<option value="50" {$fifty}>50</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_msg_perpage}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_com_perpage}</div>
+		<div class="page-input-content">
+			<select name="cperpage">
+				<option value="3" {$ctrei}>3</option>
+				<option value="5" {$ccinci}>5</option>
+				<option value="10" {$czece}>10</option>
+				<option value="15" {$ccinspe}>15</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_com_perpage}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_chat_perpage}</div>
+		<div class="page-input-content">
+			<select name="mperpage">
+				<option value="5" {$mone}>5</option>
+				<option value="10" {$mtwo}>10</option>
+				<option value="25" {$mthree}>25</option>
+				<option value="50" {$mfour}>50</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_chat_perpage}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_nperpage}</div>
+		<div class="page-input-content">
+			<select name="nperpage">
+				<option value="10" {$nten}>10</option>
+				<option value="25" {$ntwentyfive}>25</option>
+				<option value="50" {$nfifty}>50</option>
+				<option value="100" {$nonehundred}>100</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_nperpage}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_msg_limit}</div>
+		<div class="page-input-content">
+			<select name="message">
+				<option value="500" {$unu}>500</option>
+				<option value="1000" {$doi}>1000</option>
+				<option value="2500" {$trei}>2500</option>
+				<option value="5000" {$patru}>5000</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_msg_limit}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_chat_limit}</div>
+		<div class="page-input-content">
+			<select name="climit">
+				<option value="500" {$cone}>500</option>
+				<option value="1000" {$ctwo}>1000</option>
+				<option value="2500" {$cthree}>2500</option>
+				<option value="5000" {$cfour}>5000</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_chat_limit}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_smiles}</div>
+		<div class="page-input-content">
+			<select name="smiles">
+				<option value="0" {$soff}>{$lng->off}</option>
+				<option value="1" {$son}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_smiles}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_email_user}</div>
+		<div class="page-input-content">
+			<select name="mail">
+				<option value="0" {$mailoff}>Off</option>
+				<option value="1" {$mailon}>On</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_email_user}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_timeonline}</div>
+		<div class="page-input-content">
+			<select name="conline">
+				<option value="60" {$conone}>1 {$lng->minute}</option>
+				<option value="300" {$contwo}>5 {$lng->minutes}</option>
+				<option value="600" {$conthree}>10 {$lng->minutes}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_timeonline}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_censor}</div>
+		<div class="page-input-content">
+			<input type="text" name="censor" value="{$currentCensor}" />
+			<div class="page-input-sub">{$lng->admin_sub_censor}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_notificationsm}</div>
+		<div class="page-input-content">
+			<select name="intervalm">
+				<option value="10000" {$intone}>10 {$lng->seconds}</option>
+				<option value="30000" {$inttwo}>30 {$lng->seconds}</option>
+				<option value="60000" {$intthree}>1 {$lng->minute} ({$lng->recommended})</option>
+				<option value="120000" {$intfour}>2 {$lng->minutes} ({$lng->recommended})</option>
+				<option value="300000" {$intfive}>5 {$lng->minutes} ({$lng->recommended})</option>
+				<option value="600000" {$intsix}>10 {$lng->minutes} ({$lng->recommended})</option>
+				<option value="3600000" {$intseven}>1 {$lng->hour}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_notificationsm}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_notificationsn}</div>
+		<div class="page-input-content">
+			<select name="intervaln">
+				<option value="10000" {$intonen}>10 {$lng->seconds}</option>
+				<option value="30000" {$inttwon}>30 {$lng->seconds}</option>
+				<option value="60000" {$intthreen}>1 {$lng->minute} ({$lng->recommended})</option>
+				<option value="120000" {$intfourn}>2 {$lng->minutes} ({$lng->recommended})</option>
+				<option value="300000" {$intfiven}>5 {$lng->minutes} ({$lng->recommended})</option>
+				<option value="600000" {$intsixn}>10 {$lng->minutes} ({$lng->recommended})</option>
+				<option value="3600000" {$intsevenn}>1 {$lng->hour}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_notificationsn}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_chatrefresh}</div>
+		<div class="page-input-content">
+			<select name="chatr">
+				<option value="1" {$crone}>1 {$lng->second}</option>
+				<option value="2" {$crtwo}>2 {$lng->seconds}</option>
+				<option value="3" {$crthree}>3 {$lng->seconds} ({$lng->recommended})</option>
+				<option value="5" {$crfive}>5 {$lng->seconds} ({$lng->recommended})</option>
+				<option value="10" {$crten}>10 {$lng->seconds} ({$lng->recommended})</option>
+				<option value="30" {$crthirty}>30 {$lng->seconds} ({$lng->recommended})</option>
+				<option value="2147483647" {$croff}>{$lng->off}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_chatrefresh}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_image_profile}</div>
+		<div class="page-input-content">
+			<select name="size">
+				<option value="1048576" {$onemb}>1MB</option>
+				<option value="2097152" {$twomb}>2MB</option>
+				<option value="3145728" {$threemb}>3MB</option>
+				<option value="10485760" {$tenmb}>10MB</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_image_profile}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_image_format}</div>
+		<div class="page-input-content">
+			<input type="text" name="format" value="{$currentFormat}" />
+			<div class="page-input-sub">{$lng->admin_sub_image_format}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_message_image}</div>
+		<div class="page-input-content">
+			<select name="sizemsg">
+				<option value="1048576" {$onembMsg}>1MB</option>
+				<option value="2097152" {$twombMsg}>2MB</option>
+				<option value="3145728" {$threembMsg}>3MB</option>
+				<option value="10485760" {$tenmbMsg}>10MB</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_message_image}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_message_format}</div>
+		<div class="page-input-content">
+			<input type="text" name="formatmsg" value="{$currentFormatMsg}" />
+			<div class="page-input-sub">{$lng->admin_sub_message_format}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_qperpage}</div>
+		<div class="page-input-content">
+			<select name="qperpage">
+				<option value="10" {$qten}>10 {$lng->per_page}</option>
+				<option value="25" {$qtwentyfive}>25 {$lng->per_page}</option>
+				<option value="50" {$qfifty}>50 {$lng->per_page}</option>
+				<option value="100" {$qonehundred}>100 {$lng->per_page}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_qperpage}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_uperpage}</div>
+		<div class="page-input-content">
+			<select name="uperpage">
+				<option value="10" {$upone}>10 {$lng->per_page}</option>
+				<option value="20" {$uptwo}>20 {$lng->per_page}</option>
+				<option value="50" {$upthree}>50 {$lng->per_page}</option>
+				<option value="100" {$upfour}>100 {$lng->per_page}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_uperpage}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_rperpage}</div>
+		<div class="page-input-content">
+			<select name="rperpage">
+				<option value="10" {$rpone}>10 {$lng->per_page}</option>
+				<option value="20" {$rptwo}>20 {$lng->per_page}</option>
+				<option value="50" {$rpthree}>50 {$lng->per_page}</option>
+				<option value="100" {$rpfour}>100 {$lng->per_page}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_rperpage}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_sperpage}</div>
+		<div class="page-input-content">
+			<select name="sperpage">
+				<option value="10" {$sone}>10 {$lng->per_page}</option>
+				<option value="20" {$stwo}>20 {$lng->per_page}</option>
+				<option value="25" {$sthree}>25 {$lng->per_page}</option>
+				<option value="50" {$sfour}>50 {$lng->per_page}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_sperpage}</div>
+		</div>
+	</div>
+
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-title"></div><input type="submit" name="submit" value="{$lng->save_changes}" />
+</div>
+</form>

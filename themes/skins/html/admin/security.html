@@ -1,0 +1,18 @@
+<div class="page-inner"><div class="page-title">{$lng->admin_desc_security}</div></div>
+{$message}
+<div class="message-divider"></div>
+<div class="page-inner">
+	<form action="{$url}/index.php?a=admin&b=security" method="post">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_password}</div>
+		<div class="page-input-content">
+			<input type="password" name="password" />
+			<div class="page-input-sub">{$lng->admin_sub_password}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-title"></div><input type="submit" value="{$lng->save_changes}" />
+</div>
+</form>

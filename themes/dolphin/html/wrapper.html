@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>{$title}</title>
+<link rel="shortcut icon" href="{$url}/favicon.ico" />
+<link href="{$url}/{$theme_path}/{$theme_name}/style.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<script type="text/javascript" src="{$url}/{$theme_url}/js/jquery.js"></script>
+<script type="text/javascript" src="{$url}/{$theme_url}/js/jquery.tipsy.js"></script>
+<script type="text/javascript" src="{$url}/{$theme_url}/js/jquery.timeago.js"></script>
+<script type="text/javascript" src="{$url}/{$theme_url}/js/functions.js"></script>
+</head>
+<body>
+<div class="topbar">
+	<div class="header">
+		<a href="{$url}"><div class="logo"></div><div class="logo-small"></div></a>
+		<div class="search-input"><input type="text" id="search" placeholder="{$lng->search_for_people}" x-webkit-speech="x-webkit-speech" onwebkitspeechchange="liveSearch();"></div>
+		{$menu}
+	</div>
+	<div class="search-container"></div>
+</div>
+<div class="topbar_margin"></div>
+{$content}
+<div class="row-body">
+	<div class="footer">
+		
+		<div class="footer-container">
+			<div class="footer-links">
+				<a href="{$url}/index.php?a=page&b=tos">{$lng->terms_of_use}</a> - 
+				<a href="{$url}/index.php?a=page&b=privacy">{$lng->privacy_policy}</a> - 
+				<a href="{$url}/index.php?a=page&b=disclaimer">{$lng->disclaimer}</a> - 
+				<a href="{$url}/index.php?a=page&b=api">{$lng->developers}</a> - 
+				<a href="{$url}/index.php?a=page&b=contact">{$lng->contact}</a> - 
+				<a href="{$url}/index.php?a=page&b=about">{$lng->about}</a> - 
+				<a href="{$url}/index.php?a=admin">{$lng->title_admin}</a>
+			</div>
+			<div class="footer-languages">
+				{$lng->language}: {$language}
+			</div>
+			<div class="footer-languages">
+				Copyright &copy; {$year} {$footer}. {$lng->all_rights_reserved}. {$powered_by}
+			</div>
+		</div>
+		
+	</div>
+</div>
+</body>
+</html>

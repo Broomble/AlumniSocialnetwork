@@ -1,0 +1,87 @@
+{$ad1}
+<script type="text/javascript">
+$(function() {
+	function checkNewMessages() {
+		var uid = $('.last-message').attr('name');
+		var last = $('.last-message').attr('id');
+		var filter = $('.last-message').attr('title');
+		var profile = $('.last-message').attr('alt');	
+		
+		// Prevents returning an error when no posts on profiles/feeds/subscriptions are available
+		if(uid) {
+			uid = uid.replace('name-', '');
+		}
+		if(last) {
+			last = last.replace('last-', '');
+		}
+		if(filter) {
+			filter = filter.replace('type-', '');
+		}
+		if(profile) {
+			profile = profile.replace('profile-', '');
+		}
+		
+		$.ajax({
+			type: "POST",
+			url: "requests/check_messages.php",
+			data: "uid="+uid+"&id="+last+"&filter="+filter+"&profile="+profile+"&subs={$subs}", 
+			success: function(html) {
+				 // html is a string of all output of the server script.
+				if(html) {
+					$('#last-'+last).prepend(html);
+					$('#last-'+last).removeAttr('name id title alt');
+				}
+				setTimeout(checkNewMessages, {$intervalm});
+		   }
+		});
+
+	}
+	checkNewMessages();
+});
+</script>
+<div class="row-body{$content_class}">
+	{$cover}
+	<div class="nine columns" id="messages">
+		{$top}
+		{$rows}
+	<div id="profile-card"></div>
+	</div>
+	<div class="three columns">
+		{$sidebar}
+	</div>
+</div>
+{$ad2}
+<div id="gallery">
+	<div id="gallery-close"></div>
+	<div class="image-container">
+		<div class="gallery-container">
+			<div class="image-content"></div>
+			<div id="gallery-prev"></div>
+			<div id="gallery-next"></div>
+			<div class="close_btn" onclick="gallery('close')"></div>
+			<div class="gallery-close" onclick="gallery('close')"></div>
+			<div class="gallery-footer">
+				<div class="gallery-footer-container">
+					  - <a onclick="gallery('close')"><div class="delete_btn"></div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="share">
+	<div class="share-container">
+		<div class="share-inner">
+			<div class="share-title">{$lng->share_title}</div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="share-inner">
+			<div class="share-desc">{$lng->share_desc}</div>
+		</div>
+		<div class="message-divider"></div>
+		<div class="share-menu">
+			<div class="share-cancel"><a>{$lng->cancel}</a></div>
+			<div class="share-btn"><a>{$lng->share}</a></div>
+			<div class="share-close"><a onclick="doShare(0, 0)">{$lng->close}</a></div>
+		</div>
+	</div>
+</div>

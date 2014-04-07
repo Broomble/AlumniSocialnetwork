@@ -1,0 +1,43 @@
+{$ad1}
+<div class="row-body{$content_class}">
+	{$cover}
+	<div class="nine columns" id="messages">
+		{$top}
+		{$rows}
+	</div>
+	<div class="three columns">
+		{$sidebar}
+	</div>
+</div>
+{$ad2}
+<script type="text/javascript">
+
+function checkNewChat(x) {
+	var uid = $('#chat').attr('class');
+	if(uid === 'chat-user') {
+		setTimeout(checkNewChat, {$chatr});
+	} else {
+		$.ajax({
+			type: "POST",
+			url: "requests/load_chat.php",
+			data: "uid="+uid.replace('chat-user', '')+"&type=1", 
+			success: function(html) {
+				 // html is a string of all output of the server script.
+				if(html) {
+					$('.chat-container').append(html);
+					jQuery("div.timeago").timeago();
+					
+					// Scroll at the bottom of the div (focus new content)
+					$(".chat-container").scrollTop($(".chat-container")[0].scrollHeight);
+					
+					notificationTitle(1);
+				}
+				if(!x) {
+					setTimeout(checkNewChat, {$chatr});
+				}
+		   }
+		});
+	}
+}
+checkNewChat();
+</script>

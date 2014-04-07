@@ -1,0 +1,37 @@
+<div class="page-inner"><div class="page-title">{$lng->user_desc_avatar}</div></div>
+{$message}
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-title-img">{$image}</div>
+	<div class="page-input-content">
+		<div class="page-input-container">
+			<form id="upload" class="uploadForm" action="{$url}/index.php?a=settings&b=avatar" method="POST" enctype="multipart/form-data">
+				<input type="file" id="avatarselect" name="avatarselect[]" /><br /><br />
+				<input type="submit" value="{$lng->ttl_upload_photo}" />
+			</form>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<!-- <div class="page-inner">
+	<div class="page-input-title-img"></div>
+	<div class="page-input-content">
+		<form action="{$url}/index.php?a=settings&b=avatar" method="POST">
+			<input type="hidden" name="image" value="" />
+			<input type="submit" name="delete" value="{$lng->ttl_delete_photo}" />
+		</form>
+	</div>
+</div> -->
+<div class="page-inner"><div class="page-title">{$lng->user_desc_cover}</div></div>
+<div class="message-divider"></div>
+<div class="page-input-title-img-wall">{$cover}</div>
+<div class="page-inner">
+	<div class="page-input-content">
+		<div class="page-input-container">
+			<form id="upload" class="uploadForm" action="{$url}/index.php?a=settings&b=avatar" method="POST" enctype="multipart/form-data">
+				<input type="file" id="coverselect" name="coverselect[]" /><br /><br />
+				<input type="submit" value="{$lng->ttl_upload_cover}" />
+			</form>
+		</div>
+	</div>
+</div>

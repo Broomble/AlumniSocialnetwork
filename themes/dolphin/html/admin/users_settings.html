@@ -1,0 +1,199 @@
+<div class="page-inner"><div class="page-title">{$lng->admin_desc_users_settings}</div></div>
+{$message}
+<div class="message-divider"></div>
+<div class="page-inner">
+	<form action="{$url}/index.php?a=admin&b=users_settings" method="post">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_mprivacy}</div>
+		<div class="page-input-content">
+			<select name="mprivacy">
+				<option value="0" {$poff}>Private</option>
+				<option value="1" {$pon}>Public</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_mprivacy}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_ilimit}</div>
+		<div class="page-input-content">
+			<select name="ilimit">
+				<option value="1" {$ione}>1</option>
+				<option value="3" {$ithree}>3</option>
+				<option value="6" {$isix}>6</option>
+				<option value="9" {$inine}>9</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_ilimit}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_wholiked}</div>
+		<div class="page-input-content">
+			<select name="lperpost">
+				<option value="0" {$likesnone}>{$lng->none}</option>
+				<option value="3" {$likesone}>3</option>
+				<option value="5" {$likestwo}>5</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_wholiked}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_verified}</div>
+		<div class="page-input-content">
+			<select name="verified">
+				<option value="0" {$off_v}>0</option>
+				<option value="1" {$on_v}>1</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_verified}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_ronline}</div>
+		<div class="page-input-content">
+			<select name="ronline">
+				<option value="5" {$uone}>5</option>
+				<option value="10" {$utwo}>10</option>
+				<option value="25" {$uthree}>25</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_ronline}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_nperwidget}</div>
+		<div class="page-input-content">
+			<select name="nperwidget">
+				<option value="5" {$none}>5</option>
+				<option value="10" {$ntwo}>10</option>
+				<option value="20" {$nthree}>20</option>
+				<option value="30" {$nfour}>30</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_nperwidget}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_notificationl}</div>
+		<div class="page-input-content">
+			<select name="notificationl">
+				<option value="0" {$loff}>{$lng->off}</option>
+				<option value="1" {$lon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_notificationl}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_notificationc}</div>
+		<div class="page-input-content">
+			<select name="notificationc">
+				<option value="0" {$coff}>{$lng->off}</option>
+				<option value="1" {$con}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_notificationc}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_notifications}</div>
+		<div class="page-input-content">
+			<select name="notifications">
+				<option value="0" {$soff}>{$lng->off}</option>
+				<option value="1" {$son}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_notifications}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_notificationd}</div>
+		<div class="page-input-content">
+			<select name="notificationd">
+				<option value="0" {$doff}>{$lng->off}</option>
+				<option value="1" {$don}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_notificationd}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_notificationf}</div>
+		<div class="page-input-content">
+			<select name="notificationf">
+				<option value="0" {$foff}>{$lng->off}</option>
+				<option value="1" {$fon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_notificationf}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_sound_nn}</div>
+		<div class="page-input-content">
+			<select name="sound_new_notification">
+				<option value="0" {$snnoff}>{$lng->off}</option>
+				<option value="1" {$snnon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_sound_nn}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_sound_nc}</div>
+		<div class="page-input-content">
+			<select name="sound_new_chat">
+				<option value="0" {$sncoff}>{$lng->off}</option>
+				<option value="1" {$sncon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_sound_nc}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_email_comment}</div>
+		<div class="page-input-content">
+			<select name="email_comment">
+				<option value="0" {$ecoff}>{$lng->off}</option>
+				<option value="1" {$econ}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_email_comment}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_email_like}</div>
+		<div class="page-input-content">
+			<select name="email_like">
+				<option value="0" {$elff}>{$lng->off}</option>
+				<option value="1" {$elon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_email_like}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->admin_ttl_email_new_friend}</div>
+		<div class="page-input-content">
+			<select name="email_new_friend">
+				<option value="0" {$enfoff}>{$lng->off}</option>
+				<option value="1" {$enfon}>{$lng->on}</option>
+			</select>
+			<div class="page-input-sub">{$lng->admin_sub_email_new_friend}</div>
+		</div>
+	</div>
+
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-title"></div><input type="submit" value="{$lng->save_changes}" />
+</div>
+</form>

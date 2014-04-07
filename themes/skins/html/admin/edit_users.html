@@ -1,0 +1,112 @@
+<div class="page-inner"><div class="page-title">{$lng->admin_desc_edit_users} (<strong><a href="{$url}/index.php?a=profile&u={$username}">{$username}</a></strong>) <a href="{$url}/index.php?a=admin&b=users&delete={$idu}">Delete</a></div></div>
+{$message}
+<div class="message-divider"></div>
+<div class="page-inner">
+	
+	<form action="{$url}/index.php?a=admin&b=users&e={$idu}" method="post">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_verified}</div>
+		<div class="page-input-content">
+			<select name="verified">
+				<option value="0" {$off_v}>{$lng->ttl_not_verified}</option>
+				<option value="1" {$on_v}>{$lng->ttl_verified}</option>
+			</select>
+			<div class="page-input-sub">{$lng->sub_verified}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_first_name}</div>
+		<div class="page-input-content">
+			<input type="text" name="first_name" value="{$currentFirstName}" />
+			<div class="page-input-sub">{$lng->sub_first_name}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_last_name}</div>
+		<div class="page-input-content">
+			<input type="text" name="last_name" value="{$currentLastName}" />
+			<div class="page-input-sub">{$lng->sub_last_name}</div>
+		</div>
+	</div>
+
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_email}</div>
+		<div class="page-input-content">
+			<input type="text" name="email" value="{$currentEmail}" />
+			<div class="page-input-sub">{$lng->sub_email}</div>
+		</div>
+	</div>
+	
+	<div class="page-input-container">
+	<div class="page-input-title">{$lng->ttl_born}</div>
+		<div class="page-input-content">
+		<select name="day">
+			{$days}
+		</select>
+		<select name="month">
+			{$months}
+		</select>
+		<select name="year">
+			{$years}
+		</select>
+		<div class="page-input-sub">{$lng->sub_born}</div>
+		</div>
+	</div>
+
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_location}</div>
+		<div class="page-input-content">
+			<input type="text" name="location" value="{$currentLocation}" />
+			<div class="page-input-sub">{$lng->sub_location}</div>
+		</div>
+	</div>
+
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_website}</div>
+		<div class="page-input-content">
+			<input type="text" name="website" value="{$currentWebsite}" />
+			<div class="page-input-sub">{$lng->sub_website}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_facebook}</div>
+		<div class="page-input-content">
+			<input type="text" name="facebook" value="{$currentFacebook}" />
+			<div class="page-input-sub">{$lng->sub_facebook}</div>
+		</div>
+	</div>
+
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_twitter}</div>
+		<div class="page-input-content"><input type="text" name="twitter" value="{$currentTwitter}" />
+		<div class="page-input-sub">{$lng->sub_twitter}</div>
+		</div>
+	</div>
+
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_google}</div>
+		<div class="page-input-content"><input type="text" name="gplus" value="{$currentGplus}" />
+		<div class="page-input-sub">{$lng->sub_google}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_bio}</div>
+		<div class="page-input-content">
+			<textarea class="ads" name="bio">{$currentBio}</textarea>
+			<div class="page-input-sub">{$lng->sub_bio}</div>
+		</div>
+	</div>
+</div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-title"></div><input type="submit" value="{$lng->save_changes}"/>
+</div>
+</form>

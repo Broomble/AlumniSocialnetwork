@@ -1,0 +1,125 @@
+<div class="page-inner"><div class="page-title">{$lng->admin_desc_stats}</div></div>
+<div class="message-divider"></div>
+<div class="page-inner">
+	<div class="page-input-container">
+		<div><strong>{$lng->user_registration}</strong></div>
+		<div class="stats-container columns">
+			{$lng->users_today}
+			<h3>{$users_today}</h3>
+		</div>
+		<div class="stats-container columns">
+			{$lng->users_this_month}
+			<h3>{$users_this_month}</h3>
+		</div>
+		<div class="stats-container columns">
+			{$lng->users_last_30}
+			<h3>{$users_last_30}</h3>
+		</div>
+		<div class="stats-container columns">
+			{$lng->total_users}
+			<h3>{$users_total}</h3>
+		</div>
+	</div>
+	<div class="message-divider"></div>
+	<div class="page-input-container">
+		<div><strong>{$lng->messages_and_comments}</strong></div>
+		<div class="stats-container columns">
+			{$lng->total_messages}
+			<h3>{$messages_total}</h3>
+		</div>
+		<div class="stats-container columns">
+			{$lng->public_messages}
+			<h3>{$messages_public}</h3>
+		</div>
+		<div class="stats-container columns">
+			{$lng->private_messages}
+			<h3>{$messages_private}</h3>
+		</div>
+		<div class="stats-container columns">
+			{$lng->total_comments}
+			<h3>{$comments_total}</h3>
+		</div>
+		<img src="//chart.googleapis.com/chart?chbh=a,5,20&chs=633x105&cht=bhg&chco=224499,76A4FB,BBCCED&chds=0,{$messages_total},0,{$messages_total},0,{$messages_total}&chd=t:{$messages_total}|{$messages_public}|{$messages_private}&chdl={$lng->stats_total}|{$lng->stats_public}|{$lng->stats_private}&chdlp=b&chma=|0,1&chm=t{$lng->stats_total},FFFFFF,0,0,13|t{$lng->stats_public},000000,1,1,13,-1|t{$lng->stats_private},000000,2,-1,13" width="100%" height="auto" alt="" />
+	</div>
+	<div class="message-divider"></div>
+	<div class="page-input-container">
+		<div class="stats-boxes-container">
+			<div><strong>{$lng->stats_reports}</strong> ({$lng->messages_and_comments})</div>
+			<div class="stats-container columns">
+				{$lng->total_reports}
+				<h3>{$total_reports}</h3>
+			</div>
+			<div class="stats-container columns">
+				{$lng->pending_reports}
+				<h3>{$pending_reports}</h3>
+			</div>
+			<div class="stats-container columns">
+				{$lng->safe_reports}
+				<h3>{$safe_reports}</h3>
+			</div>
+			<div class="stats-container columns">
+				{$lng->deleted_reports}
+				<h3>{$deleted_reports}</h3>
+			</div>
+		</div>
+		<div class="stats-boxes-container">
+			<div><strong>{$lng->messages}</strong></div>
+			<div class="stats-container columns">
+				{$lng->total_reports}
+				<h3>{$total_message_reports}</h3>
+			</div>
+			<div class="stats-container columns">
+				{$lng->pending_reports}
+				<h3>{$pending_message_reports}</h3>
+			</div>
+			<div class="stats-container columns">
+				{$lng->safe_reports}
+				<h3>{$safe_message_reports}</h3>
+			</div>
+			<div class="stats-container columns">
+				{$lng->deleted_reports}
+				<h3>{$deleted_message_reports}</h3>
+			</div>
+		</div>
+		<div class="stats-boxes-container">
+			<div><strong>{$lng->comments}</strong></div>
+			<div class="stats-container columns">
+				{$lng->total_reports}
+				<h3>{$total_comment_reports}</h3>
+			</div>
+			<div class="stats-container columns">
+				{$lng->pending_reports}
+				<h3>{$pending_comment_reports}</h3>
+			</div>
+			<div class="stats-container columns">
+				{$lng->safe_reports}
+				<h3>{$safe_comment_reports}</h3>
+			</div>
+			<div class="stats-container columns">
+				{$lng->deleted_reports}
+				<h3>{$deleted_comment_reports}</h3>
+			</div>
+		</div>
+		<img src="//chart.googleapis.com/chart?chbh=a,5,20&chs=633x125&cht=bhg&chco=224499,76A4FB,a7c5ff,BBCCED&chds=0,{$total_reports},0,{$total_reports},0,{$total_reports},0,{$total_reports}&chd=t:{$total_reports}|{$pending_reports}|{$safe_reports}|{$deleted_reports}&chdl={$lng->total_reports}|{$lng->pending_reports}|{$lng->safe_reports}|{$lng->deleted_reports}&chdlp=b&chma=|0,1&chm=t{$lng->total_reports},FFFFFF,0,0,13|t{$lng->pending_reports},000000,1,1,13,-1|t{$lng->safe_reports},000000,2,-1,13|t{$lng->deleted_reports},000000,3,-1,13&chtt={$lng->reports_title}&chts=676767,12.4" width="100%" height="auto" alt="" />
+	</div>
+	<div class="message-divider"></div>
+	<div class="page-input-container">
+		<div><strong>{$lng->likes}</strong></div>
+		<div class="stats-container columns">
+			{$lng->likes_today}
+			<h3>{$likes_today}</h3>
+		</div>
+		<div class="stats-container columns">
+			{$lng->likes_this_month}
+			<h3>{$likes_this_month}</h3>
+		</div>
+		<div class="stats-container columns">
+			{$lng->likes_last_30}
+			<h3>{$likes_last_30}</h3>
+		</div>
+		<div class="stats-container columns">
+			{$lng->likes_total}
+			<h3>{$total_likes}</h3>
+		</div>
+	</div>
+</div>
