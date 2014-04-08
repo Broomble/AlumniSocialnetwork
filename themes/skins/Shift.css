@@ -5,13 +5,23 @@ html {
 }
 
 body {
+	position: relative;
 color:#333;
 font-family: 'Segoe UI', Tahoma, Segoe UI, Arial, sans-serif;
 font-size:13px;
 margin:0;
 padding:0;
-background: #edeff0 url(images/niec.png) ;
-overflow-x: hidden;
+background: #edeff0 url(images/niec.jpg) repeat-x;
+background-attachment: fixed;
+}
+.background-overlay{
+	position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(250, 247, 247, 0.64);
+    z-index: -1;
 }
 img {  }
 
