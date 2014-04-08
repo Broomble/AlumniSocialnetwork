@@ -32,7 +32,7 @@
 					<div class="loginpass">
 					<input type="password" id="short" name="password" placeholder="{$lng->password}" />
 					</div>
-					<input type="checkbox" class="checked" name="remember" value="1"><label>{$lng->remember}</label>
+					<input type="checkbox" class="checked" name="remember" value="1"><label>Remember Password</label>
 					<button type="submit" name="login" class="login-button">{$lng->login}</button>
 				</form>
 				</div>

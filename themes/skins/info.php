@@ -1,9 +1,9 @@
 <?php
 // Theme Name
-$name = 'niecInstalled';
+$name = 'niec alumni';
 
 // Theme Author
-$author = 'imnavneet';
+$author = 'prayag';
 
 // Theme URL
 $url = '';

@@ -19,6 +19,16 @@ h1, h3, h4, h5 {
 font-family: 'Segoe UI', Tahoma, Arial, Verdana, sans-serif;
 font-weight: 300;
 }
+*::-webkit-scrollbar {
+width: 5px;
+height: 5px;
+}
+*::-webkit-scrollbar-thumb {
+background-color: #818181;
+}
+*::-webkit-scrollbar-track {
+background-color: #F5F5F5;
+}
 a {
 color:#333;
 text-decoration: none;
@@ -105,6 +115,9 @@ box-shadow: rgb(204, 204, 204) 0px 1px 5px inset;
 z-index: 2;
 color: #000;
 }
+.center {
+ text-align: center;   
+}
 .row-top {
 background: #fff;
 padding: 20px 0 10px 0;
@@ -188,8 +201,7 @@ width: 100%;
 margin: 0 auto;
 overflow: auto;
 margin-top: -20px;
-background: url('images/background.png');
-background-position: 50% 50%;
+ background-position: 50% 50%;
 background-size: cover;
 border-bottom: 1px solid #1e346a;
 }
@@ -1574,7 +1586,7 @@ width: 70px;
 height: 70px;
 float: left;
 border: 5px solid #fff;
-border-radius: 5px;
+border-radius: 100% !important;
 margin-right: 11px;
 box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 margin-top: 5px;
@@ -1590,6 +1602,7 @@ overflow: hidden;
 .welcome-user img {
 width: 70px;
 height: 70px;
+    border-radius: 100%;
 }
 .welcome-message {
 float: left;

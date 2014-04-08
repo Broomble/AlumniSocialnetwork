@@ -1,11 +1,16 @@
-
 $(function () {
     $('#branch').hide();
-     $('#course').change(function () {
-         $('#branch').hide();
-         if (this.options[this.selectedIndex].value == 1) {
+     if ($('#course').find(":selected").val() == 1 ) {
              $('#branch').show();
-         }
+     }
+    else 
+         $('#branch').hide();
+     $('#course').change(function () {
+         if ($('#course').find(":selected").val() == 1 ) {
+             $('#branch').show();
+     }
+    else 
+         $('#branch').hide();
      });
 });
 

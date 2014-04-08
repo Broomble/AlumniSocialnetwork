@@ -2965,7 +2965,7 @@ class feed {
 		// If there are maps available
 		if(!empty($rows)) {
 			$i = 0;
-			$output = '<div class="sidebar-container widget-places"><div class="sidebar-content"><div class="sidebar-header"><a href="'.$this->url.'/index.php?a=profile&u='.((!
+			$output = '<div class="sidebar-container widget-subscriptions"><div class="sidebar-content"><div class="sidebar-header"><a href="'.$this->url.'/index.php?a=profile&u='.((!
 			empty($this->profile)) ? $this->profile : $this->username).'&filter=map">'.$LNG['sidebar_map'].' <span class="sidebar-header-light">('.$query->num_rows.')</span></a></div>';
 			foreach($rows as $row) {
 				if($i == 6) break; // Display only the last 6 maps
@@ -3925,8 +3925,9 @@ function realName($username, $first = null, $last = null, $fullname = null) {
 	}
 }
 function showUsers($users, $url) {
+
 	foreach($users as $user) {
-		$x .= '<div class="welcome-user"><a href="'.$url.'/index.php?a=profile&u='.$user['username'].'"><img src="'.$url.'/thumb.php?src='.$user['image'].'&t=a&w=112&h=112"></a></div>';
+		$x .= '<div class="welcome-user"><a href="'.$url.'/index.php?a=profile&u='.$user['username'].'"><img src="'.$url.'/thumb.php?src='.$user['image'].'&t=a&w=112&h=112"></a><br/><div class="center" >'.(($user['join'] !== '0000-0000') ? $user['join'] : '').'</div></div>';
 	}
 	return $x;
 }
