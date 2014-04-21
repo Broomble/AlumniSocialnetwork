@@ -1,0 +1,125 @@
+
+	<div class="row-body register">
+		<div class="welcome-inner">
+
+			<div class="welcome-inputs verify-inputs">
+
+
+
+				<div id ="Registers" class="welcomeforms verify">
+					<div class="register">verification</div>
+				
+          
+		<form action="{$url}/index.php?a=verify" method="post">
+	          {$verificationMsg}
+	
+			<div class="page-input-container">
+				<div class="page-input-title">{$lng->ttl_course}</div>
+				<div class="page-input-content">
+					<select name="course" id="course">
+						<option value="0">- Select a course -</option>
+						<option value="1" {$btech}>{$lng->btech}</option>
+						<option value="2" {$mca}>{$lng->mca}</option>
+						<option value="3" {$mba}>{$lng->mba}</option>
+						<option value="4" {$bca}>{$lng->bca}</option>
+					</select>			
+					<div class="page-input-sub">{$lng->sub_course}</div>
+				</div>
+			</div>
+
+			<div class="page-input-container" id="branch">
+				<div class="page-input-title">{$lng->ttl_branch}</div>
+				<div class="page-input-content">
+					<select name="branch">
+						<option value="0">- Select a branch -</option>
+						<option value="1" {$ece}>{$lng->ece}</option>
+						<option value="2" {$cse}>{$lng->cse}</option>
+						<option value="3" {$mae}>{$lng->mae}</option>
+						<option value="4" {$eee}>{$lng->eee}</option>
+						<option value="5" {$it}>{$lng->it}</option>
+						<option value="6" {$ce}>{$lng->ce}</option>
+					</select>
+					<div class="page-input-sub">{$lng->sub_branch}</div>
+				</div>
+			</div>
+
+			<div class="page-input-container">
+				<div class="page-input-title">{$lng->ttl_year}</div>
+				<div class="page-input-content">
+					<select name="jyear">
+						{$jyear}
+					</select>
+					-
+					<select name="tyear">
+						{$tyear}
+					</select>
+					<div class="page-input-sub">{$lng->sub_year}</div>
+				</div>
+			</div>
+
+
+			<div class="page-input-container">
+				<div class="page-input-title">{$lng->ttl_enrollno}</div>
+				<div class="page-input-content">
+					<input type="text" name="enrollno" placeholder="Enroll No"/>
+					<div class="page-input-sub" >{$lng->sub_enrollno}</div>
+				</div>
+			</div>
+
+			
+			<div class="page-input-container">
+			<div class="page-input-title">{$lng->ttl_born}</div>
+				<div class="page-input-content">
+				<select name="day">
+					{$days}
+				</select>
+				<select name="month">
+					{$months}
+				</select>
+				<select name="year">
+					{$years}
+				</select>
+				<div class="page-input-sub">{$lng->sub_born}</div>
+				</div>
+			</div>
+			
+	<div class="page-input-container">
+		<div class="page-input-title">{$lng->ttl_name}</div>
+		<div class="page-input-content">
+			<input type="text" name="name" placeholder="Name"/>
+			<div class="page-input-sub">{$lng->sub_name}</div>
+		</div>
+	</div>
+
+			<div class="page-input-container">
+				<div class="page-input-title">Father's Name</div>
+					<div class="page-input-content">
+						<input type="text" id="short" name="fname" placeholder="Father's Name" />
+						<div class="page-input-sub">Enter your Father's name</div>
+				</div>    
+			</div>
+
+        
+                        
+            <button type="submit" name="verify" class="register-button">Continue</button>
+
+
+
+		</form>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+<!--  <div class="welcome-full">
+	<div class="row-body">
+		<div class="welcome-inner">
+					
+
+				
+		</div>
+	</div>
+</div> --> 
+{$ad}

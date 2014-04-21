@@ -11,18 +11,8 @@ body {
     font-size:13px;
     margin:0;
     padding:0;
-    background: #edeff0 url(images/niec.jpg) repeat-x;
-    background-attachment: fixed;
-    background-size: cover !important;
-}
-.background-overlay{
-	position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(250, 247, 247, 0.64);
-    z-index: -1;
+    background: #edeff0 url(images/noise.png) ;
+    overflow-x: hidden;
 }
 .checked {
     height:14px !important;
@@ -1636,7 +1626,7 @@ border: 1px solid #AAA;
 float: left;
 }
 .page-input-title, .page-input-title-img {
-text-align: right;
+text-align: left;
 width: 75px;
 margin-right: 10px;
 margin-top: 4px;
@@ -1656,7 +1646,7 @@ margin-top: 5px;
 color: #666;
 font-size: 11px;
 padding-top: 3px;
-width: 350px;
+width: 230px;
 }
 .page-title {
 font-size: 18px;
@@ -1906,7 +1896,7 @@ height: 70px;
 .welcome-message {
 float: left;
 text-align: left;
-width: 50%;
+width: 69%;
 display: block;
 color: #000;
 font-family: "wf_SegoeUILight","wf_SegoeUI","Segoe UI Light","Segoe WP Light","Segoe UI","Segoe","Segoe WP","Tahoma","Verdana","Arial","sans-serif";
@@ -1935,11 +1925,16 @@ text-shadow: 0 2px 1px rgba(0,0,0,.2);
 font-family: 'Lato',sans-serif;
 }
 .welcome-inputs {
-width: 50%;
+width: 31%;
 float: right;
 margin: 0 auto;
 }
 
+.verify-inputs {
+width: 50%;
+float: right;
+margin: 0 auto;
+}
 .welcome-inputs form {
 padding: 10px;
 width: 100%;
@@ -1947,6 +1942,11 @@ max-width: 245px;
 overflow: hidden;
 float: none;
 margin: 0 auto;
+}
+
+.verify form{
+max-width: 380px;
+
 }
 
 .welcome-inputs input {
@@ -2975,10 +2975,13 @@ padding-right: 0px;
 font-family: 'Segoe UI', Tahoma, Verdana, Arial, sans-serif;
 color: #6B6B6B;
 overflow: auto;
-max-width: 300px;
+max-width: 275px;
 margin: 0 auto;
 }
 
+.verify{
+    max-width: 400px;
+}
 
 .loginpass{
 width: 100%;
@@ -3208,7 +3211,7 @@ left: 50%;
 position: absolute;
 z-index: 99;
 }
-.login, .register{
+.login{
 display: inline-block;
 padding: 10px;
 margin:0 auto;
@@ -3221,8 +3224,17 @@ text-transform: uppercase;
 color: #fff;
 }
 
-.login{
-margin-left: -5px;
+.register{
+display: inline-block;
+padding: 10px;
+margin:0 auto;
+width: 65%;
+font-weight: bolder;
+text-shadow: 0px 1px 0px rgba(0,0,0,.09);
+border-top-right-radius: 20px;
+border-top-left-radius: 20px;
+text-transform: uppercase;
+color: #fff;
 }
 
 .create-account{

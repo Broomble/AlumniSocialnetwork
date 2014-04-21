@@ -7,6 +7,11 @@ function PageMain() {
 		<span class="welcome-captcha"><img src="'.$CONF['url'].'/includes/captcha.php" /></span>';
 	}
 	
+	//if(isset($_POST['verification'])) {
+		// Verification usage
+		
+	//}
+
 	if(isset($_POST['register'])) {
 		// Register usage
 		$reg = new register();
@@ -15,6 +20,7 @@ function PageMain() {
 		$reg->username = $_POST['username'];
 		$reg->password = $_POST['password'];
 		$reg->email = $_POST['email'];
+		$reg->enrollno = $_POST['enrollno'];
 		$reg->captcha = $_POST['captcha'];
 		$reg->captcha_on = $settings['captcha'];
 		$reg->message_privacy = $settings['mprivacy'];
@@ -39,6 +45,18 @@ function PageMain() {
 			header("Location: ".$CONF['url']."/index.php?a=feed");
 		}
 	}
+
+
+	/*if(isset($_POST['contacts'])) {
+		// Contacts usage
+
+	}
+
+	if(isset($_POST['employment'])) {
+		// Employment usage
+
+	}*/
+
 	
 	if(isset($_POST['login'])) {
 		// Log-in usage

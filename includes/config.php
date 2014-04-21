@@ -7,7 +7,7 @@ $CONF = $TMPL = array();
 // The MySQL credentials
 $CONF['host'] = 'localhost';
 $CONF['user'] = 'root';
-$CONF['pass'] = 'root';
+$CONF['pass'] = '';
 $CONF['name'] = 'alumni';
 
 // The Installation URL
@@ -21,6 +21,8 @@ $CONF['theme_path'] = 'themes';
 
 $action = array('admin'			=> 'admin',
 				'feed'			=> 'feed',
+				'verify'		=> 'verify',
+				'register'		=> 'register',
 				'settings'		=> 'settings',
 				'messages'		=> 'messages',
 				'post'			=> 'post',
