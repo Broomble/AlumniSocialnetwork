@@ -1,19 +1,11 @@
 <?php
-class employee{
+class contact{
 	public $db; 					// Database Property
 	public $url; 					// Installation URL Property
-	public $company;					
-	public $hrphone;					
-	public $hrname;					
-	public $hremail;					
-	public $joining;	
-	public $offaddress;	
-	public $offemail;
-	public $offphone;
-	public $industry;
-	public $designation;
-	public $department;
-	public $state;
+	public $phone;					
+	public $email;					
+	public $address;	
+	public $state;				
 	public $country;
 	
 	function process() {
@@ -41,7 +33,20 @@ class employee{
 		return $x;		
 	}
 	
-
+	function verify_if_phone_exist() {
+			$query = sprintf("SELECT `phone` FROM `contacts` WHERE `phone` = '%s'", $this->db->real_escape_string($this->phone));
+			$result = $this->db->query($query);
+			
+			return ($result->num_rows == 0) ? 0 : 1;
+	}
+		
+	function verify_if_email_exists() {
+			$query = sprintf("SELECT `email` FROM `contacts` WHERE `email` = '%s'", $this->db->real_escape_string(strtolower($this->email)));
+			$result = $this->db->query($query);
+			
+			return ($result->num_rows == 0) ? 0 : 1;
+	}
+	
 	function queryEnroll() {
 		// If the username input string is an e-mail, switch the query
 		if(filter_var($_SESSION['username'], FILTER_VALIDATE_EMAIL)) {
@@ -61,23 +66,26 @@ class employee{
 		// Create the array which contains the Language variable
 		$error = array();
 				// Define the Language variable for each type of error
-		if(empty($this->company) && empty($this->industry) && empty($this->designation) && empty($this->department) && empty($this->offaddress) && empty($state) && empty($country)) {
+		if(empty($this->phone) && empty($this->email) && empty($state) && empty($country) && empty($address)) {
 			$error[] .= 'all_fields';
 		}
-		if(!filter_var($this->offemail, FILTER_VALIDATE_EMAIL)) {
-			$error[] .= 'invalid_email';
+		if($this->verify_if_phone_exist() !== 0) {
+			$error[] .= 'phone_exists';
+		}
+		if($this->verify_if_email_exists() !== 0) {
+			$error[] .= 'email_exists';
 		}
 		return $error;
 	}
 
 	function query() {
-		$query = sprintf("INSERT into `employment` (`enrollno`, `company`, `joining`, `industry`, `department`, `designation`, `office_landline`, `office_email`, `office_addr`, `state`, `country`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');", $this->queryEnroll(), $this->db->real_escape_string($this->company), $this->db->real_escape_string($this->joining),  $this->db->real_escape_string($this->industry),  $this->db->real_escape_string($this->department),  $this->db->real_escape_string($this->designation),  $this->db->real_escape_string($this->offphone),  $this->db->real_escape_string($this->offemail),  $this->db->real_escape_string($this->offaddress), $this->db->real_escape_string($this->state), $this->db->real_escape_string($this->country));
+		$query = sprintf("INSERT into `contacts` (`enrollno`, `phone`, `email`, `perma_addr`, `state`, `country`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s');", $this->queryEnroll(), $this->db->real_escape_string($this->phone), $this->db->real_escape_string($this->email),  $this->db->real_escape_string($this->address), $this->db->real_escape_string($this->state), $this->db->real_escape_string($this->country));
 		$this->db->query($query);
 		// return ($this->db->query($query)) ? 0 : 1;
 	}
 
 	function query1() {
-		$query = sprintf("UPDATE `users` SET `status`=2 WHERE `enrollno` = '%s'",  $this->queryEnroll());
+		$query = sprintf("UPDATE `users` SET `status`=1 WHERE `enrollno` = '%s'",  $this->queryEnroll());
 		$this->db->query($query);		
 	}	
 	

@@ -50,7 +50,6 @@ class logIn {
 		unset($_SESSION['branch']);
 		unset($_SESSION['username']);
 		unset($_SESSION['password']);
-		unset($_SESSION['enrollno']);
 		setcookie("username", '', 1);
 		setcookie("password", '', 1);
 	}

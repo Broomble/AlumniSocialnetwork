@@ -6,6 +6,7 @@ $LNG['charset'] = "iso-8859-1";
 $LNG['user_success'] = 'User succesfully created!';
 $LNG['user_exists'] = 'This username already exists.';
 $LNG['email_exists'] = 'This e-mail is already in use.';
+$LNG['enrollno_exist'] = 'Enroll No already <strong>Exists</strong>';
 
 $LNG['enrollno_exists'] = 'Enroll No doesn\'t  <strong>Exists</strong>';
 $LNG['branch_exists'] = 'Are you sure you are from this <strong>Branch</strong>';
@@ -14,6 +15,7 @@ $LNG['fname_exists'] = 'Enter correct <strong>Father\'s name</strong>';
 $LNG['name_exists'] = 'Enter your correct <strong>Name</strong>';
 $LNG['born_exists'] = 'Enter correct Date of Birth';
 $LNG['join_exists'] = 'Enter correct Duration of Course';
+$LNG['phone_exists'] = 'Phone NO already exists';
 
 $LNG['all_fields'] = 'All fields are required!';
 $LNG['user_alnum'] = 'The username must consists only from letters and numbers.';
@@ -27,6 +29,8 @@ $LNG['visitor'] = 'Visitor';
 $LNG['register'] = 'Register';
 $LNG['login'] = 'Login';
 $LNG['Verify'] = 'Verification';
+$LNG['Contact'] = 'Contact Details';
+$LNG['Employee'] = 'Employment Details';
 $LNG['remember'] = 'Remember me';
 $LNG['password'] = 'Password';
 $LNG['username'] = 'Username';

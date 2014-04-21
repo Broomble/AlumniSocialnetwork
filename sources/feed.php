@@ -78,12 +78,30 @@ function PageMain() {
 			$TMPL['top'] = $top;
 			$TMPL['rows'] = $rows;
 			$TMPL['sidebar'] = $sidebar;
+
+						// If the username input string is an e-mail, switch the query
+				if(filter_var($_SESSION['username'], FILTER_VALIDATE_EMAIL)) {
+					$result = $db->query("SELECT * FROM `users` WHERE `email` = '".$_SESSION['username']."' AND `password` = '".$_SESSION['password']."'");
+				} else {
+					$result = $db->query("SELECT * FROM `users` WHERE `username` = '".$_SESSION['username']."' AND `password` = '".$_SESSION['password']."'");
+				}		
+				
+				while($row = $result->fetch_assoc()) {
+					$status = $row['status'];	
+				}
+				
+				if($status == 0){
+					header("Location: ".$CONF['url']."/index.php?a=contact");
+				}elseif($status == 1){
+					header("Location: ".$CONF['url']."/index.php?a=employee");
+				}
+
 		}
 	} else {
 		// If the session or cookies are not set, redirect to home-page
 		header("Location: ".$CONF['url']."/index.php?a=welcome");
 	}
-	
+
 	if(isset($_GET['logout']) == 1) {
 		$loggedIn->logOut();
 		header("Location: ".$CONF['url']."/index.php?a=welcome");

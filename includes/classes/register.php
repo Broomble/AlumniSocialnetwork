@@ -53,6 +53,13 @@ class register {
 		
 		return ($result->num_rows == 0) ? 0 : 1;
 	}
+
+	function verify_if_enrollno_exist() {
+		$query = sprintf("SELECT `enrollno` FROM `users` WHERE `enrollno` = '%s'", $_SESSION['enrollno']);
+		$result = $this->db->query($query);
+		
+		return ($result->num_rows == 0) ? 0 : 1;
+	}
 	
 	function verify_if_email_exists() {
 		$query = sprintf("SELECT `email` FROM `users` WHERE `email` = '%s'", $this->db->real_escape_string(strtolower($this->email)));
@@ -83,6 +90,9 @@ class register {
 		}
 		if($this->verify_if_email_exists() !== 0) {
 			$error[] .= 'email_exists';
+		}
+		if($this->verify_if_enrollno_exist() !== 0) {
+			$error[] .= 'enrollno_exist';
 		}
 		if(empty($this->username) && empty($this->password) && empty($email) && empty($enrollno)) {
 			$error[] .= 'all_fields';

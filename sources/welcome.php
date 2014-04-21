@@ -7,11 +7,6 @@ function PageMain() {
 		<span class="welcome-captcha"><img src="'.$CONF['url'].'/includes/captcha.php" /></span>';
 	}
 	
-	//if(isset($_POST['verification'])) {
-		// Verification usage
-		
-	//}
-
 	if(isset($_POST['register'])) {
 		// Register usage
 		$reg = new register();
@@ -47,17 +42,6 @@ function PageMain() {
 	}
 
 
-	/*if(isset($_POST['contacts'])) {
-		// Contacts usage
-
-	}
-
-	if(isset($_POST['employment'])) {
-		// Employment usage
-
-	}*/
-
-	
 	if(isset($_POST['login'])) {
 		// Log-in usage
 		$log = new logIn();

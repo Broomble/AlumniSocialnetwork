@@ -120,6 +120,8 @@ function notificationBox($type, $title, $message, $z = null) {
 
 require_once('classes/register.php');
 require_once('classes/verify.php');
+require_once('classes/contact.php');
+require_once('classes/employee.php');
 require_once('classes/logIn.php');
 require_once('classes/loggedIn.php');
 require_once('classes/logInAdmin.php');

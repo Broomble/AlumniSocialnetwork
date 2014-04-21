@@ -1,16 +1,16 @@
 $(function () {
     $('#branch').hide();
      if ($('#course').find(":selected").val() == 1 ) {
-             $('#branch').show();
+             $('#branch').slideDown();
      }
     else 
-         $('#branch').hide();
+         $('#branch').slideUp();
      $('#course').change(function () {
          if ($('#course').find(":selected").val() == 1 ) {
-             $('#branch').show();
+             $('#branch').slideDown();
      }
     else 
-         $('#branch').hide();
+         $('#branch').slideUp();
      });
 });
 

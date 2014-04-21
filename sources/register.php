@@ -46,12 +46,12 @@ function PageMain() {
 	}
 
 
-	/*if(isset($_POST['contacts'])) {
+	if(isset($_POST['contact'])) {
 		// Contacts usage
 
 	}
 
-	if(isset($_POST['employment'])) {
+	/*if(isset($_POST['employment'])) {
 		// Employment usage
 
 	}*/
