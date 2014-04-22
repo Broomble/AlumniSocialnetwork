@@ -3355,7 +3355,8 @@ color:#8cc253;
 .nIndia , .states {
     display: none;
 }
-.employz{width:124px;}
+.employz{width:164px;font-size: 16px;
+font-weight: bold;}
 .noz , .yesz{width:60px;}
 .mainemployz, .maindone{display: none;}
 .employz , .noz , .yesz{
