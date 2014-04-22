@@ -129,7 +129,7 @@ class verify{
 			$error[] .= 'born_exists';
 		}
 		if($this->verify_if_join_exists() == 0) {
-			$error[] .= 'born_exists';
+			$error[] .= 'join_exists';
 		}
 		if(empty($this->enrollno) && empty($this->name) && empty($this->fname) && empty($this->course) && empty($this->born) && empty($this->join)) {
 			$error[] .= 'all_fields';
@@ -140,9 +140,6 @@ class verify{
 		if(strlen($this->enrollno) <= 10) {
 			$error[] .= 'enrollno_too_short';
 		}
-		/*if(!preg_match("/^([0-9]{5})(-[0-9]{4})?$/i", $this->enrollno)){
-			$error[] .= 'enrollno_invalid';
-		}*/
 		if(!ctype_digit($this->enrollno)) {
 			$error[] .= 'enrollno_digit';
 		}

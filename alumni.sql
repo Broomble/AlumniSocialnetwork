@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2014 at 09:52 AM
+-- Generation Time: Apr 22, 2014 at 09:50 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -129,6 +129,61 @@ INSERT INTO `comments` (`id`, `uid`, `mid`, `message`, `time`) VALUES
 (2, 1, 5, 'hmm ', '2014-04-04 06:50:10'),
 (3, 1, 6, 'test''', '2014-04-04 06:50:55'),
 (4, 2, 3, 'cool', '2014-04-04 07:00:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE IF NOT EXISTS `contacts` (
+  `enrollno` varchar(20) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `perma_addr` varchar(100) NOT NULL,
+  `city` varchar(40) NOT NULL,
+  `state` varchar(40) NOT NULL,
+  `country` varchar(40) NOT NULL,
+  KEY `enroll_no` (`enrollno`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`enrollno`, `phone`, `email`, `perma_addr`, `city`, `state`, `country`) VALUES
+('16615602710', '919911396550', 'pricelesssumit@gmail.com', 'sdfgdsfgsdf', '', '10', 'IN'),
+('16615602708', '919911396557', 'gauravsars11@gmail.com', 'asdasdsa', '', '10', 'IN');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employment`
+--
+
+CREATE TABLE IF NOT EXISTS `employment` (
+  `enrollno` varchar(20) NOT NULL,
+  `company` varchar(40) NOT NULL,
+  `joining` varchar(10) NOT NULL,
+  `industry` varchar(50) NOT NULL,
+  `department` varchar(50) NOT NULL,
+  `designation` varchar(50) NOT NULL,
+  `office_landline` varchar(50) DEFAULT NULL,
+  `office_email` varchar(50) DEFAULT NULL,
+  `office_addr` varchar(100) NOT NULL,
+  `state` varchar(40) NOT NULL,
+  `country` varchar(40) NOT NULL,
+  KEY `enroll_no` (`enrollno`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employment`
+--
+
+INSERT INTO `employment` (`enrollno`, `company`, `joining`, `industry`, `department`, `designation`, `office_landline`, `office_email`, `office_addr`, `state`, `country`) VALUES
+('16615602710', 'TCS', '2008-7-5', '25', 'IT- Software', 'Software Engineer', '011-26886668', 'npandey@gmail.com', 'Banglore', '10', 'IN'),
+('16615602708', 'TCS', '2010-9-8', '33', 'Animation', 'Asst. Manager', '6546544656546', 'npandey@gmail.com', 'GI -1075', '10', 'IN'),
+('16615602708', 'TCS', '2006-7-9', '26', 'Fresher/Trainee', 'Junior Assistant', '6546544656546', 'npandey@gmail.com', 'asdsadsa', '10', 'IN');
 
 -- --------------------------------------------------------
 
@@ -357,14 +412,15 @@ CREATE TABLE IF NOT EXISTS `students` (
   `born` date NOT NULL,
   `fname` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `students`
 --
 
 INSERT INTO `students` (`id`, `name`, `course`, `branch`, `join`, `enrollno`, `gender`, `born`, `fname`) VALUES
-(1, 'Navneet', '1', '2', '2010-2014', '16615602710', 1, '1992-09-16', 'Rakesh Pandey');
+(1, 'Navneet', '1', '2', '2010-2014', '16615602710', 1, '1992-09-16', 'Rakesh Pandey'),
+(2, 'Sumit R Pandey', '1', '2', '2008-2012', '16615602708', 1, '1995-05-02', 'Rakesh Pandey');
 
 -- --------------------------------------------------------
 
@@ -411,17 +467,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `sound_new_notification` tinyint(4) NOT NULL,
   `sound_new_chat` tinyint(4) NOT NULL,
   `born` date NOT NULL,
+  `status` tinyint(5) NOT NULL,
   UNIQUE KEY `id` (`idu`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`idu`, `username`, `password`, `email`, `first_name`, `last_name`, `course`, `branch`, `join`, `enrollno`, `location`, `website`, `bio`, `date`, `facebook`, `twitter`, `gplus`, `image`, `private`, `salted`, `background`, `cover`, `verified`, `privacy`, `gender`, `online`, `offline`, `notificationl`, `notificationc`, `notifications`, `notificationd`, `notificationf`, `email_comment`, `email_like`, `email_new_friend`, `sound_new_notification`, `sound_new_chat`, `born`) VALUES
-(1, 'imnavneet', 'df24526b08b8da6e6e5b27f6315424e4', 'npandey057@gmail.com', 'Navneet', 'Pandey', '1', '2', '2010-2014', '16615602711', 'India', 'htp://navneetpandey.com', '', '2014-04-04', 'imnavneet', 'iTechingg', '+NavneetPandey', '898295299_831060223_1024257080.jpg', 0, '', '', '1839017986_130522597_1329657326.jpg', 0, 1, 1, 1398066697, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, '1992-09-16'),
-(2, 'kingnavneet', 'df24526b08b8da6e6e5b27f6315424e4', 'n@n.com', '', '', '', '', '0000-0000', '0', '', '', '', '2014-04-04', '', '', '', '557668401_1002824475_1935951441.JPG', 0, '', '', '138610334_1384058665_1012171594.jpg', 0, 1, 0, 1398066055, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, '0000-00-00'),
-(12, 'navneet', 'df24526b08b8da6e6e5b27f6315424e4', 'npics@p.com', '', '', '1', '2', '2010-2014', '16615602710', '', '', '', '2014-04-21', '', '', '', 'default.png', 0, '', '', 'default.png', 0, 1, 0, 1398066036, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, '1992-09-16');
+INSERT INTO `users` (`idu`, `username`, `password`, `email`, `first_name`, `last_name`, `course`, `branch`, `join`, `enrollno`, `location`, `website`, `bio`, `date`, `facebook`, `twitter`, `gplus`, `image`, `private`, `salted`, `background`, `cover`, `verified`, `privacy`, `gender`, `online`, `offline`, `notificationl`, `notificationc`, `notifications`, `notificationd`, `notificationf`, `email_comment`, `email_like`, `email_new_friend`, `sound_new_notification`, `sound_new_chat`, `born`, `status`) VALUES
+(1, 'imnavneet', 'df24526b08b8da6e6e5b27f6315424e4', 'npandey057@gmail.com', 'Navneet', 'Pandey', '1', '2', '2010-2014', '16615602710', 'India', 'htp://navneetpandey.com', '', '2014-04-04', 'imnavneet', 'iTechingg', '+NavneetPandey', '898295299_831060223_1024257080.jpg', 0, '', '', '1839017986_130522597_1329657326.jpg', 0, 1, 1, 1398151511, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, '1992-09-16', 1),
+(2, 'kingnavneet', 'df24526b08b8da6e6e5b27f6315424e4', 'n@n.com', '', '', '', '', '0000-0000', '0', '', '', '', '2014-04-04', '', '', '', '52478770_1905198199_1521533666.JPG', 0, '', '', '138610334_1384058665_1012171594.jpg', 0, 1, 0, 1398090471, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, '0000-00-00', 0),
+(5, 'sumit', 'df24526b08b8da6e6e5b27f6315424e4', 'pricelesssumit@gmail.com', 'Sumit', 'Pandey', '1', '2', '2008-2012', '16615602708', '', '', '', '2014-04-22', '', '', '', 'default.png', 0, '', '', 'default.png', 0, 1, 1, 1398152510, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, '1995-05-02', 2);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

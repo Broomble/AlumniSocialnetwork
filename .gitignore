@@ -8,7 +8,9 @@
 bin/
 tmp/
 cache/
-uploads/
+uploads/covers
+uploads/media
+uploads/avatars
 *.tmp
 *.bak
 *.swp

@@ -48,8 +48,15 @@ class logIn {
 		unset($_SESSION['join']);
 		unset($_SESSION['course']);
 		unset($_SESSION['branch']);
+		unset($_SESSION['enrollno']);
 		unset($_SESSION['username']);
 		unset($_SESSION['password']);
+		setcookie("name", '', 1);
+		setcookie("born", '', 1);
+		setcookie("join", '', 1);
+		setcookie("course", '', 1);
+		setcookie("branch", '', 1);
+		setcookie("enrollno", '', 1);
 		setcookie("username", '', 1);
 		setcookie("password", '', 1);
 	}

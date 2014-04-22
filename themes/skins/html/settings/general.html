@@ -16,21 +16,21 @@
 	<div class="page-input-container">
 		<div class="page-input-title">{$lng->ttl_course}</div>
 		<div class="page-input-content">
-			<select name="course" id="course">
+			<select name="course" id="course" disabled>
 				<option value="0">- Select a course -</option>
 				<option value="1" {$btech}>{$lng->btech}</option>
 				<option value="2" {$mca}>{$lng->mca}</option>
 				<option value="3" {$mba}>{$lng->mba}</option>
 				<option value="4" {$bca}>{$lng->bca}</option>
 			</select>			
-			<div class="page-input-sub">{$lng->sub_course}</div>
+			
 		</div>
 	</div>
 
 	<div class="page-input-container" id="branch">
 		<div class="page-input-title">{$lng->ttl_branch}</div>
 		<div class="page-input-content">
-			<select name="branch">
+			<select name="branch" disabled>
 				<option value="0">- Select a branch -</option>
 				<option value="1" {$ece}>{$lng->ece}</option>
 				<option value="2" {$cse}>{$lng->cse}</option>
@@ -39,21 +39,20 @@
 				<option value="5" {$it}>{$lng->it}</option>
 				<option value="6" {$ce}>{$lng->ce}</option>
 			</select>
-			<div class="page-input-sub">{$lng->sub_branch}</div>
+			
 		</div>
 	</div>
 
 	<div class="page-input-container">
-		<div class="page-input-title">{$lng->ttl_year}</div>
+		<div class="page-input-title" disabled>{$lng->ttl_year}</div>
 		<div class="page-input-content">
-			<select name="jyear">
+			<select name="jyear" disabled="">
 				{$jyear}
 			</select>
 			-
-			<select name="tyear">
+			<select name="tyear" disabled="">
 				{$tyear}
 			</select>
-			<div class="page-input-sub">{$lng->sub_year}</div>
 		</div>
 	</div>
 
@@ -61,8 +60,7 @@
 	<div class="page-input-container">
 		<div class="page-input-title">{$lng->ttl_enrollno}</div>
 		<div class="page-input-content">
-			<input type="text" name="enrollno" value="{$currentEnrollno}" />
-			<div class="page-input-sub">{$lng->sub_enrollno}</div>
+			<input type="text" name="enrollno" value="{$currentEnrollno}" disabled/>
 		</div>
 	</div>
 

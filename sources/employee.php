@@ -57,7 +57,7 @@ function PageMain() {
 					if($status == 0){
 						header("Location: ".$CONF['url']."/index.php?a=contact");
 					}elseif($status == 2){
-						header("Location: ".$CONF['url']."/index.php?a=feed");
+						header("Location: ".$CONF['url']."/index.php?a=settings&b=avatar");
 					}
 
 				}
