@@ -27,10 +27,13 @@ $(function () {
     $(".yesz").click(function(){
           $('.mainemployz').slideDown();
            $('.maindone').hide();
+        $('.mainchoose').hide();
+
           });
     $(".noz").click(function(){
           $('.maindone').show();
          $('.mainemployz').slideUp();
+        $('.mainchoose').hide();
           });
     
 });
