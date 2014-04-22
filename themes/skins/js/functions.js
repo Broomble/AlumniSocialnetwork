@@ -27,12 +27,21 @@ $(function () {
     $(".yesz").click(function(){
           $('.mainemployz').slideDown();
            $('.maindone').hide();
+<<<<<<< HEAD
            $('.mainchoose').hide();
+=======
+        $('.mainchoose').hide();
+
+>>>>>>> 77076e1e0315fb30ec5f96415747fa23f6afd245
           });
     $(".noz").click(function(){
           $('.maindone').show();
          $('.mainemployz').slideUp();
+<<<<<<< HEAD
           $('.mainchoose').hide();
+=======
+        $('.mainchoose').hide();
+>>>>>>> 77076e1e0315fb30ec5f96415747fa23f6afd245
           });
     
 });
