@@ -12,6 +12,18 @@ $(function () {
     else 
          $('#branch').slideUp();
      });
+   $("#country").click(function(){
+    if ($('#country').find(":selected").val() == "IN" ) {
+         $('.nIndia').hide(); 
+         $('.states').hide(); 
+         $('#state').show();    
+     }
+    else {
+        $('.nIndia').show(); 
+         $('#state').hide(); 
+         $('.states').show(); 
+    }
+       });
 });
 
 
