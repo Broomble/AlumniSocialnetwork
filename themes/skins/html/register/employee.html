@@ -6,13 +6,20 @@
 
 <!-- <h2>Are you employed?</h2> <button type="submit" name="employee" class="register-button sidebut">No</button><button type="submit" name="employee" class="register-button sidebut">Yes</button>
  -->				<div id ="Registers" class="welcomeforms verify">
-					<div class="register">employment details</div>
+					<div class="register vers">Employment Details</div>
 				
           
 		<form action="{$url}/index.php?a=employee" method="post">
 	          {$employeeMsg}
 	
 
+            <div class="page-input-container mainchoose">                
+              <div class="employz welcome-about" > Are You Employed ?</div>
+              <button type="button" class="login-button yesz">Yes</button>
+              <button type="button" name="noo" class="register-button noz">No</button>
+            </div>
+	            
+            <div class="mainemployz" >
 			<div class="page-input-container">
 				<div class="page-input-title">Company Name</div>
 				<div class="page-input-content">
@@ -234,48 +241,6 @@
 				</div>
 			</div>
 
-			<div class="page-input-container">
-				<div class="page-input-title">State</div>
-				<div class="page-input-content">
-					<select name="state" id="state" class="">
-							<option value="1">Andaman and Nicobar Islands</option>
-							<option value="2">Andhra Pradesh</option>
-							<option value="3">Arunachal Pradesh</option>
-							<option value="4">Assam</option>
-							<option value="5">Bihar</option>
-							<option value="6">Chandigarh</option>
-							<option value="7">Chhattisgarh</option>
-							<option value="8">Dadra and Nagar Haveli</option>
-							<option value="9">Daman and Diu</option>
-							<option value="10" selected="selected">Delhi</option>
-							<option value="11">Goa</option>
-							<option value="12">Gujarat</option>
-							<option value="13">Haryana</option>
-							<option value="14">Himachal Pradesh</option>
-							<option value="15">Jammu and Kashmir</option>
-							<option value="16">Jharkhand</option>
-							<option value="17">Karnataka</option>
-							<option value="18">Kerala</option>
-							<option value="19">Lakshadweep</option>
-							<option value="20">Madhya Pradesh</option>
-							<option value="21">Maharashtra</option>
-							<option value="22">Manipur</option>
-							<option value="23">Meghalaya</option>
-							<option value="24">Mizoram</option>
-							<option value="25">Nagaland</option>
-							<option value="26">Orissa</option>
-							<option value="27">Puducherry</option>
-							<option value="28">Punjab</option>
-							<option value="29">Rajasthan</option>
-							<option value="30">Sikkim</option>
-							<option value="31">Tamil Nadu</option>
-							<option value="32">Tripura</option>
-							<option value="33">Uttar Pradesh</option>
-							<option value="34">Uttarakhand</option>
-							<option value="35">West Bengal</option>
-					</select>
-				</div>
-			</div>
 
 			<div class="page-input-container">
 				<div class="page-input-title">Country</div>
@@ -531,6 +496,51 @@
 						</select>
 				</div>    
 			</div>
+            
+            <div class="page-input-container">
+				<div class="page-input-title">State</div>
+				<div class="page-input-content">
+                    <input type="text" name="state" class="nIndia" placeholder="State" />
+                    <div class="page-input-sub states">Enter your State</div>
+					<select name="state" id="state" class="">
+							<option value="1">Andaman and Nicobar Islands</option>
+							<option value="2">Andhra Pradesh</option>
+							<option value="3">Arunachal Pradesh</option>
+							<option value="4">Assam</option>
+							<option value="5">Bihar</option>
+							<option value="6">Chandigarh</option>
+							<option value="7">Chhattisgarh</option>
+							<option value="8">Dadra and Nagar Haveli</option>
+							<option value="9">Daman and Diu</option>
+							<option value="10" selected="selected">Delhi</option>
+							<option value="11">Goa</option>
+							<option value="12">Gujarat</option>
+							<option value="13">Haryana</option>
+							<option value="14">Himachal Pradesh</option>
+							<option value="15">Jammu and Kashmir</option>
+							<option value="16">Jharkhand</option>
+							<option value="17">Karnataka</option>
+							<option value="18">Kerala</option>
+							<option value="19">Lakshadweep</option>
+							<option value="20">Madhya Pradesh</option>
+							<option value="21">Maharashtra</option>
+							<option value="22">Manipur</option>
+							<option value="23">Meghalaya</option>
+							<option value="24">Mizoram</option>
+							<option value="25">Nagaland</option>
+							<option value="26">Orissa</option>
+							<option value="27">Puducherry</option>
+							<option value="28">Punjab</option>
+							<option value="29">Rajasthan</option>
+							<option value="30">Sikkim</option>
+							<option value="31">Tamil Nadu</option>
+							<option value="32">Tripura</option>
+							<option value="33">Uttar Pradesh</option>
+							<option value="34">Uttarakhand</option>
+							<option value="35">West Bengal</option>
+					</select>
+				</div>
+			</div>
 
         	<div class="page-input-container">
 				<div class="page-input-title">Ofiice Contact No</div>
@@ -547,8 +557,10 @@
 					<div class="page-input-sub" >Enter official email</div>
 				</div>
 			</div>
-                        
-            <button type="submit" name="employee" class="register-button sidebut">Done</button>
+                 <button type="submit" name="employee" class="register-button sidebut">Done</button>
+
+             </div>           
+            <button type="submit" name="employee" class="register-button sidebut maindone">Done</button>
 
 
 

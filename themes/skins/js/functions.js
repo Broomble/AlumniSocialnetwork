@@ -12,6 +12,29 @@ $(function () {
     else 
          $('#branch').slideUp();
      });
+   $("#country").click(function(){
+    if ($('#country').find(":selected").val() == "IN" ) {
+         $('.nIndia').hide(); 
+         $('.states').hide(); 
+         $('#state').show();    
+     }
+    else {
+        $('.nIndia').show(); 
+         $('#state').hide(); 
+         $('.states').show(); 
+    }
+       });
+    $(".yesz").click(function(){
+          $('.mainemployz').slideDown();
+           $('.maindone').hide();
+           $('.mainchoose').hide();
+          });
+    $(".noz").click(function(){
+          $('.maindone').show();
+         $('.mainemployz').slideUp();
+          $('.mainchoose').hide();
+          });
+    
 });
 
 

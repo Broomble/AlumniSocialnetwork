@@ -113,7 +113,7 @@ class verify{
 		if($this->verify_if_fname_exists() == 0) {
 			$error[] .= 'fname_exists';
 		}
-		if($this->verify_if_name_exists() !== 0) {
+		if($this->verify_if_name_exists() == 0) {
 			$error[] .= 'name_exists';
 		}
 		// if($this->verify_if_mname() !== 0) {

@@ -376,6 +376,29 @@ class feed {
 		global $LNG, $CONF;
 		$coverAvatar = ((!empty($profile['image'])) ? $profile['image'] : 'default.png');
 		$subscribe = $this->getSubscribe(null, null, null);
+			if($profile['course'] == '1') {
+				$course = 'Bachelor Of Technology';
+			} elseif($profile['course'] == '2') {
+				$course = 'Master of Computer Applications';
+			} elseif($profile['course'] == '3') {
+				$course = 'Master of Business Administration"';
+			} elseif($profile['course'] == '4') {
+				$course = 'Bachelor of Computer Applications';
+			}
+
+			if($profile['branch'] == '1') {
+				$branch  = 'Electronics and Communication Engineering';
+			} elseif($profile['branch'] == '2') {
+				$branch  = 'Computer Science Engineering';
+			} elseif($profile['branch'] == '3') {
+				$branch  = 'Mechanical and Automation Engineering';
+			} elseif($profile['branch'] == '4') {
+				$branch  = 'Electrical and Electronics Engineering';
+			} elseif($profile['branch'] == '5') {
+				$branch  = 'Information and Technology';
+			} elseif($profile['branch'] == '6') {
+				$branch  = 'Civil Engineering';
+			}
 		$card = '
 			<div class="profile-card-cover"><img src="'.$this->url.'/thumb.php?src='.((!empty($profile['cover'])) ? $profile['cover'] : 'default.png').'&w=900&h=300&t=c"></div>
 			<div class="profile-card-avatar">
@@ -384,7 +407,7 @@ class feed {
 			<div class="profile-card-info">
 				<a href="'.$this->url.'/index.php?a=profile&u='.$profile['username'].'"><span id="author'.$profile['idu'].$profile['username'].'"></span><span id="time'.$profile['idu'].$profile['username'].'"></span><div class="cover-username">'.realName($profile['username'], $profile['first_name'], $profile['last_name']).''.((!empty($profile['verified'])) ? '<img src="'.$this->url.'/'.$CONF['theme_url'].'/images/icons/verified.png" title="'.$LNG['verified_user'].'" />' : '').'</div></a>
 			</div>
-			'.((!empty($profile['bio'])) ? '<div class="profile-card-divider"></div><div class="profile-card-bio">'.$profile['bio'].'</div>' : '').'
+			'.((!empty($profile['course'])) ? '<div class="profile-card-divider"></div><div class="profile-card-bio">'.$course.'<br>'.((!empty($profile['branch'])) ? $branch : '').'<br>'.((!empty($profile['join'])) ? $profile['join'] : '').'</div>' : '').'			
 			'.((!empty($subscribe)) ? '
 			<div class="profile-card-divider"></div>
 			<div class="profile-card-buttons"><div class="profile-card-buttons-container"><div id="subscribe'.$profile['idu'].'">'.$subscribe.'</div>'.$this->chatButton($profile['idu'], $profile['username'], 1).'</div></div>' : '').'
@@ -471,7 +494,7 @@ class feed {
 		// Make it into integer instead of a string (removes the 0, e.g: 03=>3, prevents breaking the language)
 		$month = intval($born[1]);
 
-		if($profile['course'] == '1') {
+				if($profile['course'] == '1') {
 					$course  = $LNG['btech'];
 				} elseif($profile['course'] == '2') {
 					$course  = $LNG['mca'];

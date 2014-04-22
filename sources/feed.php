@@ -79,11 +79,19 @@ function PageMain() {
 			$TMPL['rows'] = $rows;
 			$TMPL['sidebar'] = $sidebar;
 
-						// If the username input string is an e-mail, switch the query
-				if(filter_var($_SESSION['username'], FILTER_VALIDATE_EMAIL)) {
-					$result = $db->query("SELECT * FROM `users` WHERE `email` = '".$_SESSION['username']."' AND `password` = '".$_SESSION['password']."'");
-				} else {
-					$result = $db->query("SELECT * FROM `users` WHERE `username` = '".$_SESSION['username']."' AND `password` = '".$_SESSION['password']."'");
+					// If the username input string is an e-mail, switch the query
+				if(isset($_SESSION['username'])){
+					if(filter_var($_SESSION['username'], FILTER_VALIDATE_EMAIL)) {
+						$result = $db->query("SELECT * FROM `users` WHERE `email` = '".$_SESSION['username']."' AND `password` = '".$_SESSION['password']."'");
+					} else {
+						$result = $db->query("SELECT * FROM `users` WHERE `username` = '".$_SESSION['username']."' AND `password` = '".$_SESSION['password']."'");
+					}
+				}elseif(isset($_COOKIE['username'])){
+					if(filter_var($_COOKIE['username'], FILTER_VALIDATE_EMAIL)) {
+						$result = $db->query("SELECT * FROM `users` WHERE `email` = '".$_COOKIE['username']."' AND `password` = '".$_COOKIE['password']."'");
+					} else {
+						$result = $db->query("SELECT * FROM `users` WHERE `username` = '".$_COOKIE['username']."' AND `password` = '".$_COOKIE['password']."'");
+					}
 				}		
 				
 				while($row = $result->fetch_assoc()) {

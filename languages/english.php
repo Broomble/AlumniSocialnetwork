@@ -326,12 +326,12 @@ $LNG['mba'] = 'Master of Business Administration';
 $LNG['bca'] = 'Bachelor of Computer Applications';
 
 
-$LNG['ece'] = 'Electronics and Communication Engineering';
-$LNG['cse'] = 'Computer Science Engineering';
-$LNG['eee'] = 'Electrical and Electronics Engineering';
-$LNG['it'] = 'Information and Technology Engineering';
-$LNG['ce'] = 'Civil Engineering';
-$LNG['mae'] = 'Mechanical and Automation Engineering';
+$LNG['ece'] = 'Electronics and Communication';
+$LNG['cse'] = 'Computer Science';
+$LNG['eee'] = 'Electrical and Electronics';
+$LNG['it'] = 'Information and Technology';
+$LNG['ce'] = 'Civil';
+$LNG['mae'] = 'Mechanical and Automation';
 
 
 

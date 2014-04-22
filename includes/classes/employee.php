@@ -44,11 +44,19 @@ class employee{
 
 	function queryEnroll() {
 		// If the username input string is an e-mail, switch the query
-		if(filter_var($_SESSION['username'], FILTER_VALIDATE_EMAIL)) {
-			$query = sprintf("SELECT * FROM `users` WHERE `email` = '%s' AND `password` = '%s'", $_SESSION['username'], $_SESSION['password']);
-		} else {
-			$query = sprintf("SELECT * FROM `users` WHERE `username` = '%s' AND `password` = '%s'", $_SESSION['username'], $_SESSION['password']);
-		}
+		if(isset($_SESSION['username'])){
+			if(filter_var($_SESSION['username'], FILTER_VALIDATE_EMAIL)) {
+				$query = sprintf("SELECT * FROM `users` WHERE `email` = '%s' AND `password` = '%s'", $_SESSION['username'], $_SESSION['password']);
+			} else {
+				$query = sprintf("SELECT * FROM `users` WHERE `username` = '%s' AND `password` = '%s'", $_SESSION['username'], $_SESSION['password']);
+			}
+		}elseif(isset($_COOKIE['username'])){
+			if(filter_var($_COOKIE['username'], FILTER_VALIDATE_EMAIL)) {
+				$query = sprintf("SELECT * FROM `users` WHERE `email` = '%s' AND `password` = '%s'", $_COOKIE['username'], $_COOKIE['password']);
+			} else {
+				$query = sprintf("SELECT * FROM `users` WHERE `username` = '%s' AND `password` = '%s'", $_COOKIE['username'], $_COOKIE['password']);
+			}
+		}	
 		$result = $this->db->query($query);		
 		
 		while($row = $result->fetch_assoc()) {
@@ -64,8 +72,8 @@ class employee{
 		if(empty($this->company) && empty($this->industry) && empty($this->designation) && empty($this->department) && empty($this->offaddress) && empty($state) && empty($country)) {
 			$error[] .= 'all_fields';
 		}
-		if(!filter_var($this->offemail, FILTER_VALIDATE_EMAIL)) {
-			$error[] .= 'invalid_email';
+		if(isset($offemail) && !filter_var($this->offemail, FILTER_VALIDATE_EMAIL)) {
+			return array('invalid_email');
 		}
 		return $error;
 	}
