@@ -9,7 +9,7 @@ $(function () {
          if ($('#course').find(":selected").val() == 1 ) {
              $('#branch').slideDown();
      }
-    else 
+     else 
          $('#branch').slideUp();
      });
    $("#country").click(function(){
@@ -17,9 +17,8 @@ $(function () {
          $('.nIndia').hide(); 
          $('.states').hide(); 
          $('#state').show();    
-     }
-    else {
-        $('.nIndia').show(); 
+     }else{
+         $('.nIndia').show(); 
          $('#state').hide(); 
          $('.states').show(); 
     }
@@ -27,22 +26,13 @@ $(function () {
     $(".yesz").click(function(){
           $('.mainemployz').slideDown();
            $('.maindone').hide();
-<<<<<<< HEAD
            $('.mainchoose').hide();
-=======
-        $('.mainchoose').hide();
-
->>>>>>> 77076e1e0315fb30ec5f96415747fa23f6afd245
-          });
+       });
     $(".noz").click(function(){
           $('.maindone').show();
-         $('.mainemployz').slideUp();
-<<<<<<< HEAD
-          $('.mainchoose').hide();
-=======
-        $('.mainchoose').hide();
->>>>>>> 77076e1e0315fb30ec5f96415747fa23f6afd245
-          });
+          $('.mainemployz').slideUp();
+          $('.mainchoose').hide();          
+      });
     
 });
 
