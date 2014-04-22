@@ -24,6 +24,15 @@ $(function () {
          $('.states').show(); 
     }
        });
+    $(".yesz").click(function(){
+          $('.mainemployz').slideDown();
+           $('.maindone').hide();
+          });
+    $(".noz").click(function(){
+          $('.maindone').show();
+         $('.mainemployz').slideUp();
+          });
+    
 });
 
 

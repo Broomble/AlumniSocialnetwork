@@ -3352,7 +3352,12 @@ max-width: #3ac162;
 color:#8cc253;
 }
 
-.nIndia {
+.nIndia , .states {
     display: none;
 }
-
+.employz{width:124px;}
+.noz , .yesz{width:60px;}
+.mainemployz, .maindone{display: none;}
+.employz , .noz , .yesz{
+display: inline-block;
+}
