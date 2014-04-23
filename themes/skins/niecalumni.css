@@ -2680,6 +2680,13 @@ padding-right: 0px;
 }
 
 }
+
+@media only screen and (max-device-width: 700px), only screen and (device-width: 700px) and (device-height: 700px), only screen and (width: 700px) and (orientation: landscape), only screen and (device-width: 700px), only screen and (max-width: 700px) {
+    .menu {
+display: none;
+}
+}
+
 /* ------------------- !MOBILE ----------------------- */
 @media only screen and (max-device-width: 600px), only screen and (device-width: 600px) and (device-height: 600px), only screen and (width: 600px) and (orientation: landscape), only screen and (device-width: 600px), only screen and (max-width: 600px) {
 .like_btn img{
@@ -2835,7 +2842,7 @@ position: static !important; /* Overrides the JS */
 margin: 1px -1px 0 0;
 }
 .search-input input {
-width: 90px;
+width: 100%;
 }
 .menu {
 display: none;
@@ -3377,4 +3384,8 @@ display: inline-block;
 }
 select[name="jyear"] , select[name="tyear"] , select[name="month"] , select[name="year"] , select[name="day"] {
 width: auto;
+}
+
+button[name="login"]{
+width: 100%;
 }
