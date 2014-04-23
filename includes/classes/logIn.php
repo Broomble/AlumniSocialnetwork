@@ -6,10 +6,10 @@ class logIn {
 	public $username;	// Username Property
 	public $password;	// Password Property
 	public $remember;	// Option to remember the usr / pwd (_COOKIE) Property
-	
+
 	function in() {
 		global $LNG;
-		
+
 		// If an user is found
 		if($this->queryLogIn() == 1) {
 			if($this->remember == 1) { // If checkbox, then set cookie
@@ -19,17 +19,17 @@ class logIn {
 				$_SESSION['username'] = $this->username;
 				$_SESSION['password'] = md5($this->password);
 			}
-			
+
 			// Redirect the user to his personal profile
 			header("Location: ".$this->url."/index.php?a=feed");
 		} else {
 			// If wrong credentials are entered, unset everything
 			$this->logOut();
-			
+
 			return $LNG['invalid_user_pw'];
 		}
 	}
-	
+
 	function queryLogIn() {
 		// If the username input string is an e-mail, switch the query
 		if(filter_var($this->db->real_escape_string($this->username), FILTER_VALIDATE_EMAIL)) {
@@ -38,10 +38,10 @@ class logIn {
 			$query = sprintf("SELECT * FROM `users` WHERE `username` = '%s' AND `password` = '%s'", $this->db->real_escape_string($this->username), md5($this->db->real_escape_string($this->password)));
 		}
 		$result = $this->db->query($query);
-		
+
 		return ($result->num_rows == 0) ? 0 : 1;
 	}
-	
+
 	function logOut() {
 		unset($_SESSION['name']);
 		unset($_SESSION['born']);
@@ -61,3 +61,4 @@ class logIn {
 		setcookie("password", '', 1);
 	}
 }
+?>

@@ -4,11 +4,11 @@ class loggedIn {
 	public $url; 		// Installation URL Property
 	public $username;	// Username Property
 	public $password;	// Password Property
-	
+
 	function verify() {
 		// Set the query result into $query variable;
 		$query = $this->query();		
-		
+
 		if(!is_int($query)) {
 			// If the $query variable is not 0 (int)
 			// Fetch associative array into $result variable
@@ -16,7 +16,7 @@ class loggedIn {
 			return $result;
 		}
 	}
-	
+
 	function query() {
 		// If the username input string is an e-mail, switch the query
 		if(filter_var($this->db->real_escape_string($this->username), FILTER_VALIDATE_EMAIL)) {

@@ -8,20 +8,25 @@ class recover {
 	
 	function checkUser() {
 		// Query the database and check if the username exists
-		$query = sprintf("SELECT `username`,`email` FROM `users` WHERE `username` = '%s'", $this->db->real_escape_string(strtolower($this->username)));
-		$result = $this->db->query($query);
+		if(filter_var($this->db->real_escape_string($this->username), FILTER_VALIDATE_EMAIL)) {
+			$query = sprintf("SELECT `username`,`email` FROM `users` WHERE `email` = '%s'", $this->db->real_escape_string(strtolower($this->username)));
+		} else {
+			$query = sprintf("SELECT `username`,`email` FROM `users` WHERE `username` = '%s'", $this->db->real_escape_string(strtolower($this->username)));
+		}
 
+		$result = $this->db->query($query);
+		
 		// If a valid username is found
 		if ($result->num_rows > 0) {
-		
+			// Fetch Associative values
+			$assoc = $result->fetch_assoc();
+			
 			// Generate the salt for that username
-			$generateSalt = $this->generateSalt($this->username);
+			$generateSalt = $this->generateSalt($assoc['username']);
 			
 			// If the salt was generated
 			if($generateSalt) {
-				// Fetch Associative values
-				
-				$assoc = $result->fetch_assoc();
+			
 				// Return the username, email and salted code
 				return array($assoc['username'], $assoc['email'], $generateSalt);
 			}
@@ -78,5 +83,7 @@ class recover {
 		}
 	}
 }
+
+
 
 ?>

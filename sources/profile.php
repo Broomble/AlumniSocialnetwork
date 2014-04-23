@@ -24,6 +24,7 @@ function PageMain() {
 			$TMPL['private_message'] = $verify['privacy'];
 			$TMPL['avatar'] = $verify['image'];
 			$TMPL['url'] = $CONF['url'];
+
 			$top = $skin->make();
 		}
 	}
@@ -77,6 +78,7 @@ function PageMain() {
 		} else {
 			$TMPL['messages'] = $timeline;
 		}
+		$title = $LNG['subscriptions'];
 	} elseif($_GET['r'] == 'subscribers') {
 		if($message !== 1) {
 			$top = ''; // Hide the message form
@@ -87,6 +89,7 @@ function PageMain() {
 		} else {
 			$TMPL['messages'] = $timeline;
 		}
+		$title = $LNG['subscribers'];
 	} elseif($_GET['r'] == 'likes') {
 		if($message !== 1) {
 			$top = ''; // Hide the message form
@@ -95,6 +98,7 @@ function PageMain() {
 		} else {
 			$TMPL['messages'] = $timeline;
 		}
+		$title = $LNG['likes'];
 	} else {
 		$TMPL['messages'] = $timeline;
 	}
@@ -131,7 +135,7 @@ function PageMain() {
 	}
 
 	$TMPL['url'] = $CONF['url'];
-	$TMPL['title'] = $LNG['title_profile'].' - '.realName($_GET['u'], $feed->profile_data['first_name'], $feed->profile_data['last_name'], 1).' - '.$settings['title'];
+	$TMPL['title'] = (!empty($title) ? $title : $LNG['title_profile']).' - '.realName($_GET['u'], $feed->profile_data['first_name'], $feed->profile_data['last_name'], 1).' - '.$settings['title'];
 
 	if($x) {
 		$skin = new skin('shared/timeline_x');

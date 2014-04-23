@@ -30,7 +30,7 @@ function PageMain() {
 		list($username, $email, $salted) = $recover->checkUser();		
 		
 		// If the POST username is the same with the result
-		if($_POST['username'] == $username) {
+		if(strtolower($_POST['username']) == $username || strtolower($_POST['username']) == $email) {
 			// Send the recover e-mail
 			
 			sendMail($email, $LNG['recover_mail'], sprintf($LNG['recover_content'], $username, $salted, $CONF['url'], $CONF['url']), $CONF['email']);
@@ -73,9 +73,9 @@ function PageMain() {
 	if($_GET['m'] == 's') {
 		$TMPL['message'] = notificationBox('info', $LNG['email_sent'], $LNG['email_reset']);
 	} elseif($_GET['m'] == 'e') {
-		$TMPL['message'] = notificationBox('error', $LNG['something_went_wrong'], $LNG['username_not_found']);
+		$TMPL['message'] = notificationBox('error', $LNG['error'], $LNG['username_not_found']);
 	} elseif($_GET['m'] == 'wk') {
-		$TMPL['message'] = notificationBox('error', $LNG['something_went_wrong'], $LNG['userkey_not_found']);
+		$TMPL['message'] = notificationBox('error', $LNG['error'], $LNG['userkey_not_found']);
 	} elseif($_GET['m'] == 'ps') {
 		$TMPL['message'] = notificationBox('success', $LNG['password_changed'], $LNG['password_reseted']);
 	}

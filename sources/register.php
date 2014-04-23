@@ -3,15 +3,9 @@ function PageMain() {
 	global $TMPL, $LNG, $CONF, $db, $loggedIn, $settings;
 	
 	if($settings['captcha']) {
-		$TMPL['captcha'] = '<input type="text" name="captcha" placeholder="'.$LNG['captcha'].'" />
-		<span class="welcome-captcha"><img src="'.$CONF['url'].'/includes/captcha.php" /></span>';
+		$TMPL['captcha'] = '<div class="page-input-container"><div class="page-input-title">'.$LNG['captcha'].'</div><div class="page-input-content"><input type="text" name="captcha" placeholder="'.$LNG['captcha'].'" /></div></div><span class="welcome-captcha"><img src="'.$CONF['url'].'/includes/captcha.php" /></span>';
 	}
 	
-	//if(isset($_POST['verification'])) {
-		// Verification usage
-		
-	//}
-
 	if(isset($_POST['register'])) {
 		// Register usage
 		$reg = new register();
@@ -46,17 +40,6 @@ function PageMain() {
 	}
 
 
-	if(isset($_POST['contact'])) {
-		// Contacts usage
-
-	}
-
-	/*if(isset($_POST['employment'])) {
-		// Employment usage
-
-	}*/
-
-	
 	if(isset($_POST['login'])) {
 		// Log-in usage
 		$log = new logIn();

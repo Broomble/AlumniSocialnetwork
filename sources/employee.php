@@ -2,10 +2,10 @@
 
 function PageMain() {
 	global $TMPL, $LNG, $CONF, $db, $loggedIn, $settings;
-	
+
 	if(isset($_SESSION['username']) && isset($_SESSION['password']) || isset($_COOKIE['username']) && isset($_COOKIE['password'])) {	
 		$verify = $loggedIn->verify();
-		
+
 		if(empty($verify['username'])) {
 			// If fake cookies are set, or they are set wrong, delete everything and redirect to home-page
 			$loggedIn->logOut();
@@ -32,7 +32,7 @@ function PageMain() {
 						$emp->country = $_POST['country'];
 						$emp->joining = $_POST['year'].'-'.$_POST['month'].'-'.$_POST['day'];
 
-						
+
 						//$con->dob = $settings['captcha'];
 
 						$TMPL['employeeMsg'] = $emp->process();
@@ -41,6 +41,18 @@ function PageMain() {
 							header("Location: ".$CONF['url']."/index.php?a=employee");
 						}
 
+					}
+
+					if(isset($_POST['noo'])) {
+						$emp = new employee();
+						$emp->db = $db;
+						$emp->url = $CONF['url'];
+						
+						$TMPL['employeeMsg'] = $emp->noprocess();
+
+						if($TMPL['employeeMsg'] == 1) {
+							header("Location: ".$CONF['url']."/index.php?a=employee");
+						}					
 					}
 
 					// If the username input string is an e-mail, switch the query
@@ -57,11 +69,11 @@ function PageMain() {
 							$result = $db->query("SELECT * FROM `users` WHERE `username` = '".$_COOKIE['username']."' AND `password` = '".$_COOKIE['password']."'");
 						}
 					}	
-					
+
 					while($row = $result->fetch_assoc()) {
 						$status = $row['status'];	
 					}
-					
+
 					if($status == 0){
 						header("Location: ".$CONF['url']."/index.php?a=contact");
 					}elseif($status == 2){
@@ -76,12 +88,12 @@ function PageMain() {
 	$TMPL['years'] = generateDateForm(0, $date[0]);
 	$TMPL['months'] = generateDateForm(1, $date[1]);
 	$TMPL['days'] = generateDateForm(2, $date[2]);			
-	
+
 	$TMPL['url'] = $CONF['url'];
 	$TMPL['title'] = $LNG['Employee'].' - '.$settings['title'];
-	
+
 	$TMPL['ad'] = $settings['ad1'];
-	
+
 	$skin = new skin('register/employee');
 	return $skin->make();
 }

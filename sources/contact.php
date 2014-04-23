@@ -2,10 +2,10 @@
 
 function PageMain() {
 	global $TMPL, $LNG, $CONF, $db, $loggedIn, $settings;
-	
+
 	if(isset($_SESSION['username']) && isset($_SESSION['password']) || isset($_COOKIE['username']) && isset($_COOKIE['password'])) {	
 		$verify = $loggedIn->verify();
-		
+
 		if(empty($verify['username'])) {
 			// If fake cookies are set, or they are set wrong, delete everything and redirect to home-page
 			$loggedIn->logOut();
@@ -23,7 +23,7 @@ function PageMain() {
 				$con->state = $_POST['state'];
 				$con->country = $_POST['country'];
 
-				
+
 				//$con->dob = $settings['captcha'];
 
 				$TMPL['contactMsg'] = $con->process();
@@ -47,11 +47,11 @@ function PageMain() {
 				$result = $db->query("SELECT * FROM `users` WHERE `username` = '".$_COOKIE['username']."' AND `password` = '".$_COOKIE['password']."'");
 			}
 		}				
-		
+
 		while($row = $result->fetch_assoc()) {
 			$status = $row['status'];	
 		}
-		
+
 		if($status == 1){
 			header("Location: ".$CONF['url']."/index.php?a=employee");
 		}elseif($status == 2){
@@ -66,9 +66,9 @@ function PageMain() {
 
 	$TMPL['url'] = $CONF['url'];
 	$TMPL['title'] = $LNG['Contact'].' - '.$settings['title'];
-	
+
 	$TMPL['ad'] = $settings['ad1'];
-	
+
 	$skin = new skin('register/contact');
 	return $skin->make();
 }

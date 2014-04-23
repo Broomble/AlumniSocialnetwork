@@ -15,7 +15,7 @@ class employee{
 	public $department;
 	public $state;
 	public $country;
-	
+
 	function process() {
 		global $LNG;
 
@@ -25,13 +25,13 @@ class employee{
 			$this->query1();
 			// Set a session and log-in the user
 
-				
+
 			//Redirect the user to his personal profile
 			//header("Location: ".$this->url."/something");
-			
+
 			// Return (int) 1 if everything was validated
 			$x = 1;
-			
+
 			// return $LNG['user_success'];
 		} else { // If there is an error message
 			foreach($arr as $err) {
@@ -40,7 +40,12 @@ class employee{
 		}
 		return $x;		
 	}
-	
+
+	function noprocess() {
+		global $LNG;				
+			$this->query1();
+	}
+
 
 	function queryEnroll() {
 		// If the username input string is an e-mail, switch the query
@@ -58,11 +63,11 @@ class employee{
 			}
 		}	
 		$result = $this->db->query($query);		
-		
+
 		while($row = $result->fetch_assoc()) {
 			return $row['enrollno'];	
 		}
-		
+
 	}
 
 	function validate_values() {
@@ -88,6 +93,6 @@ class employee{
 		$query = sprintf("UPDATE `users` SET `status`=2 WHERE `enrollno` = '%s'",  $this->queryEnroll());
 		$this->db->query($query);		
 	}	
-	
+
 }
 ?>

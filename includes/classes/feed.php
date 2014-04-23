@@ -339,10 +339,10 @@ class feed {
 		} else {
 			$query = sprintf("SELECT `idu`, `username`, `email`, `first_name`, `last_name`, `location`, `course`, `branch`, `join`, `enrollno`, `website`, `bio`, `date`, `facebook`, `twitter`, `gplus`, `image`, `private`, `background`, `privacy`, `born`, `cover`, `verified`, `gender`, `email_new_friend` FROM `users` WHERE `username` = '%s'", $this->db->real_escape_string($username));
 		}
-		
+
 		// Run the query
 		$result = $this->db->query($query);
-		
+
 		return $result->fetch_assoc();
 	}
 	
@@ -372,7 +372,7 @@ class feed {
 		return $cover;
 	}
 	
-	function getProfileCard($profile) {
+function getProfileCard($profile) {
 		global $LNG, $CONF;
 		$coverAvatar = ((!empty($profile['image'])) ? $profile['image'] : 'default.png');
 		$subscribe = $this->getSubscribe(null, null, null);
@@ -488,7 +488,7 @@ class feed {
 	function fetchProfileInfo($profile) {
 		global $LNG;
 		
-		// Explode the born value [[0]=>Y,[1]=>M,[2]=>D];
+// Explode the born value [[0]=>Y,[1]=>M,[2]=>D];
 		$born = explode('-', $profile['born']);
 		$join  = explode('-', $profile['join']);
 		// Make it into integer instead of a string (removes the 0, e.g: 03=>3, prevents breaking the language)
@@ -517,8 +517,6 @@ class feed {
 				} elseif($profile['branch'] == '6') {
 					$branch  = $LNG['ce'];
 				}
-
-
 		$info = '<div class="sidebar-container widget-about"><div class="sidebar-content"><div class="sidebar-header">'.$LNG['profile_about'].''.(($this->profile == $this->username) ? ' (<a href="'.$this->url.'/index.php?a=settings">'.$LNG['admin_ttl_edit'].'</a>)' : '').'</div>
 		'.((!empty($profile['location'])) ? '<div class="sidebar-list">'.$LNG['profile_location'].': <strong>'.$profile['location'].'</strong></div>' : '').'
 		'.(($profile['born'] !== '0000-00-00') ? '<div class="sidebar-list">'.$LNG['profile_born'].': <strong>'.$LNG["month_$month"].' '.$born[2].', '.$born[0].'</strong></div>' : '').'
@@ -1092,7 +1090,7 @@ class feed {
 		global $LNG, $CONF;
 		
 		// Parse links
-		$parseUrl = preg_replace_callback('/(?i)\b((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?\AB\BB\93\94\91\92]))/', "parseCallback", $message);
+		$parseUrl = preg_replace_callback('/(?i)\b((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))/', "parseCallback", $message);
 		
 		// Parse @mentions and #hashtags
 		$parsedMessage = preg_replace(array('/(^|[^a-z0-9_])@([a-z0-9_]+)/i', '/(^|[^a-z0-9_])#(\w+)/u'), array('$1<a href="'.$this->url.'/index.php?a=profile&u=$2">@$2</a>', '$1<a href="'.$this->url.'/index.php?a=search&tag=$2">#$2</a>'), $parseUrl);
@@ -1978,7 +1976,7 @@ class feed {
 		// If there are maps available
 		if(!empty($rows)) {
 			$i = 0;
-			$output = '<div class="sidebar-container widget-subscriptions"><div class="sidebar-content"><div class="sidebar-header"><a href="'.$this->url.'/index.php?a=profile&u='.((!
+			$output = '<div class="sidebar-container widget-places"><div class="sidebar-content"><div class="sidebar-header"><a href="'.$this->url.'/index.php?a=profile&u='.((!
 			empty($this->profile)) ? $this->profile : $this->username).'&filter=map">'.$LNG['sidebar_map'].' <span class="sidebar-header-light">('.$query->num_rows.')</span></a></div>';
 			foreach($rows as $row) {
 				if($i == 6) break; // Display only the last 6 maps
@@ -2304,7 +2302,7 @@ class feed {
 				// Ignore any gender as it doesn't matter
 				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `gender` = '%s' AND `email` = '%s' LIMIT 1", $gender, $this->db->real_escape_string($value)));
 			} else {
-				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `gender` = '%s' AND (`join` LIKE '%s' OR `username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`)  LIKE '%s') ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", $gender, '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
+				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `gender` = '%s' AND (`username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`)  LIKE '%s') ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", $gender, '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
 			}
 		} 
 		// If the filter is a date range (digit type)
@@ -2314,7 +2312,7 @@ class feed {
 			if($qt == 1) {
 				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `email` = '%s' LIMIT 1", $this->db->real_escape_string($value)));
 			} else {
-				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `join` LIKE '%s' OR `username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`) LIKE '%s' ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
+				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`) LIKE '%s' ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
 				
 				// Sometimes the query might fail due to the fact that utf8 characters are being passed and the `username` sql field does not allow special chars
 				if(!$query) {
@@ -2358,8 +2356,7 @@ class feed {
 											<a href="'.$this->url.'/index.php?a=profile&u='.$row['username'].'">'.$row['username'].'</a>'.((!empty($row['verified'])) ? '<span class="verified-small"><img src="'.$this->url.'/'.$CONF['theme_url'].'/images/icons/verified.png" title="'.$LNG['verified_user'].'" /></span>' : '').'
 										</div>
 										<div class="message-time">
-											'.realName(null, $row['first_name'], $row['last_name']).'
-											'.(($row['join'] !== '0000-0000') ? ' ('.$row['join'].')' : '&nbsp;').'
+											'.realName(null, $row['first_name'], $row['last_name']).''.((!empty($row['location'])) ? ' ('.$row['location'].')' : '&nbsp;').' 
 										</div>
 									</div>
 								</div>';
@@ -2387,7 +2384,7 @@ class feed {
 													<a href="'.$this->url.'/index.php?a=profile&u='.$row['username'].'">'.$row['username'].'</a>'.((!empty($row['verified'])) ? '<span class="verified-small"><img src="'.$this->url.'/'.$CONF['theme_url'].'/images/icons/verified.png" title="'.$LNG['verified_user'].'" /></span>' : '').'
 												</div>
 												<div class="message-time">
-													'.realName(null, $row['first_name'], $row['last_name']).''.(($row['join'] !== '0000-0000') ? ' ('.$row['join'].')' : '&nbsp;').' 
+													'.realName(null, $row['first_name'], $row['last_name']).''.((!empty($row['location'])) ? ' ('.$row['location'].')' : '&nbsp;').' 
 												</div>
 											</div>
 										</div>
@@ -2591,11 +2588,8 @@ class feed {
 			
 			// Define the $people who liked variable
 			$people = '';
-			if (is_array($array))
-			{
-				foreach($array as $row) {
-					$people .= '<a href="'.$this->url.'/index.php?a=profile&u='.$row['username'].'"><img src="'.$this->url.'/thumb.php?src='.$row['image'].'&w=25&h=25&t=a" title="'.realName($row['username'], $row['first_name'], $row['last_name']).' '.$LNG['liked_this'].'" /></a> ';
-				}
+			foreach($array as $row) {
+				$people .= '<a href="'.$this->url.'/index.php?a=profile&u='.$row['username'].'"><img src="'.$this->url.'/thumb.php?src='.$row['image'].'&w=25&h=25&t=a" title="'.realName($row['username'], $row['first_name'], $row['last_name']).' '.$LNG['liked_this'].'" /></a> ';
 			}
 		}
 
@@ -2854,5 +2848,4 @@ class feed {
 		}
 	}
 }
-
 ?>

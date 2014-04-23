@@ -27,14 +27,26 @@ $(function () {
           $('.mainemployz').slideDown();
            $('.maindone').hide();
            $('.mainchoose').hide();
+           $.cookie("visited", 'yesz');
        });
     $(".noz").click(function(){
           $('.maindone').show();
           $('.mainemployz').slideUp();
           $('.mainchoose').hide();          
       });
-    
+if($.cookie('visited') === null || $.cookie('visited') === "" 
+    || $.cookie('visited') === "null" || $.cookie('visited') === undefined)
+		{
+			      //no cookie
+		}else{
+           $('.mainemployz').slideDown();
+           $('.maindone').hide();
+           $('.mainchoose').hide();
+		}
+   
 });
+
+
 
 
 function autosize() {
