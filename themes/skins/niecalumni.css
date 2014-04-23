@@ -1992,7 +1992,6 @@ border-radius: 3px;
 display: inline;
 font-weight: bold;
 font-size: 15px;
-width: 65%;
 margin-right: 0;
 }
 .register-button:hover {
@@ -2018,7 +2017,6 @@ padding: 0px 10px;
 font-size: 15px;
 display: inline;
 font-weight: bold;
-width: 100%;
 margin-right: 0;
 border-bottom: 1px solid #3b960c;
 text-shadow: 0 -1px 0 rgba(0,0,0,.25);
@@ -3355,10 +3353,28 @@ color:#8cc253;
 .nIndia , .states {
     display: none;
 }
-.employz{width:164px;font-size: 16px;
-font-weight: bold;}
-.noz , .yesz{width:60px;}
-.mainemployz, .maindone{display: none;}
-.employz , .noz , .yesz{
+
+.employz {
+    width:164px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.noz , .yesz { 
+    width:60px;
+}
+
+.mainemployz, .maindone {
+    display: none;
+}
+
+.employz , .noz , .yesz {
 display: inline-block;
+}
+
+.formveri input , .formveri textarea , .formveri select{
+    width: 250px;
+}
+select[name="jyear"] , select[name="tyear"] , select[name="month"] , select[name="year"] , select[name="day"] {
+width: auto;
 }

@@ -2,13 +2,12 @@
 	<div class="row-body register">
 		<div class="welcome-inner">
 
-			<div class="welcome-inputs verify-inputs">
+			<div class="welcome-inputs verify-inputs formveri">
 
 <!-- <h2>Are you employed?</h2> <button type="submit" name="employee" class="register-button sidebut">No</button><button type="submit" name="employee" class="register-button sidebut">Yes</button>
  -->				<div id ="Registers" class="welcomeforms verify">
 					<div class="register vers">Employment Details</div>
 				
-          
 		<form action="{$url}/index.php?a=employee" method="post">
 	          {$employeeMsg}
 	
@@ -21,7 +20,6 @@
 	            
 
             <div class="mainemployz" >
-            <button type="submit" name="noo" class="login-button" style="width: 50px; float: right;">Skip</button>
 			<div class="page-input-container">
 				<div class="page-input-title">Company Name</div>
 				<div class="page-input-content">
@@ -559,7 +557,8 @@
 					<div class="page-input-sub" >Enter official email</div>
 				</div>
 			</div>
-                 <button type="submit" name="employee" class="register-button sidebut">Done</button>                 
+<button type="submit" name="noo" class="register-button" >Skip</button> <button type="submit" name="employee" class="login-button">Done</button>      
+
              </div>           
             
 
