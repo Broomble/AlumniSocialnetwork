@@ -331,9 +331,9 @@ $LNG['ece'] = 'Electronics and Communication';
 $LNG['cse'] = 'Computer Science';
 $LNG['eee'] = 'Electrical and Electronics';
 $LNG['it'] = 'Information and Technology';
-$LNG['ce'] = 'Civil';
+$LNG['ce'] = 'Civil Engineering';
 $LNG['mae'] = 'Mechanical and Automation';
-
+$LNG['ene'] = 'Environmental Engineering';
 
 
 $LNG['ttl_upload'] = 'Upload';

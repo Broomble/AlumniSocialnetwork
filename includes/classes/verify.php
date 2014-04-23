@@ -44,37 +44,29 @@ class verify{
 	
 	
 	function verify_if_enrollno_exists() {
-		$query = sprintf("SELECT `enrollno` FROM `students` WHERE `enrollno` = '%s'", $this->db->real_escape_string($this->enrollno));
+		$query = sprintf("SELECT `enroll_no` FROM `tbl_students_data` WHERE `enroll_no` = '%s'", $this->db->real_escape_string($this->enrollno));
 		$result = $this->db->query($query);
 
 		return ($result->num_rows == 0) ? 0 : 1;
 	}
 
 	function verify_if_name_exists() {
-		$query = sprintf("SELECT `name` FROM `students` WHERE `enrollno` = '%s' AND `name` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string(strtolower($this->name)));
+		$query = sprintf("SELECT `student_name` FROM `tbl_students_data` WHERE `enroll_no` = '%s' AND `student_name` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string(strtolower($this->name)));
 		$result = $this->db->query($query);
 		
 		return ($result->num_rows == 0) ? 0 : 1;
 	}
 	
 	function verify_if_fname_exists() {
-		$query = sprintf("SELECT `fname` FROM `students` WHERE `enrollno` = '%s' AND `fname` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string(strtolower($this->fname)));
+		$query = sprintf("SELECT `father_name` FROM `tbl_students_data` WHERE `enroll_no` = '%s' AND `father_name` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string(strtolower($this->fname)));
 		$result = $this->db->query($query);
 		
 		return ($result->num_rows == 0) ? 0 : 1;
 	}
 
 
-	// function verify_if_mname_exists() {
-	// 	$query = sprintf("SELECT `mname` FROM `students` WHERE `enrollno` = '%s'", $this->db->real_escape_string(strtolower($this->mname)));
-	// 	$result = $this->db->query($query);
-		
-	// 	return ($result->num_rows == 0) ? 0 : 1;
-	// }
-
-
 	function verify_if_course_exists() {
-		$query = sprintf("SELECT `course` FROM `students` WHERE `enrollno` = '%s' AND `course` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string($this->course));
+		$query = sprintf("SELECT `course` FROM `tbl_students_data` WHERE `enroll_no` = '%s' AND `course` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string($this->course));
 		$result = $this->db->query($query);
 		
 		return ($result->num_rows == 0) ? 0 : 1;
@@ -82,21 +74,21 @@ class verify{
 
 
 	function verify_if_branch_exists() {
-		$query = sprintf("SELECT `branch` FROM `students` WHERE `enrollno` = '%s' AND `branch` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string($this->branch));
+		$query = sprintf("SELECT `branch` FROM `tbl_students_data` WHERE `enroll_no` = '%s' AND `branch` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string($this->branch));
 		$result = $this->db->query($query);
 		
 		return ($result->num_rows == 0) ? 0 : 1;
 	}
 
 	function verify_if_join_exists() {
-		$query = sprintf("SELECT `join` FROM `students` WHERE `enrollno` = '%s' AND `join` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string($this->join));
+		$query = sprintf("SELECT `batch` FROM `tbl_students_data` WHERE `enroll_no` = '%s' AND `batch` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string($this->join));
 		$result = $this->db->query($query);
 		
 		return ($result->num_rows == 0) ? 0 : 1;
 	}
 
 	function verify_if_born_exists() {
-		$query = sprintf("SELECT `born` FROM `students` WHERE `enrollno` = '%s' AND `born` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string($this->born));
+		$query = sprintf("SELECT `dob` FROM `tbl_students_data` WHERE `enroll_no` = '%s' AND `dob` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string($this->born));
 		$result = $this->db->query($query);
 		
 		return ($result->num_rows == 0) ? 0 : 1;
@@ -105,7 +97,18 @@ class verify{
 	function validate_values() {
 		// Create the array which contains the Language variable
 		$error = array();
-		
+		if(empty($this->enrollno) && empty($this->name) && empty($this->fname) && empty($this->course) && empty($this->born) && empty($this->join)) {
+			$error[] .= 'all_fields';
+		}
+		if($this->course == 'btech' && empty($this->branch)){
+			$error[] .= 'all_fields';
+		}
+		if(strlen($this->enrollno) < 10 || strlen($this->enrollno) > 11) {
+			$error[] .= 'enrollno_too_short';
+		}		
+		if(!ctype_digit($this->enrollno)) {
+			$error[] .= 'enrollno_digit';
+		}
 		// Define the Language variable for each type of error
 		if($this->verify_if_enrollno_exists() == 0) {
 			$error[] .= 'enrollno_exists';
@@ -116,9 +119,6 @@ class verify{
 		if($this->verify_if_name_exists() == 0) {
 			$error[] .= 'name_exists';
 		}
-		// if($this->verify_if_mname() !== 0) {
-		// 	$error[] .= 'mname_exists';
-		// }
 		if($this->verify_if_course_exists() == 0) {
 			$error[] .= 'course_exists';
 		}
@@ -131,18 +131,7 @@ class verify{
 		if($this->verify_if_join_exists() == 0) {
 			$error[] .= 'join_exists';
 		}
-		if(empty($this->enrollno) && empty($this->name) && empty($this->fname) && empty($this->course) && empty($this->born) && empty($this->join)) {
-			$error[] .= 'all_fields';
-		}
-		if(isset($this->course) && empty($this->branch)){
-			$error[] .= 'all_fields';
-		}
-		if(!ctype_digit($this->enrollno)) {
-			$error[] .= 'enrollno_digit';
-		}
-		if(strlen($this->enrollno) <= 9 || strlen($this->enrollno) >= 11) {
-			$error[] .= 'enrollno_too_short';
-		}
+
 
 		return $error;
 	}

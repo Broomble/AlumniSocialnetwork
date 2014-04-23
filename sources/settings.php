@@ -262,35 +262,6 @@ function PageMain() {
 				} else {
 					$TMPL['fgender'] = 'selected="selected"';
 				}
-
-				if($userSettings['course'] == '1') {
-					$TMPL['btech'] = 'selected="selected"';
-				} elseif($userSettings['course'] == '2') {
-					$TMPL['mca'] = 'selected="selected"';
-				} elseif($userSettings['course'] == '3') {
-					$TMPL['mba'] = 'selected="selected"';
-				} elseif($userSettings['course'] == '4') {
-					$TMPL['bca'] = 'selected="selected"';
-				}else{
-					$TMPL['none'] = 'selected="selected"';
-				}
-
-
-				if($userSettings['branch'] == '1') {
-					$TMPL['ece'] = 'selected="selected"';
-				} elseif($userSettings['branch'] == '2') {
-					$TMPL['cse'] = 'selected="selected"';
-				} elseif($userSettings['branch'] == '3') {
-					$TMPL['mae'] = 'selected="selected"';
-				} elseif($userSettings['branch'] == '4') {
-					$TMPL['eee'] = 'selected="selected"';
-				} elseif($userSettings['branch'] == '5') {
-					$TMPL['it'] = 'selected="selected"';
-				} elseif($userSettings['branch'] == '6') {
-					$TMPL['ce'] = 'selected="selected"';
-				}else{
-					$TMPL['none'] = 'selected="selected"';				
-				}
 				
 				$page .= $skin->make();
 			}

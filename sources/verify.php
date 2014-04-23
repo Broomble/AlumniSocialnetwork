@@ -20,7 +20,7 @@ function PageMain() {
 				$ver->branch = $_POST['branch'];
 
 				$ver->join = $_POST['jyear'].'-'.$_POST['tyear'];
-				$ver->born = $_POST['year'].'-'.$_POST['month'].'-'.$_POST['day'];
+				$ver->born = $_POST['day'].'/'.$_POST['month'].'/'.$_POST['year'];
 				//$ver->dob = $settings['captcha'];
 
 				$TMPL['verificationMsg'] = $ver->process();
@@ -33,9 +33,7 @@ function PageMain() {
 
 			if(isset($_SESSION['enrollno']) || isset($_SESSION['born']) || isset($_SESSION['join']) || isset($_SESSION['course']) || isset($_SESSION['branch']) || isset($_SESSION['name'])) {		
 
-					header("Location: ".$CONF['url']."/index.php?a=register");
-					//unset($_SESSION['verify']);
-
+					header("Location: ".$CONF['url']."/index.php?a=register");					
 			}
 		}
 

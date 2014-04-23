@@ -95,7 +95,7 @@ class employee{
 	function query1() {
 		$query = sprintf("UPDATE `users` SET `status`=2 WHERE `enrollno` = '%s'",  $this->queryEnroll());
 		$this->db->query($query);		
-	}	
+	}
 
 }
 ?>

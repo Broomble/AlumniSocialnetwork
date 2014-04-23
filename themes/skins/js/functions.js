@@ -1,12 +1,12 @@
 $(function () {
     $('#branch').hide();
-     if ($('#course').find(":selected").val() == 1 ) {
+     if ($('#course').find(":selected").val() == 'btech' ) {
              $('#branch').slideDown();
      }
     else 
          $('#branch').slideUp();
      $('#course').change(function () {
-         if ($('#course').find(":selected").val() == 1 ) {
+         if ($('#course').find(":selected").val() == 'btech' ) {
              $('#branch').slideDown();
      }
      else 

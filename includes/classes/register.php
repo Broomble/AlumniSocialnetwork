@@ -84,24 +84,11 @@ class register {
 		// Create the array which contains the Language variable
 		$error = array();
 		
-		// Define the Language variable for each type of error
-		if($this->verify_if_user_exist() !== 0) {
-			$error[] .= 'user_exists';
-		}
-		if($this->verify_if_email_exists() !== 0) {
-			$error[] .= 'email_exists';
-		}
-		if($this->verify_if_enrollno_exist() !== 0) {
-			$error[] .= 'enrollno_exist';
-		}
 		if(empty($this->username) && empty($this->password) && empty($email) && empty($enrollno)) {
 			$error[] .= 'all_fields';
 		}
 		if(strlen($this->password) <= 2) {
 			$error[] .= 'password_too_short';
-		}
-		if(strlen($this->enrollno) <= 9 || strlen($this->enrollno) >= 11) {
-			$error[] .= 'enrollno_too_short';
 		}
 		if(!ctype_alnum($this->username)) {
 			$error[] .= 'user_alnum';
@@ -112,6 +99,17 @@ class register {
 		if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
 			$error[] .= 'invalid_email';
 		}
+		// Define the Language variable for each type of error
+		if($this->verify_if_user_exist() !== 0) {
+			$error[] .= 'user_exists';
+		}
+		if($this->verify_if_email_exists() !== 0) {
+			$error[] .= 'email_exists';
+		}
+		if($this->verify_if_enrollno_exist() !== 0) {
+			$error[] .= 'enrollno_exist';
+		}
+
 		if($this->verify_captcha() == false) {
 			$error[] .= 'invalid_captcha';
 		}

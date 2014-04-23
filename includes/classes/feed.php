@@ -376,29 +376,30 @@ function getProfileCard($profile) {
 		global $LNG, $CONF;
 		$coverAvatar = ((!empty($profile['image'])) ? $profile['image'] : 'default.png');
 		$subscribe = $this->getSubscribe(null, null, null);
-			if($profile['course'] == '1') {
+			if($profile['course'] == 'btech') {
 				$course = 'Bachelor Of Technology';
-			} elseif($profile['course'] == '2') {
+			} elseif($profile['course'] == 'mca') {
 				$course = 'Master of Computer Applications';
-			} elseif($profile['course'] == '3') {
+			} elseif($profile['course'] == 'mba') {
 				$course = 'Master of Business Administration"';
-			} elseif($profile['course'] == '4') {
-				$course = 'Bachelor of Computer Applications';
+			} 
+
+			if($profile['branch'] == 'ece') {
+				$branch  = 'Electronics and Communication Engineering';
+			} elseif($profile['branch'] == 'cse') {
+				$branch  = 'Computer Science Engineering';
+			} elseif($profile['branch'] == 'mae') {
+				$branch  = 'Mechanical and Automation Engineering';
+			} elseif($profile['branch'] == 'eee') {
+				$branch  = 'Electrical and Electronics Engineering';
+			} elseif($profile['branch'] == 'it') {
+				$branch  = 'Information and Technology';
+			} elseif($profile['branch'] == 'ce') {
+				$branch  = 'Civil Engineering';
+			}elseif($profile['branch'] == 'ene') {
+				$branch  = 'Environmental Engineering';
 			}
 
-			if($profile['branch'] == '1') {
-				$branch  = 'Electronics and Communication Engineering';
-			} elseif($profile['branch'] == '2') {
-				$branch  = 'Computer Science Engineering';
-			} elseif($profile['branch'] == '3') {
-				$branch  = 'Mechanical and Automation Engineering';
-			} elseif($profile['branch'] == '4') {
-				$branch  = 'Electrical and Electronics Engineering';
-			} elseif($profile['branch'] == '5') {
-				$branch  = 'Information and Technology';
-			} elseif($profile['branch'] == '6') {
-				$branch  = 'Civil Engineering';
-			}
 		$card = '
 			<div class="profile-card-cover"><img src="'.$this->url.'/thumb.php?src='.((!empty($profile['cover'])) ? $profile['cover'] : 'default.png').'&w=900&h=300&t=c"></div>
 			<div class="profile-card-avatar">
@@ -494,32 +495,33 @@ function getProfileCard($profile) {
 		// Make it into integer instead of a string (removes the 0, e.g: 03=>3, prevents breaking the language)
 		$month = intval($born[1]);
 
-				if($profile['course'] == '1') {
+				if($profile['course'] == 'btech') {
 					$course  = $LNG['btech'];
-				} elseif($profile['course'] == '2') {
+				} elseif($profile['course'] == 'mca') {
 					$course  = $LNG['mca'];
-				} elseif($profile['course'] == '3') {
+				} elseif($profile['course'] == 'mba') {
 					$course  = $LNG['mba'];
-				} elseif($profile['course'] == '4') {
-					$course  = $LNG['bca'];
 				}
 
-				if($profile['branch'] == '1') {
+				if($profile['branch'] == 'ece') {
 					$branch  = $LNG['ece'];
-				} elseif($profile['branch'] == '2') {
+				} elseif($profile['branch'] == 'cse') {
 					$branch  = $LNG['cse'];
-				} elseif($profile['branch'] == '3') {
+				} elseif($profile['branch'] == 'mae') {
 					$branch  = $LNG['mae'];
-				} elseif($profile['branch'] == '4') {
+				} elseif($profile['branch'] == 'eee') {
 					$branch  = $LNG['eee'];
-				} elseif($profile['branch'] == '5') {
+				} elseif($profile['branch'] == 'it') {
 					$branch  = $LNG['it'];
-				} elseif($profile['branch'] == '6') {
+				} elseif($profile['branch'] == 'ce') {
 					$branch  = $LNG['ce'];
+				} elseif($profile['branch'] == 'ene') {
+					$branch  = $LNG['ene'];
 				}
+
 		$info = '<div class="sidebar-container widget-about"><div class="sidebar-content"><div class="sidebar-header">'.$LNG['profile_about'].''.(($this->profile == $this->username) ? ' (<a href="'.$this->url.'/index.php?a=settings">'.$LNG['admin_ttl_edit'].'</a>)' : '').'</div>
 		'.((!empty($profile['location'])) ? '<div class="sidebar-list">'.$LNG['profile_location'].': <strong>'.$profile['location'].'</strong></div>' : '').'
-		'.(($profile['born'] !== '0000-00-00') ? '<div class="sidebar-list">'.$LNG['profile_born'].': <strong>'.$LNG["month_$month"].' '.$born[2].', '.$born[0].'</strong></div>' : '').'
+		'.(($profile['born'] !== '00/00/0000') ? '<div class="sidebar-list">'.$LNG['profile_born'].': <strong>'.$LNG["month_$month"].' '.$born[2].', '.$born[0].'</strong></div>' : '').'
 		'.((!empty($profile['gender'])) ? '<div class="sidebar-list">'.$LNG['ttl_gender'].': <strong>'.(($profile['gender'] == 1) ? $LNG['male'] : $LNG['female']).'</strong></div>' : '').'
 		'.(($profile['join'] !== '0000-0000') ? '<div class="sidebar-list">'.$LNG['ttl_year'].': <strong>'.$join[0].' - '.$join[1].'</strong></div>' : '').'		
 		'.((!empty($profile['course'])) ? '<div class="sidebar-list">'.$LNG['ttl_course'].': <strong>'.$course.'</strong></div>' : '').'
