@@ -137,12 +137,13 @@ class verify{
 		if(isset($this->course) && empty($this->branch)){
 			$error[] .= 'all_fields';
 		}
-		if(strlen($this->enrollno) <= 10) {
-			$error[] .= 'enrollno_too_short';
-		}
 		if(!ctype_digit($this->enrollno)) {
 			$error[] .= 'enrollno_digit';
 		}
+		if(strlen($this->enrollno) <= 9 || strlen($this->enrollno) >= 11) {
+			$error[] .= 'enrollno_too_short';
+		}
+
 		return $error;
 	}
 	
