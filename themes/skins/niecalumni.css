@@ -3389,3 +3389,7 @@ width: auto;
 button[name="login"]{
 width: 100%;
 }
+
+ .formveri select {
+  height: 35px;   
+ }
