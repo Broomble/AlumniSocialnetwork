@@ -74,8 +74,11 @@ class employee{
 		// Create the array which contains the Language variable
 		$error = array();
 				// Define the Language variable for each type of error
-		if(empty($this->company) && empty($this->industry) && empty($this->designation) && empty($this->department) && empty($this->offaddress) && empty($state) && empty($country)) {
+		if(empty($this->company) && empty($this->industry) && empty($this->designation) && empty($this->department) && empty($state) && empty($country)) {
 			$error[] .= 'all_fields';
+		}
+		if (isset($offphone) && !preg_match('/^[0-9+- ]*$/', $this->phone)){
+			$error[] .= 'phone_no_error';
 		}
 		if(isset($offemail) && !filter_var($this->offemail, FILTER_VALIDATE_EMAIL)) {
 			return array('invalid_email');

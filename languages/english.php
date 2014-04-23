@@ -15,7 +15,8 @@ $LNG['fname_exists'] = 'Enter correct <strong>Father\'s name</strong>';
 $LNG['name_exists'] = 'Enter your correct <strong>Name</strong>';
 $LNG['born_exists'] = 'Enter correct Date of Birth';
 $LNG['join_exists'] = 'Enter correct Duration of Course';
-$LNG['phone_exists'] = 'Phone NO already exists';
+$LNG['phone_exists'] = 'Phone No already exists';
+$LNG['phone_no_error'] = 'Phone No not valid';
 
 $LNG['all_fields'] = 'All fields are required!';
 $LNG['user_alnum'] = 'The username must consists only from letters and numbers.';
