@@ -77,7 +77,7 @@ class employee{
 		if(empty($this->company) && empty($this->industry) && empty($this->designation) && empty($this->department) && empty($state) && empty($country)) {
 			$error[] .= 'all_fields';
 		}
-		if (isset($offphone) && !preg_match('/^[0-9+- ]*$/', $this->phone)){
+		if (isset($offphone) && !preg_match('/^[0-9+- ]*$/', $this->offphone)){
 			$error[] .= 'phone_no_error';
 		}
 		if(isset($offemail) && !filter_var($this->offemail, FILTER_VALIDATE_EMAIL)) {

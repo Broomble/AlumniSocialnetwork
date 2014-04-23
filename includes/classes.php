@@ -239,7 +239,7 @@ function generateDateForm($type, $current) {
 	global $LNG;
 	$rows = '';
 	if($type == 0) {
-		for ($i = date('Y'); $i >= (date('Y') - 100); $i--) {
+		for ($i = date('Y'); $i >= (date('Y') - 50); $i--) {
 			if($i == $current) {
 				$selected = ' selected="selected"';
 			} else {

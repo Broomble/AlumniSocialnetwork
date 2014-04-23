@@ -100,9 +100,9 @@ class register {
 		if(strlen($this->password) <= 2) {
 			$error[] .= 'password_too_short';
 		}
-/*		if(strlen($this->enrollno) <= 10) {
+		if(strlen($this->enrollno) < 10) {
 			$error[] .= 'enrollno_too_short';
-		}*/
+		}
 		if(!ctype_alnum($this->username)) {
 			$error[] .= 'user_alnum';
 		}
