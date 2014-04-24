@@ -1332,10 +1332,6 @@ color: #6B6B6B;
 border-radius: 3px;
 overflow: auto;
 }
-.page-inner {
-padding: 10px;
-overflow: auto;
-}
 .page-header {
 font-weight: normal;
 }
@@ -2388,8 +2384,4 @@ background-size: 25px;
 	.welcome-user:last-child {
 	display: none;
 	}
-}
-
-.vers {
-   font-size: 20px; 
 }

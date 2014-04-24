@@ -196,6 +196,7 @@ function loadPeople(start, value, filter) {
 		}
 	});
 }
+
 function loadProfile(start, filter, profile) {
 	$('#more_messages').html('<div class="load_more"><div class="preloader-retina-large preloader-center"></div></div>');
 	
@@ -460,7 +461,9 @@ function privacy(id, value) {
 function manage_the(start, type) {
 	if(type == 1) {
 		type = 'reports';
-	} else {
+	} else if(type == 2) {
+		type = 'dirusers';
+	}else{
 		type = 'users';
 	}
 	$('#more_'+type).html('<div class="load_more"><div class="preloader-retina-large preloader-center"></div></div>');
@@ -478,6 +481,25 @@ function manage_the(start, type) {
 		}
 	});
 }
+
+function manage_the_dir(start) {
+
+	$('#more_dirusers').html('<div class="load_more"><div class="preloader-retina-large preloader-center"></div></div>');
+	
+	$.ajax({
+		type: "POST",
+		url: "requests/manage_dirusers.php",
+		data: "start="+start, 
+		cache: false,
+		success: function(html) {
+			$('#more_dirusers').remove();
+			
+			// Append the new comment to the div id
+			$('.js-masonry').append(html);
+		}
+	});
+}
+
 function delete_user(id) {
 	// id = unique id of the message/comment
 	// type = type of post: message/comment

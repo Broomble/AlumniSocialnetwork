@@ -5,18 +5,15 @@ html {
 }
 
 body {
-   position: relative;
-   color:#333;
-   font-family: 'Segoe UI', Tahoma, Segoe UI, Arial, sans-serif;
-   font-size:13px;
-   margin:0;
-   padding:0;
-   background: #edeff0 url(images/noise.jpg) no-repeat center center fixed;
-   overflow-x: hidden;
-   -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+
+    position: relative;
+    color:#333;
+    font-family: 'Segoe UI', Tahoma, Segoe UI, Arial, sans-serif;
+    font-size:13px;
+    margin:0;
+    padding:0;
+    background: #edeff0 url(images/noise.png) ;
+    overflow-x: hidden;
 }
 .checked {
     height:14px !important;
@@ -1951,7 +1948,6 @@ margin: 0 auto;
 
 .verify form{
 max-width: 380px;
-
 }
 
 .welcome-inputs input {
@@ -2334,7 +2330,7 @@ background-size: 16px;
 background: url('images/icons/private_post_a.png') no-repeat;
 background-size: 16px;
 }
-#more_users, #more_reports {
+#more_users, #more_reports, #more_dirusers {
 width: 100%;
 float: left;
 padding: 10px 0 5px 0;
@@ -2993,6 +2989,8 @@ margin: 0 auto;
 
 .verify{
     max-width: 400px;
+    background-color: white;
+    padding: 5px;
 }
 
 .loginpass{
@@ -3384,7 +3382,7 @@ display: inline-block;
 }
 
 .formveri{
-background: rgba(255, 255, 255, 0.6);
+//background: rgba(255, 255, 255, 0.6);
 }
 
 .formveri input , .formveri textarea , .formveri select{
@@ -3400,4 +3398,93 @@ width: 100%;
 
  .formveri select {
   height: 35px;   
+ background-color: #f6f7f8;
  }
+ .formveri input {
+  background-color: #f6f7f8;  
+ }
+ .vers {
+   font-size: 22px; 
+   color: rgb(167, 9, 9);
+}
+
+#dir-card {
+background: #fafafa;
+border:none;
+width: 285px;
+margin: 0 auto;
+/*border-radius: 3px;*/
+position: absolute;
+padding: 0 0 10px 0;
+border: none;
+box-shadow: 0 0 1px rgba(0, 0, 0, .25), 0 1px 5px 3px rgba(0, 0, 0, .05), 0 5px 4px -3px rgba(0, 0, 0, .06);
+-moz-box-shadow: 0 0 1px rgba(0, 0, 0, .25), 0 1px 5px 3px rgba(0, 0, 0, .05), 0 5px 4px -3px rgba(0, 0, 0, .06);
+-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .25), 0 1px 5px 3px rgba(0, 0, 0, .05), 0 5px 4px -3px rgba(0, 0, 0, .06);
+border-radius: 3px 3px 0 0;
+}
+
+.dir-card{   
+    //box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+    float: left;    
+    margin: 0 15px 15px 0;
+    position: relative;
+    width: 290px;
+    min-height: 250px;
+}
+
+}
+.dir-card-padding {
+padding: 20px 10px 10px 10px;
+}
+.dir-card-cover img {
+width: 100%;
+border-radius: 3px 3px 0 0;
+}
+.dir-card-avatar {
+text-align: center;
+margin-top: -40px;
+}
+.dir-card-avatar img {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+}
+.dir-card-info {
+text-align: center;
+}
+.dir-card-info a:hover {
+text-decoration: none;
+}
+.dir-card-info .cover-username {
+float: none;
+margin: 0;
+}
+
+.dir-card-info .cover-username:hover {
+float: none;
+text-decoration: none;
+margin: 0;
+}
+.dir-card-buttons {
+padding: 0 10px 0 10px;
+overflow: auto;
+}
+.dir-card-buttons-container {
+width: 60px;
+margin: 0 auto;
+}
+.dir-card-divider {
+width: 280px;
+height: 1px;
+background: #dee0e3;
+margin: 10px auto;
+}
+.dir-card-buttons .edit_dir_btn {
+float: none;
+margin: 0 auto;
+}
+.dir-card-bio {
+padding: 0 10px;
+color: #AAA;
+text-align: center;
+}

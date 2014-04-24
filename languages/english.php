@@ -31,6 +31,7 @@ $LNG['register'] = 'Register';
 $LNG['login'] = 'Login';
 $LNG['Verify'] = 'Verification';
 $LNG['Contact'] = 'Contact Details';
+$LNG['Directory'] = 'Directory';
 $LNG['Employee'] = 'Employment Details';
 $LNG['remember'] = 'Remember me';
 $LNG['password'] = 'Password';

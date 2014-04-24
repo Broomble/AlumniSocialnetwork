@@ -3,19 +3,19 @@ function PageMain() {
 	global $TMPL, $LNG, $CONF, $db, $settings;
 
 
-				$manageUsers = new manageUsers();
-				$manageUsers->db = $db;
-				$manageUsers->url = $CONF['url'];
-				$manageUsers->per_page = $settings['uperpage'];
-				
-				$skin = new skin('welcome/directory'); $page = 10;
-				
+				$dir = new manageUsers();
+				$dir->db = $db;
+				$dir->url = $CONF['url'];
+				$dir->per_page = $settings['uperpage'];
+								
+				$skin = new skin('welcome/directory'); $page = '';
+			
+				$TMPL['url'] = $CONF['url'];
+				$TMPL['title'] = $LNG['Directory'].' - '.$settings['title'];
 				// Save the array returned into a list
-				$TMPL['users'] = $manageUsers->getUsers(0);
-				
-				
-						
-
+				$TMPL['users'] = $dir->dirgetUsers(0);				
+										
+return $skin->make();
 				
 
 }

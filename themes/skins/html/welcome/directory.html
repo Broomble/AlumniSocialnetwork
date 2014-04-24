@@ -1,9 +1,13 @@
-<div class="page-inner"></div>
-{$message}
-<div class="message-divider"></div>
-
-<div class="inner-page-list page-inner">
-	
-	{$users}
-	<div id="users"></div>
+<script type="text/javascript">
+	$(function(){    
+	    $('.row-body').masonry({
+	    isAnimated: true,
+	    itemSelector : '.dir-card',
+		isAnimated: true,
+		isFitWidth: true
+	    });
+	  });
+</script>
+<div class="row-body content-feed">					
+					{$users}		
 </div>
