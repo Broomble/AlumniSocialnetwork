@@ -7,7 +7,7 @@ $CONF = $TMPL = array();
 // The MySQL credentials
 $CONF['host'] = 'localhost';
 $CONF['user'] = 'root';
-$CONF['pass'] = '';
+$CONF['pass'] = 'root';
 $CONF['name'] = 'alumni';
 
 // The Installation URL

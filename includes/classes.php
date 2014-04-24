@@ -223,7 +223,7 @@ function realName($username, $first = null, $last = null, $fullname = null) {
 function showUsers($users, $url) {
 
 	foreach($users as $user) {
-		$x .= '<div class="welcome-user"><a href="'.$url.'/index.php?a=profile&u='.$user['username'].'"><img src="'.$url.'/thumb.php?src='.$user['image'].'&t=a&w=112&h=112"></a><br/><div class="center" >'.(($user['join'] !== '0000-0000') ? $user['join'] : '').'</div></div>';
+		$x .= '<div class="welcome-user"><a href="'.$url.'/index.php?a=profile&u='.$user['username'].'"><img src="'.$url.'/thumb.php?src='.$user['image'].'&t=a&w=112&h=112"></a></div>';
 	}
 	return $x;
 }
