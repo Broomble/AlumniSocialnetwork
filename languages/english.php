@@ -702,15 +702,15 @@ $LNG['developers'] = 'Developers';
 $LNG['language'] = 'Language';
 
 // MONTHS
-$LNG['month_1'] = 'January';
-$LNG['month_2'] = 'February';
-$LNG['month_3'] = 'March';
-$LNG['month_4'] = 'April';
-$LNG['month_5'] = 'May';
-$LNG['month_6'] = 'June';
-$LNG['month_7'] = 'July';
-$LNG['month_8'] = 'August';
-$LNG['month_9'] = 'September';
+$LNG['month_01'] = 'January';
+$LNG['month_02'] = 'February';
+$LNG['month_03'] = 'March';
+$LNG['month_04'] = 'April';
+$LNG['month_05'] = 'May';
+$LNG['month_06'] = 'June';
+$LNG['month_07'] = 'July';
+$LNG['month_08'] = 'August';
+$LNG['month_09'] = 'September';
 $LNG['month_10'] = 'October';
 $LNG['month_11'] = 'November';
 $LNG['month_12'] = 'December';

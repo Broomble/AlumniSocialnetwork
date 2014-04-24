@@ -253,7 +253,9 @@ function generateDateForm($type, $current) {
 				$selected = ' selected="selected"';
 			} else {
 				$selected = '';
-			}
+			}			
+			($i < 10) ? $i = '0'.$i : $i;
+			
 			$rows .= '<option value="'.$i.'"'.$selected.'>'.$LNG["month_$i"].'</option>';
 		}
 	} elseif($type == 2) {

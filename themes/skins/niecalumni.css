@@ -5,14 +5,18 @@ html {
 }
 
 body {
-    position: relative;
-    color:#333;
-    font-family: 'Segoe UI', Tahoma, Segoe UI, Arial, sans-serif;
-    font-size:13px;
-    margin:0;
-    padding:0;
-    background: #edeff0 url(images/noise.png) ;
-    overflow-x: hidden;
+   position: relative;
+   color:#333;
+   font-family: 'Segoe UI', Tahoma, Segoe UI, Arial, sans-serif;
+   font-size:13px;
+   margin:0;
+   padding:0;
+   background: #edeff0 url(images/noise.jpg) no-repeat center center fixed;
+   overflow-x: hidden;
+   -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .checked {
     height:14px !important;
@@ -3377,6 +3381,10 @@ color:#8cc253;
 
 .employz , .noz , .yesz {
 display: inline-block;
+}
+
+.formveri{
+background: rgba(255, 255, 255, 0.6);
 }
 
 .formveri input , .formveri textarea , .formveri select{

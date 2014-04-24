@@ -346,7 +346,7 @@ class feed {
 		return $result->fetch_assoc();
 	}
 	
-	function fetchProfile($profile) {
+function fetchProfile($profile) {
 		global $LNG, $CONF;
 		$coverImage = ((!empty($profile['cover'])) ? $profile['cover'] : 'default.png');
 		$coverAvatar = ((!empty($profile['image'])) ? $profile['image'] : 'default.png');
@@ -490,10 +490,10 @@ function getProfileCard($profile) {
 		global $LNG;
 		
 // Explode the born value [[0]=>Y,[1]=>M,[2]=>D];
-		$born = explode('-', $profile['born']);
+		$born = explode('/', $profile['born']);
 		$join  = explode('-', $profile['join']);
 		// Make it into integer instead of a string (removes the 0, e.g: 03=>3, prevents breaking the language)
-		$month = intval($born[1]);
+		$month = $born[1];
 
 				if($profile['course'] == 'btech') {
 					$course  = $LNG['btech'];
@@ -521,7 +521,7 @@ function getProfileCard($profile) {
 
 		$info = '<div class="sidebar-container widget-about"><div class="sidebar-content"><div class="sidebar-header">'.$LNG['profile_about'].''.(($this->profile == $this->username) ? ' (<a href="'.$this->url.'/index.php?a=settings">'.$LNG['admin_ttl_edit'].'</a>)' : '').'</div>
 		'.((!empty($profile['location'])) ? '<div class="sidebar-list">'.$LNG['profile_location'].': <strong>'.$profile['location'].'</strong></div>' : '').'
-		'.(($profile['born'] !== '00/00/0000') ? '<div class="sidebar-list">'.$LNG['profile_born'].': <strong>'.$LNG["month_$month"].' '.$born[2].', '.$born[0].'</strong></div>' : '').'
+		'.(($profile['born'] !== '00/00/0000') ? '<div class="sidebar-list">'.$LNG['profile_born'].': <strong>'.$LNG["month_$month"].' '.$born[0].', '.$born[2].'</strong></div>' : '').'
 		'.((!empty($profile['gender'])) ? '<div class="sidebar-list">'.$LNG['ttl_gender'].': <strong>'.(($profile['gender'] == 1) ? $LNG['male'] : $LNG['female']).'</strong></div>' : '').'
 		'.(($profile['join'] !== '0000-0000') ? '<div class="sidebar-list">'.$LNG['ttl_year'].': <strong>'.$join[0].' - '.$join[1].'</strong></div>' : '').'		
 		'.((!empty($profile['course'])) ? '<div class="sidebar-list">'.$LNG['ttl_course'].': <strong>'.$course.'</strong></div>' : '').'
@@ -2304,7 +2304,7 @@ function getProfileCard($profile) {
 				// Ignore any gender as it doesn't matter
 				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `gender` = '%s' AND `email` = '%s' LIMIT 1", $gender, $this->db->real_escape_string($value)));
 			} else {
-				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `gender` = '%s' AND (`username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`)  LIKE '%s') ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", $gender, '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
+				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `gender` = '%s' AND (`join` LIKE '%s' OR `username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`)  LIKE '%s') ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", $gender, '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
 			}
 		} 
 		// If the filter is a date range (digit type)
@@ -2314,7 +2314,7 @@ function getProfileCard($profile) {
 			if($qt == 1) {
 				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `email` = '%s' LIMIT 1", $this->db->real_escape_string($value)));
 			} else {
-				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`) LIKE '%s' ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
+				$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE `join` LIKE '%s' OR `username` LIKE '%s' OR concat_ws(' ', `first_name`, `last_name`) LIKE '%s' ORDER BY `verified` DESC, `idu` DESC LIMIT %s, %s", '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', '%'.$this->db->real_escape_string($value).'%', $this->db->real_escape_string($start), ($per_page + 1)));
 				
 				// Sometimes the query might fail due to the fact that utf8 characters are being passed and the `username` sql field does not allow special chars
 				if(!$query) {
@@ -2358,7 +2358,8 @@ function getProfileCard($profile) {
 											<a href="'.$this->url.'/index.php?a=profile&u='.$row['username'].'">'.$row['username'].'</a>'.((!empty($row['verified'])) ? '<span class="verified-small"><img src="'.$this->url.'/'.$CONF['theme_url'].'/images/icons/verified.png" title="'.$LNG['verified_user'].'" /></span>' : '').'
 										</div>
 										<div class="message-time">
-											'.realName(null, $row['first_name'], $row['last_name']).''.((!empty($row['location'])) ? ' ('.$row['location'].')' : '&nbsp;').' 
+											'.realName(null, $row['first_name'], $row['last_name']).'
+											'.(($row['join'] !== '0000-0000') ? ' ('.$row['join'].')' : '&nbsp;').'
 										</div>
 									</div>
 								</div>';
@@ -2386,7 +2387,7 @@ function getProfileCard($profile) {
 													<a href="'.$this->url.'/index.php?a=profile&u='.$row['username'].'">'.$row['username'].'</a>'.((!empty($row['verified'])) ? '<span class="verified-small"><img src="'.$this->url.'/'.$CONF['theme_url'].'/images/icons/verified.png" title="'.$LNG['verified_user'].'" /></span>' : '').'
 												</div>
 												<div class="message-time">
-													'.realName(null, $row['first_name'], $row['last_name']).''.((!empty($row['location'])) ? ' ('.$row['location'].')' : '&nbsp;').' 
+													'.realName(null, $row['first_name'], $row['last_name']).''.(($row['join'] !== '0000-0000') ? ' ('.$row['join'].')' : '&nbsp;').' 
 												</div>
 											</div>
 										</div>
