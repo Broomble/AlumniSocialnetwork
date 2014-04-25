@@ -6,7 +6,36 @@
 
 		<div class="welcomeforms verify formveri">
 					<div class="register vers">Register</div>
-				<form action="" method="POST" autocomplete="off">
+            
+            <ul id="timeline">
+  <li class="work">
+    <input class="radio" id="work5" name="works" type="radio">
+    <div class="relative">
+      <span class="circle"></span>
+    </div>
+  </li>
+  <li class="work">
+    <input class="radio" id="work4" name="works" type="radio" checked="">
+    <div class="relative">
+              <span class="date">Step 2</span>
+      <span class="circle"></span>
+    </div>
+  </li>
+  <li class="work">
+    <input class="radio" id="work3" name="works" type="radio">
+    <div class="relative">
+      <span class="circle"></span>
+    </div>
+  </li>
+  <li class="work">
+    <input class="radio" id="work2" name="works" type="radio">
+    <div class="relative">
+      <span class="circle"></span>
+    </div>
+  </li>
+</ul>
+            
+				<form action="" method="POST" autocomplete="on">
 					{$registerMsg}
 					
 			<div class="page-input-container">
@@ -34,7 +63,7 @@
 			</div>
 
 				{$captcha}
-					<button type="submit" name="register"  class="register-button sidebut">{$lng->register}</button>
+				 	<button type="submit" name="register"  class="register-button sidebut">{$lng->register}</button>
 					</form>	
 			</div> 
 
