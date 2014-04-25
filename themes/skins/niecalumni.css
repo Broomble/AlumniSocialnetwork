@@ -3519,7 +3519,7 @@ left: 12px;
   position: absolute;
 }
 
-label {
+#timeline  label {
   font-size: 1.3em;
   position: absolute;
   z-index: 100;
