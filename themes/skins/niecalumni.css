@@ -3604,3 +3604,29 @@ left: 12px;
 	left: 50%;
 	position: absolute;
         z-index: 99; }
+
+
+.searchdir{ 
+    display: none;
+margin: 0 20%; 
+    background: white;
+}
+
+.dirfield {
+   display: inline-block;
+    
+}
+
+.Slidedown{
+background: url(/themes/skins/images/down.png) no-repeat;
+width: 24px;
+height: 24px;
+    text-align: center;
+margin: 0 auto; 
+    cursor: pointer;
+}
+
+.upz{ cursor: pointer;
+    
+    background: url(/themes/skins/images/up.png) no-repeat;
+}
