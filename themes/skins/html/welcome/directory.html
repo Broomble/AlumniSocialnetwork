@@ -1,13 +1,36 @@
-<script type="text/javascript">
-	$(function(){    
-	    $('.row-body').masonry({
-	    isAnimated: true,
-	    itemSelector : '.dir-card',
-		isAnimated: true,
-		isFitWidth: true
-	    });
-	  });
-</script>
-<div class="row-body content-feed">					
+<div class="main_container">					
 					{$users}		
 </div>
+
+<script type="text/javascript" src="{$url}/{$theme_url}/js/masonary.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+//masonry part
+
+$(function(){
+    
+    $('.main_container').masonry({
+      isAnimated: true,
+    itemSelector : '.pin',
+	isAnimated: true,
+	isFitWidth: true
+    });
+
+  });
+$(function(){
+
+    var $container = $('.main_container');
+  
+    $container.imagesLoaded( function(){
+      $container.masonry({
+         isAnimated: true,
+    itemSelector : '.pin',
+	isAnimated: true,
+	isFitWidth: true
+      });
+    });
+  
+  });
+ });	
+</script>

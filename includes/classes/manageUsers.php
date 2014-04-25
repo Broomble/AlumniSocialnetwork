@@ -161,7 +161,7 @@ function dirgetUsers($start) {
 				$branch  = 'Environmental Engineering';
 			}
 			$users .= '
-				<div class="dir-card">
+				<div class="pin">
 					<div id="dir-card">
 				<div class="dir-card-cover"><img src="'.$this->url.'/thumb.php?src='.((!empty($row['cover'])) ? $row['cover'] : 'default.png').'&w=900&h=300&t=c"></div>
 			<div class="dir-card-avatar">

@@ -3421,31 +3421,29 @@ width: 100%;
    color: rgb(167, 9, 9);
 }
 
+.dir-content{
+    padding-top: 10px;
+}
+
+.main_container{
+    margin:0 auto;
+    padding:15px;
+    position:relative;
+}
+.pin{
+    background-color:#FaFaFa;
+    box-shadow:0 1px 3px rgba(34, 25, 25, 0.4);
+    float:left;
+    margin:0 15px 15px 0;
+    min-height:190px;
+    position:absolute;
+    width:236px;
+}
+
 #dir-card {
-background: #fafafa;
-border:none;
-width: 285px;
-margin: 0 auto;
-/*border-radius: 3px;*/
-position: absolute;
-padding: 0 0 10px 0;
-border: none;
-box-shadow: 0 0 1px rgba(0, 0, 0, .25), 0 1px 5px 3px rgba(0, 0, 0, .05), 0 5px 4px -3px rgba(0, 0, 0, .06);
--moz-box-shadow: 0 0 1px rgba(0, 0, 0, .25), 0 1px 5px 3px rgba(0, 0, 0, .05), 0 5px 4px -3px rgba(0, 0, 0, .06);
--webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .25), 0 1px 5px 3px rgba(0, 0, 0, .05), 0 5px 4px -3px rgba(0, 0, 0, .06);
-border-radius: 3px 3px 0 0;
-}
-
-.dir-card{   
-    //box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
-    float: left;    
-    margin: 0 15px 15px 0;
-    position: relative;
-    width: 290px;
-    min-height: 250px;
-}
 
 }
+
 .dir-card-padding {
 padding: 20px 10px 10px 10px;
 }
@@ -3487,7 +3485,7 @@ width: 60px;
 margin: 0 auto;
 }
 .dir-card-divider {
-width: 280px;
+width: 236px;
 height: 1px;
 background: #dee0e3;
 margin: 10px auto;
