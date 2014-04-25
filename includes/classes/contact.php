@@ -74,20 +74,20 @@ class contact{
 		// Create the array which contains the Language variable
 		$error = array();
 				// Define the Language variable for each type of error
-		if(empty($this->phone) && empty($this->email) && empty($state) && empty($country)) {
-			$error[] .= 'all_fields';
-		}
-		if (!preg_match('/^[0-9+- ]*$/', $this->phone)){
-			$error[] .= 'phone_no_error';
-		}
-		if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-			return array('invalid_email');
-		}
 		if($this->verify_if_phone_exist() !== 0) {
 			$error[] .= 'phone_exists';
 		}
 		if($this->verify_if_email_exists() !== 0) {
 			$error[] .= 'email_exists';
+		}
+		if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+			return array('invalid_email');
+		}		
+		if (!preg_match('/^[0-9+-]*$/', $this->phone)){
+			$error[] .= 'phone_no_error';
+		}
+		if(empty($this->phone) && empty($this->email) && empty($state) && empty($country)) {
+			$error[] .= 'all_fields';
 		}
 		return $error;
 	}

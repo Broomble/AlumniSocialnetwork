@@ -131,8 +131,6 @@ class verify{
 		if($this->verify_if_join_exists() == 0) {
 			$error[] .= 'join_exists';
 		}
-
-
 		return $error;
 	}
 	
