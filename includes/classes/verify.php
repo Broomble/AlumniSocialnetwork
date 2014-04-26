@@ -58,17 +58,16 @@ class verify{
 	}
 	
 	function verify_if_fname_exists() {
-		$query = sprintf("SELECT `father_name` FROM `tbl_students_data` WHERE `enroll_no` = '%s' AND `father_name` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string(strtolower($this->fname)));
-		$result = $this->db->query($query);
-		
-		return ($result->num_rows == 0) ? 0 : 1;
+		$query = $this->db->query(sprintf("SELECT REPLACE(father_name,  '.',  '') AS fname FROM `tbl_students_data` WHERE `enroll_no` = '%s'", $this->db->real_escape_string($this->enrollno)));
+		$result = $query->fetch_assoc();
+		$data = $result['fname'];
+		return ($data == $this->db->real_escape_string(strtolower($this->fname))) ? 1 : 0;
 	}
 
 
 	function verify_if_course_exists() {
 		$query = sprintf("SELECT `course` FROM `tbl_students_data` WHERE `enroll_no` = '%s' AND `course` = '%s'", $this->db->real_escape_string($this->enrollno), $this->db->real_escape_string($this->course));
 		$result = $this->db->query($query);
-		
 		return ($result->num_rows == 0) ? 0 : 1;
 	}
 

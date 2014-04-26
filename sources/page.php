@@ -7,7 +7,8 @@ function PageMain() {
 					'about'		 => $LNG['about'],
 					'disclaimer' => $LNG['disclaimer'],
 					'contact'    => $LNG['contact'],
-					'api'		 => $LNG['api_documentation']);
+					'api'		 => $LNG['api_documentation'],
+					'developers' => $LNG['developers']);
 		
 	$skin = new skin('page/sidebar'); $sidebar = '';
 	foreach($title as $url => $header) {

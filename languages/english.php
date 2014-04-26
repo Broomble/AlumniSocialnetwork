@@ -699,7 +699,7 @@ $LNG['about'] = 'About';
 $LNG['disclaimer'] = 'Disclaimer';
 $LNG['contact'] = 'Contact';
 $LNG['api_documentation'] = 'API Documentation';
-$LNG['developers'] = 'Developers';
+$LNG['developers'] = 'Developed By';
 $LNG['language'] = 'Language';
 
 // MONTHS
