@@ -3,7 +3,6 @@
        
 <div class="dirfield"> 				
      
-		<div class="page-input-title newt">Name</div>
 		<div class="page-input-content">
 			<input type="text" name="name" class="namz" placeholder="Name">
 		</div>
@@ -16,7 +15,7 @@
     <div class="page-input-title  newt">{$lng->ttl_course}</div>
 				<div class="page-input-content">
 					<select name="course" id="course">
-						<option value="0">- Select a course -</option>
+						<option value="0">- Select -</option>
 						<option value="btech" {$btech}>B.Tech</option>
 						<option value="mca" {$mca}>MCA</option>
 						<option value="mba" {$mba}>MBA</option>
@@ -29,7 +28,7 @@
 				<div class="page-input-title newt">{$lng->ttl_branch}</div>
 				<div class="page-input-content">
 					<select name="branch">
-						<option value="0">- Select a branch -</option>
+						<option value="0">- Select -</option>
 						<option value="ece" {$ece}>ECE</option>
 						<option value="cse" {$cse}>CSE</option>
 						<option value="mae" {$mae}>MAE</option>
@@ -62,53 +61,3 @@
     <div class="main_container">					
 					{$users}		
 </div>
-
-<script type="text/javascript" src="{$url}/{$theme_url}/js/masonary.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-
-//masonry part
-
-$(function(){
-    
-    $('.main_container').masonry({
-      isAnimated: true,
-    itemSelector : '.pin',
-	isAnimated: true,
-	isFitWidth: true
-    });
-
-  });
-/*$(function(){
-
-    var $container = $('.main_container');
-  
-    $container.imagesLoaded( function(){
-      $container.masonry({
-         isAnimated: true,
-    itemSelector : '.pin',
-	isAnimated: true,
-	isFitWidth: true
-      });
-    });
-  
-  });*/
-	function manage_the_dir(start) {
-
-	$('#more_dirusers').html('<div class="load_more"><div class="preloader-retina-large preloader-center"></div></div>');
-	
-	$.ajax({
-		type: "POST",
-		url: "requests/manage_dirusers.php",
-		data: "start="+start, 
-		cache: false,
-		success: function(html) {
-			$('#more_dirusers').remove();
-			
-			// Append the new comment to the div id
-			$('.main_container').append(html).masonry('destroy');
-		}
-	});
-}
- });
-</script>

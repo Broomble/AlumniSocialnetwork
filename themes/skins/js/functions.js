@@ -52,7 +52,53 @@ $( this ).toggleClass( "upz" );
    
 });
 
+//Masonary
 
+$(document).ready(function(){
+
+//masonry part
+
+    
+    $('.main_container').masonry({
+      isAnimated: true,
+    itemSelector : '.pin',
+	isAnimated: true,
+	isFitWidth: true
+    });
+  });
+
+	function manage_the_dir(start) {
+     	$container = $('.main_container');
+   	    $('#more_dirusers').html('<div class="load_more"><div class="preloader-retina-large preloader-center"></div></div>');
+
+				$.ajax({
+					type: "POST",
+					url: "requests/manage_dirusers.php",
+					data: "start="+start,
+					cache: false,
+					success: function(html) {
+						//alert("\""+$.trim(html)+"\"");
+						$('.show-more').remove();
+							$container.append(html).masonry('reload'); 
+			
+					}
+			  });
+
+}
+
+
+ $(function(){
+    
+    var $container = $('.main_container');
+    
+    $container.masonry({
+      itemSelector: '.pin',
+      isAnimated: true
+    });
+        
+
+    
+  });
 
 
 function autosize() {
@@ -488,7 +534,24 @@ function manage_the(start, type) {
 	});
 }
 
+/*function manage_the_dir(start) {
 
+$('#more_dirusers').html('<div class="load_more"><div class="preloader-retina-large preloader-center"></div></div>');
+
+$.ajax({
+	type: "POST",
+	url: "requests/manage_dirusers.php",
+	data: "start="+start,
+	cache: false,
+	success: function(html) {
+		$('.admin-load-more').remove();
+		
+		// Append the new comment to the div id
+		//$('.main_container').append(html).masonry('reload');
+		$('.main_container').append(html).masonry('reload');
+	}
+});
+}*/
 
 function delete_user(id) {
 	// id = unique id of the message/comment

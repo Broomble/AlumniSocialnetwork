@@ -1649,6 +1649,7 @@ display: inline-block;
 vertical-align: top;
 float: left;
 color: #444;
+padding: 5px;
 }
 .page-input-title-img {
 margin-right: 20px;
@@ -3651,13 +3652,16 @@ background-color: #F6F7F8;
     width: auto ;
 }
 .dirfield input, .dirfield select {
-height: 30px;
+padding: 5px;
 }
 .namz{
 padding: 0;
 margin: 0 2px; 
 }
-
+.show-more{
+    position: absolute;
+    margin-top: 200px;
+}
 .searchbut {
     height: 25px;
     padding: 0 10px ;
