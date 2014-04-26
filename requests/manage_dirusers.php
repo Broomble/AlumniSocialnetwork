@@ -12,15 +12,6 @@ $db->set_charset("utf8");
 $resultSettings = $db->query(getSettings());
 $settings = $resultSettings->fetch_assoc();
 
-if(isset($_SESSION['usernameAdmin']) && isset($_SESSION['passwordAdmin'])) {
-	$loggedInAdmin = new loggedInAdmin();
-	$loggedInAdmin->db = $db;
-	$loggedInAdmin->url = $CONF['url'];
-	$loggedInAdmin->username = $_SESSION['usernameAdmin'];
-	$loggedInAdmin->password = $_SESSION['passwordAdmin'];
-	$loggedIn = $loggedInAdmin->verify();
-
-	if($loggedIn['username']) { 
 		if(isset($_POST['start'])) {
 			$manageUsers = new manageUsers();
 			
@@ -30,6 +21,6 @@ if(isset($_SESSION['usernameAdmin']) && isset($_SESSION['passwordAdmin'])) {
 			
 			echo $manageUsers->dirgetUsers($_POST['start']);
 		}
-	}
-}
+	
+
 ?>

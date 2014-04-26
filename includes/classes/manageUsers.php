@@ -160,7 +160,7 @@ function dirgetUsers($start) {
 			}elseif($row['branch'] == 'ene') {
 				$branch  = 'Environmental Engineering';
 			}
-			$usera = '
+			$users .= '
 				<div class="pin">
 					<div id="dir-card">
 				<div class="dir-card-cover"><img src="'.$this->url.'/thumb.php?src='.((!empty($row['cover'])) ? $row['cover'] : 'default.png').'&w=900&h=300&t=c"></div>
@@ -172,13 +172,12 @@ function dirgetUsers($start) {
 			</div><div class="dir-card-divider"></div>
 			'.((!empty($row['course'])) ? '<div class="dir-card-bio">'.$course.'<br>'.((!empty($row['branch'])) ? $branch : '').'<br>'.((!empty($row['join'])) ? $row['join'] : '').'</div>' : '').'</div></div>';
 
-		$users .= str_replace('"', '\'', $usera);
-
+		//$users .= str_replace('"', '\'', $usera);
 
 			$last = $row['idu'];
 		}
 		if($loadmore) {
-				$users .= "<div class='show-more'><div class='admin-load-more'><div class='message-container' id='more_dirusers'>
+				$users .= "<div class='pin show-more'><div class='admin-load-more'><div class='message-container' id='more_dirusers'>
 					<div class='load_more' id='".$last."'><a onclick='manage_the_dir(".$last.")'>Load More</a>				
 					</div>
 				</div></div></div>";
