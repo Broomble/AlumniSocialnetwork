@@ -43,6 +43,12 @@ if($.cookie('visited') === null || $.cookie('visited') === ""
            $('.maindone').hide();
            $('.mainchoose').hide();
 		}
+    
+    $( ".Slidedown" ).click(function() {
+  $( ".searchdir" ).slideToggle( "slow" );
+$( this ).toggleClass( "upz" );
+
+});
    
 });
 

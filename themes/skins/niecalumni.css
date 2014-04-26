@@ -205,7 +205,7 @@ margin: 0 auto;
 overflow: auto;
 margin-top: -20px;
 background: #F5F5F5 url(images/noise.jpg);
-background-position: 50% 50%;
+background-position: 50% 75%;
 background-size: cover;
 padding-bottom: 20px;
 padding-top: 20px;
@@ -3604,3 +3604,29 @@ left: 12px;
 	left: 50%;
 	position: absolute;
         z-index: 99; }
+
+
+.searchdir{ 
+    display: none;
+margin: 0 20%; 
+    background: white;
+}
+
+.dirfield {
+   display: inline-block;
+    
+}
+
+.Slidedown{
+background: url(/themes/skins/images/down.png) no-repeat;
+width: 24px;
+height: 24px;
+    text-align: center;
+margin: 0 auto; 
+    cursor: pointer;
+}
+
+.upz{ cursor: pointer;
+    
+    background: url(/themes/skins/images/up.png) no-repeat;
+}
