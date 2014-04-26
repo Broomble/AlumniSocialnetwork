@@ -29,6 +29,11 @@ $(function () {
            $('.mainchoose').hide();
            $.cookie("visited", 'yesz');
        });
+    $(".noz").click(function(){
+          $('.maindone').show();
+          $('.mainemployz').slideUp();
+          $('.mainchoose').hide();          
+      });
 if($.cookie('visited') === null || $.cookie('visited') === "" 
     || $.cookie('visited') === "null" || $.cookie('visited') === undefined)
 		{
@@ -49,12 +54,8 @@ $( this ).toggleClass( "upz" );
 
 //Masonary
 
-$(document).ready(function(){
-
-//masonry part
-
-    
-    $('.main_container').masonry({
+ $(function(){
+   $('.main_container').masonry({
       isAnimated: true,
     itemSelector : '.pin',
 	isAnimated: true,
@@ -62,24 +63,28 @@ $(document).ready(function(){
     });
   });
 
-	function manage_the_dir(start) {
-     	$container = $('.main_container');
-   	    $('#more_dirusers').html('<div class="load_more"><div class="preloader-retina-large preloader-center"></div></div>');
+function manage_the_dir(start) {
+$container = $('.main_container');
+    $('#more_dirusers').html('<div class="load_more"><div class="preloader-retina-large preloader-center"></div></div>');
 
-				$.ajax({
-					type: "POST",
-					url: "requests/manage_dirusers.php",
-					data: "start="+start,
-					cache: false,
-					success: function(html) {
-						//alert("\""+$.trim(html)+"\"");
-						$('.show-more').remove();
-							$container.append(html).masonry('reload'); 
-			
-					}
-			  });
+		$.ajax({
+			type: "POST",
+			url: "requests/manage_dirusers.php",
+			data: "start="+start,
+			cache: false,
+			success: function(html) {
+				//alert("\""+$.trim(html)+"\"");
+				$('.show-more').remove();
+					$container.append(html).masonry('reload'); 
 
+			}
+	  });
 }
+
+
+
+
+
 
 function autosize() {
 	// auto adjust the height of

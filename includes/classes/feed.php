@@ -1547,10 +1547,10 @@ function getProfileCard($profile) {
 			foreach($row as $date) {
 				
 				// Explode the born value [[0]=>Y,[1]=>M];
-				$born = explode('-', wordwrap($date, 4, '-', true));
+				$born = explode('/', wordwrap($date, 4, '/', true));
 				
 				// Make it into integer instead of a string (removes the 0, e.g: 03=>3, prevents breaking the language)
-				$month = intval($born[1]);
+				$month = $born[1];
 				
 				// Start the strong tag
 				if($date == $bold) {

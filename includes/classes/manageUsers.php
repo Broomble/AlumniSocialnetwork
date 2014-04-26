@@ -160,7 +160,7 @@ function dirgetUsers($start) {
 			}elseif($row['branch'] == 'ene') {
 				$branch  = 'Environmental Engineering';
 			}
-			$users .= '
+			$usera = '
 				<div class="pin">
 					<div id="dir-card">
 				<div class="dir-card-cover"><img src="'.$this->url.'/thumb.php?src='.((!empty($row['cover'])) ? $row['cover'] : 'default.png').'&w=900&h=300&t=c"></div>
@@ -172,7 +172,7 @@ function dirgetUsers($start) {
 			</div><div class="dir-card-divider"></div>
 			'.((!empty($row['course'])) ? '<div class="dir-card-bio">'.$course.'<br>'.((!empty($row['branch'])) ? $branch : '').'<br>'.((!empty($row['join'])) ? $row['join'] : '').'</div>' : '').'</div></div>';
 
-		//$users .= str_replace('"', '\'', $usera);
+		$users .= str_replace('"', '\'', $usera);
 
 			$last = $row['idu'];
 		}
