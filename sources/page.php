@@ -2,12 +2,8 @@
 function PageMain() {
 	global $TMPL, $LNG, $CONF, $db, $settings;
 	
-	$title = array( 'privacy'    => $LNG['privacy_policy'],
-					'tos'		 => $LNG['terms_of_use'],
-					'about'		 => $LNG['about'],
-					'disclaimer' => $LNG['disclaimer'],
+	$title = array( 'disclaimer' => $LNG['disclaimer'],
 					'contact'    => $LNG['contact'],
-					'api'		 => $LNG['api_documentation'],
 					'developers' => $LNG['developers']);
 		
 	$skin = new skin('page/sidebar'); $sidebar = '';
