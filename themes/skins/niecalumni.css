@@ -3639,21 +3639,31 @@ border-bottom-left-radius: 4px;    cursor: pointer;
     background:#3AC162 url(/themes/skins/images/up.png) no-repeat;     
 
 }
+.searchdir input , .searchdir select {
+background-color: #F6F7F8;
+    border: 1px solid #F6F7F8;
+    outline: none;
+    border-radius: 2px;
+}
+
 .newt {
     width: auto ;
 }
 .dirfield input, .dirfield select {
-height: 20px;
+height: 30px;
 }
 .namz{
 padding: 0;
-margin: 0 2px;
-border: 1px solid #a9a9a9 !important;
+margin: 0 2px; 
 }
 
 .searchbut {
     height: 25px;
     padding: 0 10px ;
 position: relative;
-top: -5px;
+top: -10px;
+}
+
+.searchdir input:hover, .searchdir input:focus, .searchdir select:hover, .searchdir select:focus {
+border: 1px solid #888;
 }
