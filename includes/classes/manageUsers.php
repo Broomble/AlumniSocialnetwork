@@ -174,10 +174,10 @@ function dirgetUsers($start) {
 			$last = $row['idu'];
 		}
 		if($loadmore) {
-				$users .= '<div class="admin-load-more"><div class="message-container" id="more_dirusers">
+				$users .= '<div class="pin"><div class="admin-load-more"><div class="message-container" id="more_dirusers">
 					<div class="load_more"><a onclick="manage_the_dir('.$last.')">'.$LNG['view_more_messages'].'</a>				
 					</div>
-				</div></div>';
+				</div></div></div>';
 		}
 		
 		// Return the array set

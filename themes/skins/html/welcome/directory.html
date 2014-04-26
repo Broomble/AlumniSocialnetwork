@@ -79,7 +79,7 @@ $(function(){
     });
 
   });
-$(function(){
+/*$(function(){
 
     var $container = $('.main_container');
   
@@ -92,6 +92,23 @@ $(function(){
       });
     });
   
-  });
- });	
+  });*/
+	function manage_the_dir(start) {
+
+	$('#more_dirusers').html('<div class="load_more"><div class="preloader-retina-large preloader-center"></div></div>');
+	
+	$.ajax({
+		type: "POST",
+		url: "requests/manage_dirusers.php",
+		data: "start="+start, 
+		cache: false,
+		success: function(html) {
+			$('#more_dirusers').remove();
+			
+			// Append the new comment to the div id
+			$('.main_container').append(html).masonry('destroy');
+		}
+	});
+}
+ });
 </script>
