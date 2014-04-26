@@ -52,6 +52,12 @@ function PageMain() {
 		$TMPL['loginMsg'] = notificationBox('transparent', $LNG['error'], $log->in(), 1);
 	}
 	
+	if(!isset($_SESSION['enrollno']) || !isset($_SESSION['name']) || !isset($_SESSION['course']) || !isset($_SESSION['branch']) || !isset($_SESSION['born']) || !isset($_SESSION['join'])) {
+		
+			header("Location: ".$CONF['url']."/index.php?a=verify");
+		
+	}
+
 	if(isset($_SESSION['username']) && isset($_SESSION['password']) || isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
 		
 		$verify = $loggedIn->verify();
