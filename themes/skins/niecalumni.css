@@ -4380,12 +4380,12 @@ background: #f6f7f8;
 .register-button {
 font-family: 'Segoe UI', Arial, Tahoma, sans-serif;
 padding: 0 17px;
-background: #3f8abf;
+background: #3f8abf !important;
 outline: 0;
 height: 37px;
-border-bottom: 1px solid #2e6186;
-text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-box-shadow: 0 2px 0px #326e99;
+border-bottom: 1px solid #2e6186 !important;
+text-shadow: 0 -1px 0 rgba(0,0,0,.25) !important;
+box-shadow: 0 2px 0px #326e99 !important;
 text-transform: none;
 cursor: pointer;
 border: none;
@@ -4399,10 +4399,10 @@ font-size: 15px;
 margin-right: 0;
 }
 .register-button:hover {
-background: #326e99;
+background: #326e99 !important;
 }
 .register-button:active {
-background: #326e99;
+background: #326e99 !important;
 }
 .sidebut{
 float: right;
@@ -6057,10 +6057,23 @@ margin: 0 2px;
 .searchbut {
     height: 25px;
     padding: 0 10px ;
-position: relative;
-top: -12px;
+    position: relative;
+    top: -12px;
 }
 
 .searchdir input:hover, .searchdir input:focus, .searchdir select:hover, .searchdir select:focus {
 border: 1px solid #888;
+}
+
+.morebut {
+    padding: 2px;
+    width: auto;
+    margin-top: 0;
+    height: auto;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 12px;
+}
+.moredisplay {
+ display: none;
 }

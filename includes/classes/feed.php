@@ -526,7 +526,7 @@ function getProfileCard($profile) {
 		'.(($profile['join'] !== '0000-0000') ? '<div class="sidebar-list">'.$LNG['ttl_year'].': <strong>'.$join[0].' - '.$join[1].'</strong></div>' : '').'		
 		'.((!empty($profile['course'])) ? '<div class="sidebar-list">'.$LNG['ttl_course'].': <strong>'.$course.'</strong></div>' : '').'
 		'.((!empty($profile['branch'])) ? '<div class="sidebar-list">'.$LNG['ttl_branch'].': <strong>'.$branch.'</strong></div>' : '').'				
-		'.((!empty($profile['enrollno'])) ? '<div class="sidebar-list">'.$LNG['ttl_enrollno'].': <strong>'.$profile['enrollno'].'</strong></div>' : '').'
+	  '.( '<div class="moredisplay">').'
 		'.((!empty($profile['website'])) ? '<div class="sidebar-list">'.$LNG['profile_website'].': <strong><a href="'.$profile['website'].'" target="_blank" rel="nofllow">'.$LNG['profile_view_site'].'</a></strong></div>' : '').'
 		'.((!empty($this->subscriptionsList[1])) ? '<div class="sidebar-list">'.$LNG['follows'].': '.$this->sidebarSubs(0, 1).'</div>' : '').'
 		'.((!empty($this->subscribersList[1])) ? '<div class="sidebar-list">'.$LNG['followed_by'].': '.$this->sidebarSubs(1, 1).'</div>' : '').'
@@ -535,7 +535,7 @@ function getProfileCard($profile) {
 		'.((!empty($profile['twitter'])) ? '<div class="sidebar-list">Twitter: <strong><a href="http://twitter.com/'.$profile['twitter'].'" target="_blank" rel="nofllow">'.$LNG['profile_view_profile'].'</a></strong></div>' : '').'
 		'.(($this->getLikes()) ? '<div class="sidebar-list">'.$LNG['likes'].': <a href="'.$this->url.'/index.php?a=profile&u='.$profile['username'].'&r=likes"><strong>'.$this->getLikes().' '.$LNG['messages'].'</strong></a></div>' : '').'
 		'.((!empty($profile['bio'])) ? '<div class="sidebar-list">'.$LNG['profile_bio'].': '.$profile['bio'].'</div>' : '').'
-		</div></div>';
+		</div><button class="login-button sidebut morebut" data-text-swap="Less" data-text-original="More" >More</button></div></div>';
 		
 		return $info;
 	}

@@ -43,6 +43,15 @@ if($.cookie('visited') === null || $.cookie('visited') === ""
 		$( ".searchdir" ).slideToggle( "slow" );
 		$( this ).toggleClass( "upz" );
 	});
+    
+     $( ".morebut" ).click(function() {
+		$( ".moredisplay" ).slideToggle( "slow" );
+		$( this ).toggleClass( "register-button" );
+         var el = $(this);
+  el.text() == el.data("text-swap") 
+    ? el.text(el.data("text-original")) 
+    : el.text(el.data("text-swap"));
+	});
    
 });
 
