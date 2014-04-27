@@ -20,6 +20,7 @@ function PageMain() {
 				$con->phone = $_POST['phone'];
 				$con->email = $_POST['email'];
 				$con->address = $_POST['address'];		
+				$con->city = $_POST['city'];	
 				$con->state = $_POST['state'];
 				$con->country = $_POST['country'];
 

@@ -74,20 +74,23 @@ class employee{
 		// Create the array which contains the Language variable
 		$error = array();
 				// Define the Language variable for each type of error
-		if(empty($this->company) && empty($this->industry) && empty($this->designation) && empty($this->department) && empty($state) && empty($country)) {
+		if(empty($this->company) || empty($this->industry) || empty($this->designation) || empty($this->department) || empty($this->city) || empty($this->state) || empty($this->country)) {
 			$error[] .= 'all_fields';
 		}
-		if (isset($offphone) && !preg_match('/^[0-9+- ]*$/', $this->offphone)){
+		if (isset($offphone) && !preg_match('/^[0-9+-]*$/', $this->offphone)){
 			$error[] .= 'phone_no_error';
 		}
 		if(isset($offemail) && !filter_var($this->offemail, FILTER_VALIDATE_EMAIL)) {
 			return array('invalid_email');
 		}
+		if (!preg_match('/^[a-zA-Z\s]*$/', $this->city)){
+			$error[] .= 'city_name_error';
+		}
 		return $error;
 	}
 
 	function query() {
-		$query = sprintf("INSERT into `employment` (`enrollno`, `company`, `joining`, `industry`, `department`, `designation`, `office_landline`, `office_email`, `office_addr`, `state`, `country`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');", $this->queryEnroll(), $this->db->real_escape_string($this->company), $this->db->real_escape_string($this->joining),  $this->db->real_escape_string($this->industry),  $this->db->real_escape_string($this->department),  $this->db->real_escape_string($this->designation),  $this->db->real_escape_string($this->offphone),  $this->db->real_escape_string($this->offemail),  $this->db->real_escape_string($this->offaddress), $this->db->real_escape_string($this->state), $this->db->real_escape_string($this->country));
+		$query = sprintf("INSERT into `employment` (`enrollno`, `company`, `joining`, `industry`, `department`, `designation`, `office_landline`, `office_email`, `office_addr`, `city`, `state`, `country`, `current`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');", $this->queryEnroll(), $this->db->real_escape_string($this->company), $this->db->real_escape_string($this->joining),  $this->db->real_escape_string($this->industry),  $this->db->real_escape_string($this->department),  $this->db->real_escape_string($this->designation),  $this->db->real_escape_string($this->offphone),  $this->db->real_escape_string($this->offemail),  $this->db->real_escape_string($this->offaddress), $this->db->real_escape_string($this->city), $this->db->real_escape_string($this->state), $this->db->real_escape_string($this->country), 1);
 		$this->db->query($query);
 		// return ($this->db->query($query)) ? 0 : 1;
 	}

@@ -99,7 +99,7 @@
 			<div class="page-input-container">
 				<div class="page-input-title">Office Address</div>
 				<div class="page-input-content">
-					<textarea name="offaddress" placeholder="Office Address*" rows="2" cols="10" style="height: 50px;width:238px !important;"  ></textarea>
+					<textarea name="offaddress" placeholder="Office Address" rows="2" cols="10" style="height: 50px;width:238px !important;"  ></textarea>
 					<div class="page-input-sub">Enter office address</div>
 				</div>
 			</div>
@@ -107,8 +107,8 @@
 			<div class="page-input-container">
 				<div class="page-input-title">Industry</div>
 				<div class="page-input-content">
-					<select name="industry" class="">
-							<option value="-1" label="Select">Select</option>
+					<select name="industry" class="" >
+							<option value="" label="Select">Select</option>
 							<option value="8" label="Accounting/Finance">Accounting/Finance</option>
 							<option value="32" label="Advertising/PR/MR/Events">Advertising/PR/MR/Events</option>
 							<option value="33" label="Agriculture/Dairy">Agriculture/Dairy</option>
@@ -174,8 +174,8 @@
 			<div class="page-input-container">
 				<div class="page-input-title">Department</div>
 				<div class="page-input-content">
-					<select name="department" class="">
-							<option value="-1">Select</option>
+					<select name="department" class="" >
+							<option value="">Select</option>
 							<option value="Accounting/Finance">Accounting/Finance</option>
 							<option value="Advertising/PR/MR/Events">Advertising/PR/MR/Events</option>
 							<option value="Animation">Animation</option>
@@ -216,8 +216,8 @@
 			<div class="page-input-container">
 				<div class="page-input-title">Designation</div>
 				<div class="page-input-content">
-						<select name="designation" class="">
-									<option value="-1">Select</option>
+						<select name="designation" class="" >
+									<option value="">Select</option>
 									<option value="Asst Gen Manager">Asst Gen Manager</option>
 									<option value="Asst Manager">Asst Manager</option>
 									<option value="Asst Project Manager">Asst Project Manager</option>
@@ -269,7 +269,13 @@
 						<div class="page-input-sub" >Select your designation</div>
 				</div>
 			</div>
-
+			<div class="page-input-container">
+				<div class="page-input-title">City</div>
+				<div class="page-input-content">
+					<input type="text" name="city" placeholder="City*" />
+					<div class="page-input-sub">Enter the city name</div>				
+				</div>
+			</div>
 
 			<div class="page-input-container">
 				<div class="page-input-title">Country</div>
@@ -529,7 +535,7 @@
             <div class="page-input-container">
 				<div class="page-input-title">State</div>
 				<div class="page-input-content">
-                    <input type="text" name="state" class="nIndia" placeholder="State" />
+                    <input type="text" name="state" class="nIndia" placeholder="State"/>
                     <div class="page-input-sub states">Enter your State</div>
 					<select name="state" id="state" class="">
 							<option value="1">Andaman and Nicobar Islands</option>
@@ -570,7 +576,6 @@
 					</select>
 				</div>
 			</div>
-
         	<div class="page-input-container">
 				<div class="page-input-title">Ofiice Contact No</div>
 				<div class="page-input-content">
@@ -586,8 +591,7 @@
 					<div class="page-input-sub" >Enter official email</div>
 				</div>
 			</div>
-              
-<button type="submit" name="noo" class="register-button sidebut" >Skip</button> <button style="margin-top:0px;margin-right:10px;"  type="submit" name="employee" class="sidebut login-button">Done</button>      
+              <button type="submit" name="employee" class="sidebut login-button">Done</button><button style="margin-top:0px;margin-right:10px; margin-top: 10px;" type="submit" name="noo" class="register-button sidebut" >Skip</button>      
 
              </div>           
             
@@ -600,14 +604,3 @@
 			</div>
 		</div>
 	</div>
-
-<!--  <div class="welcome-full">
-	<div class="row-body">
-		<div class="welcome-inner">
-					
-
-				
-		</div>
-	</div>
-</div> --> 
-{$ad}

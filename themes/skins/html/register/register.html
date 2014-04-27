@@ -62,6 +62,18 @@
 				</div>
 			</div>
 
+				<div class="page-input-container">
+					<div class="page-input-title">{$lng->ttl_gender}</div>
+					<div class="page-input-content">
+					<select name="gender">
+						<option value="0" {$ngender}>- Select your gender -</option>
+						<option value="1" {$mgender}>Male</option>
+						<option value="2" {$fgender}>Female</option>
+					</select>
+					<div class="page-input-sub">{$lng->sub_gender}</div>
+					</div>
+				</div>
+
 				{$captcha}
 				 	<button type="submit" name="register"  class="register-button sidebut">{$lng->register}</button>
 					</form>	
@@ -71,14 +83,3 @@
 			</div>
 		</div>
 	</div>
-
-<!--  <div class="welcome-full">
-	<div class="row-body">
-		<div class="welcome-inner">
-					
-
-				
-		</div>
-	</div>
-</div> --> 
-{$ad}

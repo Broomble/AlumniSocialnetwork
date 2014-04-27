@@ -221,11 +221,11 @@ function PageMain() {
 				
 				$userSettings = $updateUserSettings->getSettings();
 				
-				$date = explode('-', $userSettings['born']);
+				$date = explode('/', $userSettings['born']);
 				
-				$TMPL['years'] = generateDateForm(0, $date[0]);
+				$TMPL['years'] = generateDateForm(0, $date[2]);
 				$TMPL['months'] = generateDateForm(1, $date[1]);
-				$TMPL['days'] = generateDateForm(2, $date[2]);
+				$TMPL['days'] = generateDateForm(2, $date[0]);
 				
 				$TMPL['currentFirstName'] = $userSettings['first_name']; $TMPL['currentLastName'] = $userSettings['last_name']; $TMPL['currentEmail'] = $userSettings['email']; $TMPL['currentLocation'] = $userSettings['location']; $TMPL['currentWebsite'] = $userSettings['website']; $TMPL['currentBio'] = $userSettings['bio']; $TMPL['currentFacebook'] = $userSettings['facebook']; $TMPL['currentTwitter'] = $userSettings['twitter'];  $TMPL['currentGplus'] = $userSettings['gplus'];
 				$TMPL['currentEnrollno'] = $userSettings['enrollno'];
@@ -262,6 +262,32 @@ function PageMain() {
 				} else {
 					$TMPL['fgender'] = 'selected="selected"';
 				}
+
+
+				if($userSettings['course'] == 'btech') {
+                       $TMPL['btech'] = 'selected="selected"';
+               } elseif($userSettings['course'] == 'mca') {
+                       $TMPL['mca'] = 'selected="selected"';
+               } elseif($userSettings['course'] == 'mba') {
+                       $TMPL['mba'] = 'selected="selected"';
+               }
+
+               if($userSettings['branch'] == 'ece') {
+                       $TMPL['ece'] = 'selected="selected"';
+               } elseif($userSettings['branch'] == 'cse') {
+                       $TMPL['cse'] = 'selected="selected"';
+               } elseif($userSettings['branch'] == 'mae') {
+                       $TMPL['mae'] = 'selected="selected"';
+               } elseif($userSettings['branch'] == 'eee') {
+                       $TMPL['eee'] = 'selected="selected"';
+               } elseif($userSettings['branch'] == 'it') {
+                       $TMPL['it'] = 'selected="selected"';
+               } elseif($userSettings['branch'] == 'ce') {
+                       $TMPL['ce'] = 'selected="selected"';
+               }elseif($userSettings['branch'] == 'ene') {
+                       $TMPL['ene'] = 'selected="selected"';                         
+               }
+
 				
 				$page .= $skin->make();
 			}

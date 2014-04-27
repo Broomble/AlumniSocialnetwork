@@ -104,7 +104,7 @@ class verify{
 	function validate_values() {
 		// Create the array which contains the Language variable
 		$error = array();
-		if(empty($this->enrollno) && empty($this->name) && empty($this->fname) && empty($this->course) && empty($this->born) && empty($this->join)) {
+		if(empty($this->enrollno) || empty($this->name) || empty($this->fname) || empty($this->course) || empty($this->born) || empty($this->join)) {
 			$error[] .= 'all_fields';
 		}
 		if($this->course == 'btech' && empty($this->branch)){

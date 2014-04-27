@@ -968,6 +968,14 @@ box-shadow: #CCC 0px 1px 3px inset;
 .load_more img {
 width: 85px;
 }
+#more_dirusers .load_more a{
+padding: 53px;
+margin-top: -9px;
+position: absolute;
+margin-left: -118px;
+font-size: 32px;
+
+}
 .new-message {
 box-shadow: 0px 1px 1px #CCC;
 border: 1px solid #BFBFBF;
@@ -5743,7 +5751,7 @@ color:#8cc253;
 }
 
 .employz {
-    width:164px;
+    width:200px;
     font-size: 16px;
     font-weight: bold;
 }
@@ -5797,8 +5805,6 @@ width: 100%;
     position:relative;
 }
 .pin{
-    
-    box-shadow:0 1px 3px rgba(34, 25, 25, 0.4);
     float:left;
     margin:0 15px 15px 0;
     min-height:190px;
@@ -5807,6 +5813,7 @@ width: 100%;
 }
 
 #dir-card {
+	box-shadow:0 1px 3px rgba(34, 25, 25, 0.4);
     padding-bottom: 10px;
     background-color:#FaFaFa;
 }

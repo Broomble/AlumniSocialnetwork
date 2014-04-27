@@ -50,34 +50,8 @@ function PageMain() {
 				$skin = new skin('admin/stats'); $page = '';
 
 				list($TMPL['messages_total'], $TMPL['messages_public'], $TMPL['messages_private'], $TMPL['comments_total'], $TMPL['users_today'], $TMPL['users_this_month'], $TMPL['users_last_30'], $TMPL['users_total'], $TMPL['total_reports'], $TMPL['pending_reports'], $TMPL['safe_reports'], $TMPL['deleted_reports'], $TMPL['total_message_reports'], $TMPL['pending_message_reports'], $TMPL['safe_message_reports'], $TMPL['deleted_message_reports'], $TMPL['total_comment_reports'], $TMPL['pending_comment_reports'], $TMPL['safe_comment_reports'], $TMPL['deleted_comment_reports'], $TMPL['total_likes'], $TMPL['likes_today'], $TMPL['likes_this_month'], $TMPL['likes_last_30']) = users_stats($db);
-			} elseif($_GET['b'] == 'themes') {
-				$skin = new skin('admin/themes'); $page = '';
-				$updateSettings = new updateSettings();
-				$updateSettings->db = $db;
-				
-				$themes = $updateSettings->getThemes();
-				
-				$TMPL['themes_list'] = $themes[0];
-				
-				if(isset($_GET['theme'])) {
-					// If theme is in array
-					if(in_array($_GET['theme'], $themes[1])) {
-						$updated = $updateSettings->query_array('settings', array('theme' => $_GET['theme']));
-						
-						if($updated == 1) {
-							header("Location: ".$CONF['url']."/index.php?a=admin&b=themes&m=s");
-						} else {
-							header("Location: ".$CONF['url']."/index.php?a=admin&b=themes&m=i");
-						}
-					}
-				}
-				
-				if($_GET['m'] == 's') {
-					$TMPL['message'] = notificationBox('success', $LNG['theme_changed'], $LNG['theme_success_changed']);
-				} elseif($_GET['m'] == 'i') {
-					$TMPL['message'] = notificationBox('error', $LNG['nothing_changed'], $LNG['theme_not_changed']);
-				}
-				
+			
+			
 			} elseif($_GET['b'] == 'manage_reports') {
 				$skin = new skin('admin/manage_reports'); $page = '';
 				
@@ -270,8 +244,8 @@ function PageMain() {
 				} elseif(!empty($_GET['m'])) {
 					$TMPL['message'] = notificationBox('success', $LNG['user_deleted'], sprintf($LNG['user_has_been_deleted'], $_GET['m']));
 				}
-			} elseif($_GET['b'] == 'manage_ads') {
-				$skin = new skin('admin/manage_ads'); $page = '';
+			} elseif($_GET['b'] == 'manage_notices') {
+				$skin = new skin('admin/manage_notices'); $page = '';
 				
 				$TMPL['ad1'] = $settings['ad1']; $TMPL['ad2'] = $settings['ad2']; $TMPL['ad3'] = $settings['ad3']; $TMPL['ad4'] = $settings['ad4']; $TMPL['ad5'] = $settings['ad5']; $TMPL['ad6'] = $settings['ad6']; $TMPL['ad7'] = $settings['ad7'];
 				if(!empty($_POST)) {
@@ -280,9 +254,9 @@ function PageMain() {
 					$updateSettings->db = $db;
 					$updated = $updateSettings->query_array('settings', $_POST);
 					if($updated == 1) {
-						header("Location: ".$CONF['url']."/index.php?a=admin&b=manage_ads&m=s");
+						header("Location: ".$CONF['url']."/index.php?a=admin&b=manage_notices&m=s");
 					} else {
-						header("Location: ".$CONF['url']."/index.php?a=admin&b=manage_ads&m=i");
+						header("Location: ".$CONF['url']."/index.php?a=admin&b=manage_notices&m=i");
 					}
 				}
 			} else {
@@ -541,12 +515,11 @@ function PageMain() {
 	$TMPL['admin_menu'] = '
 	<a href="'.$CONF['url'].'/index.php?a=admin">'.$LNG['admin_menu_general'].'</a>
 	<a href="'.$CONF['url'].'/index.php?a=admin&b=users_settings">'.$LNG['admin_menu_users_settings'].'</a>
-	<a href="'.$CONF['url'].'/index.php?a=admin&b=themes">'.$LNG['admin_menu_themes'].'</a> 
 	<a href="'.$CONF['url'].'/index.php?a=admin&b=stats">'.$LNG['admin_menu_stats'].'</a>
 	<a href="'.$CONF['url'].'/index.php?a=admin&b=security">'.$LNG['admin_menu_security'].'</a>
 	<a href="'.$CONF['url'].'/index.php?a=admin&b=users">'.$LNG['admin_menu_users'].'</a>
 	<a href="'.$CONF['url'].'/index.php?a=admin&b=manage_reports">'.$LNG['admin_menu_manage_reports'].'</a>
-	<a href="'.$CONF['url'].'/index.php?a=admin&b=manage_ads">'.$LNG['admin_menu_manage_ads'].'</a>
+	<a href="'.$CONF['url'].'/index.php?a=admin&b=manage_notices">'.$LNG['admin_menu_manage_notices'].'</a>
 	<a href="'.$CONF['url'].'/index.php?a=admin&logout=1">'.$LNG['admin_menu_logout'].'</a>';
 	
 	$TMPL['url'] = $CONF['url'];

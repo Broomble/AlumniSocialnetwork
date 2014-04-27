@@ -10,6 +10,7 @@ class register {
 	public $captcha_on;				// Store the Admin Captcha settings
 	public $message_privacy;		// Store the Admin User's Message Privacy settings (Predefined, changeable)
 	public $verified;				// Store the Admin Verified settings
+	public $gender;
 	public $like_notification;		// Store the Admin Like Notification Settings  (Predefined, changeable)
 	public $comment_notification;	// Store the Admin Comment Notification Settings (Predefined, changeable)
 	public $shared_notification;	// Store the Admin Shared Message Notification Settings  (Predefined, changeable)
@@ -84,7 +85,7 @@ class register {
 		// Create the array which contains the Language variable
 		$error = array();
 		
-		if(empty($this->username) && empty($this->password) && empty($email) && empty($enrollno)) {
+		if(empty($this->username) && empty($this->password) && empty($email) && empty($gender)) {
 			$error[] .= 'all_fields';
 		}
 		if(strlen($this->password) <= 2) {
@@ -100,16 +101,15 @@ class register {
 			$error[] .= 'invalid_email';
 		}
 		// Define the Language variable for each type of error
+		if($this->verify_if_enrollno_exist() !== 0) {
+			$error[] .= 'enrollno_exist';
+		}
 		if($this->verify_if_user_exist() !== 0) {
 			$error[] .= 'user_exists';
 		}
 		if($this->verify_if_email_exists() !== 0) {
 			$error[] .= 'email_exists';
 		}
-		if($this->verify_if_enrollno_exist() !== 0) {
-			$error[] .= 'enrollno_exist';
-		}
-
 		if($this->verify_captcha() == false) {
 			$error[] .= 'invalid_captcha';
 		}
@@ -119,7 +119,7 @@ class register {
 	
 	function query() {
 		$name = explode(' ', $_SESSION['name']);
-		$query = sprintf("INSERT into `users` (`username`, `password`, `email`, `enrollno`, `first_name`, `last_name`, `date`, `image`, `privacy`, `cover`, `verified`, `online`, `notificationl`, `notificationc`, `notifications`, `notificationd`, `notificationf`, `email_comment`, `email_like`, `email_new_friend`, `sound_new_notification`, `sound_new_chat`, `born`, `join`, `course`, `branch`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', 'default.png', '%s', 'default.png', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');", $this->db->real_escape_string(strtolower($this->username)), md5($this->db->real_escape_string($this->password)), $this->db->real_escape_string($this->email), $_SESSION['enrollno'], reset($name), end($name), date("Y-m-d H:i:s"), $this->message_privacy, $this->verified, time(), $this->like_notification, $this->comment_notification, $this->shared_notification, $this->chat_notification, $this->friend_notification, $this->email_comment, $this->email_like, $this->email_new_friend, $this->sound_new_notification, $this->sound_new_chat, $_SESSION['born'], $_SESSION['join'], $_SESSION['course'], $_SESSION['branch']);
+		$query = sprintf("INSERT into `users` (`username`, `password`, `email`, `enrollno`, `first_name`, `last_name`, `date`, `image`, `privacy`, `cover`, `verified`, `gender`, `online`, `notificationl`, `notificationc`, `notifications`, `notificationd`, `notificationf`, `email_comment`, `email_like`, `email_new_friend`, `sound_new_notification`, `sound_new_chat`, `born`, `join`, `course`, `branch`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', 'default.png', '%s', 'default.png', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');", $this->db->real_escape_string(strtolower($this->username)), md5($this->db->real_escape_string($this->password)), $this->db->real_escape_string($this->email), $_SESSION['enrollno'], reset($name), end($name), date("Y-m-d H:i:s"), $this->message_privacy, $this->verified, $this->db->real_escape_string($this->gender), time(), $this->like_notification, $this->comment_notification, $this->shared_notification, $this->chat_notification, $this->friend_notification, $this->email_comment, $this->email_like, $this->email_new_friend, $this->sound_new_notification, $this->sound_new_chat, $_SESSION['born'], $_SESSION['join'], $_SESSION['course'], $_SESSION['branch']);
 		$this->db->query($query);
 		// return ($this->db->query($query)) ? 0 : 1;
 	}

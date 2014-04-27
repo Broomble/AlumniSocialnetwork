@@ -1,10 +1,10 @@
 <div class="searchdir">
-  <form action="post" >  
-       
+<form action="{$url}/index.php?a=directory" method="post" autocomplete="on">
+	       
 <div class="dirfield"> 				
      
 		<div class="page-input-content">
-			<input type="text" name="name" class="namz" placeholder="Name">
+			<input type="text" name="name" class="namz" placeholder="Name" required="required">
 		</div>
 	 
     </div>
@@ -14,8 +14,8 @@
     
     <div class="page-input-title  newt">{$lng->ttl_course}</div>
 				<div class="page-input-content">
-					<select name="course" id="course">
-						<option value="0">- Select -</option>
+					<select name="course" id="course" required>
+						<option value="">- Select -</option>
 						<option value="btech" {$btech}>B.Tech</option>
 						<option value="mca" {$mca}>MCA</option>
 						<option value="mba" {$mba}>MBA</option>
@@ -27,7 +27,7 @@
 			<div class="dirfield" id="branch">
 				<div class="page-input-title newt">{$lng->ttl_branch}</div>
 				<div class="page-input-content">
-					<select name="branch">
+					<select name="branch" required>
 						<option value="0">- Select -</option>
 						<option value="ece" {$ece}>ECE</option>
 						<option value="cse" {$cse}>CSE</option>
@@ -58,6 +58,7 @@
 </div>
 <div class="Slidedown" ></div>
 
-    <div class="main_container">					
-					{$users}		
+    <div class="main_container">	
+
+	{$searchResult}{$users}		
 </div>

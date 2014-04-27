@@ -34,6 +34,6 @@ $action = array('admin'			=> 'admin',
 				'notifications'	=> 'notifications',
 				'search'		=> 'search',
 				'page'			=> 'page',
-				'directory'		=> 'directory'
+				'directory'		=> 'alumnidir'
 				);
 ?>

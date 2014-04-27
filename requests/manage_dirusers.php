@@ -13,13 +13,13 @@ $resultSettings = $db->query(getSettings());
 $settings = $resultSettings->fetch_assoc();
 
 		if(isset($_POST['start'])) {
-			$manageUsers = new manageUsers();
+			$dir = new alumnidir();
 			
-			$manageUsers->db = $db;
-			$manageUsers->url = $CONF['url'];
-			$manageUsers->per_page = $settings['uperpage'];
+			$dir->db = $db;
+			$dir->url = $CONF['url'];
+			$dir->per_page = $settings['uperpage'];
 			
-			echo $manageUsers->dirgetUsers($_POST['start']);
+			echo $dir->dirgetUsers($_POST['start']);
 		}
 	
 

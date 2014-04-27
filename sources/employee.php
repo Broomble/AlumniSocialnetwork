@@ -27,6 +27,7 @@ function PageMain() {
 						$emp->industry = $_POST['industry'];
 						$emp->designation = $_POST['designation'];
 						$emp->department = $_POST['department'];
+						$emp->city = $_POST['city'];
 						$emp->country = $_POST['country'];
 						$emp->state = $_POST['state'];
 						$emp->country = $_POST['country'];

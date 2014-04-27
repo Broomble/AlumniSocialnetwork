@@ -66,56 +66,5 @@ class updateSettings {
 		// Return the array;
 		return array_flip($columns);
 	}
-	
-	function getThemes() {
-		global $CONF, $LNG;
-		if($handle = opendir('./'.$CONF['theme_path'].'/')) {
-			
-			$allowedThemes = array();
-			// This is the correct way to loop over the directory.
-			while(false !== ($theme = readdir($handle))) {
-				// Exclude ., .., and check whether the info.php file of the theme exist
-				if($theme != '.' && $theme != '..' && file_exists('./'.$CONF['theme_path'].'/'.$theme.'/info.php')) {
-					$allowedThemes[] = $theme;
-					include('./'.$CONF['theme_path'].'/'.$theme.'/info.php');
-					
-					if($CONF['theme_name'] == $theme) {
-						$state = '<span class="theme-active">'.$LNG['theme_active'].'</span>';
-					} else {
-						$state = '<span class="theme-activate"><a href="'.$CONF['url'].'/index.php?a=admin&b=themes&theme='.$theme.'">'.$LNG['theme_activate'].'</a></span>';
-					}
-					
-					if(file_exists('./'.$CONF['theme_path'].'/'.$theme.'/icon.png')) {
-						$image = '<img src="'.$CONF['url'].'/'.$CONF['theme_path'].'/'.$theme.'/icon.png" />';
-					}  else {
-						$image = '';
-					}
-					$output .= '<div class="message-container">
-								<div class="message-content">
-									<div class="message-inner">
-										<div class="theme-icon">
-											<a href="#">
-												'.$image.'
-											</a>
-										</div>
-										<div class="theme-top">
-											<div class="message-author">
-												<a href="'.$url.'" target="_blank" title="'.$LNG['theme_author_homepage'].'">'.$name.'</a> - '.$state.'
-											</div>
-											<div class="message-time">
-												'.$LNG['theme_by'].': '.$author.'<br />
-												<strong>'.$LNG['theme_version'].':</strong> '.$version.'
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>';
-				}
-			}
-
-			closedir($handle);
-			return array($output, $allowedThemes);
-		}
-	}
 }
 ?>

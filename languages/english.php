@@ -16,7 +16,9 @@ $LNG['name_exists'] = 'Enter your correct <strong>Name</strong>';
 $LNG['born_exists'] = 'Enter correct Date of Birth';
 $LNG['join_exists'] = 'Enter correct Duration of Course';
 $LNG['phone_exists'] = 'Phone No already exists';
-$LNG['phone_no_error'] = 'Phone No not valid';
+$LNG['phone_no_error'] = 'Phone No not valid numeric, +, - allowed';
+$LNG['city_name_error'] = 'City name only alphabets allowed';
+
 
 $LNG['all_fields'] = 'All fields are required!';
 $LNG['user_alnum'] = 'The username must consists only from letters and numbers.';
@@ -83,9 +85,6 @@ $LNG['user_deleted'] = 'User Deleted';
 $LNG['user_has_been_deleted'] = 'User with the ID: <strong>%s</strong> has been deleted.';
 $LNG['user_not_deleted'] = 'The selected user (ID: %s) could not be deleted.';
 $LNG['user_not_exist'] = 'The selected user does not exist.';
-$LNG['theme_changed'] = 'Theme changed';
-$LNG['theme_success_changed'] = 'The theme has been successfully changed.';
-$LNG['theme_not_changed'] = 'Sorry but the theme could not be changed';
 $LNG['notif_saved'] = 'Notifications changed';
 $LNG['notif_success_saved'] = 'Notifications has been successfully updated.';
 
@@ -109,13 +108,6 @@ $LNG['new_friend_email'] = 'Hello <strong>%s</strong>,<br /><br /><strong><a hre
 $LNG['general_link'] = 'General';
 $LNG['security_link'] = 'Security';
 $LNG['manage_users'] = 'Manage Users';
-
-$LNG['theme_install'] = 'To install a new theme, upload it on the <strong>themes</strong> folder.';
-$LNG['theme_author_homepage'] = 'Visit the author homepage';
-$LNG['theme_version'] = 'Version';
-$LNG['theme_active'] = 'Active';
-$LNG['theme_activate'] = 'Activate';
-$LNG['theme_by'] = 'By';
 
 // FEED //
 $LNG['welcome_feed_ttl'] = 'Welcome to your Feed';
@@ -328,13 +320,13 @@ $LNG['mba'] = 'Master of Business Administration';
 $LNG['bca'] = 'Bachelor of Computer Applications';
 
 
-$LNG['ece'] = 'Electronics and Communication';
-$LNG['cse'] = 'Computer Science';
-$LNG['eee'] = 'Electrical and Electronics';
+$LNG['ece'] = 'Electronics and Communication Engineering';
+$LNG['cse'] = 'Computer Science Engineering';
+$LNG['eee'] = 'Electrical and Electronics Engineering';
 $LNG['it'] = 'Information and Technology';
 $LNG['ce'] = 'Civil Engineering';
-$LNG['mae'] = 'Mechanical and Automation';
-$LNG['ene'] = 'Environmental Engineering';
+$LNG['mae'] = 'Mechanical and Automation Engineering';
+$LNG['ene'] = 'Environmental Engineering Engineering';
 
 
 $LNG['ttl_upload'] = 'Upload';
@@ -389,29 +381,26 @@ $LNG['admin_menu_users'] = 'Manage Users';
 $LNG['admin_menu_logout'] = 'Log Out';
 $LNG['admin_menu_stats'] = 'Statistics';
 $LNG['admin_menu_users_settings'] = 'Users Settings';
-$LNG['admin_menu_themes'] = 'Themes';
 $LNG['admin_menu_manage_reports'] = 'Manage Reports';
-$LNG['admin_menu_manage_ads'] = 'Manage Ads';
+$LNG['admin_menu_manage_notices'] = 'Manage Notices';
 
 $LNG['admin_ttl_sidebar'] = 'Menu';
 $LNG['admin_ttl_general'] = 'General Settings';
 $LNG['admin_ttl_security'] = 'Password Settings';
-$LNG['admin_ttl_themes'] = 'Themes';
 $LNG['admin_ttl_users'] = 'Manage Users';
 $LNG['admin_ttl_stats'] = 'Statistics';
 $LNG['admin_ttl_users_settings'] = 'Users Settings';
 $LNG['admin_ttl_manage_reports'] = 'Manage Reports';
-$LNG['admin_ttl_manage_ads'] = 'Manage Advertisments';
+$LNG['admin_ttl_manage_notices'] = 'Manage Notices';
 
 $LNG['admin_desc_general'] = 'Change general website settings.';
 $LNG['admin_desc_users_settings'] = 'Change general users settings.';
-$LNG['admin_desc_themes']  = 'Change the website interface.';
 $LNG['admin_desc_security'] = 'Change your Admin Password.';
 $LNG['admin_desc_users'] = 'Manage the registered users.';
 $LNG['admin_desc_stats'] = 'Users and site statistics';
 $LNG['admin_desc_edit_users'] = 'Edit user settings';
 $LNG['admin_desc_manage_reports'] = 'Manage reported messages and comments.';
-$LNG['admin_desc_manage_ads'] = 'Manage the site\'s advertisment units.';
+$LNG['admin_desc_manage_notices'] = 'Manage the site\'s notice units.';
 
 $LNG['admin_ttl_title'] = 'Title';
 $LNG['admin_sub_title'] = 'The site\'s title';
@@ -476,23 +465,23 @@ $LNG['admin_sub_message_format'] = 'Image format allowed for upload (Messages), 
 $LNG['admin_ttl_censor'] = 'Censor';
 $LNG['admin_sub_censor'] = 'Words to be censored (divided by \',\' [comma])';
 
-$LNG['admin_ttl_ad1'] = 'Ad Unit 1';
-$LNG['admin_sub_ad1'] = 'Advertisement Unit 1 (bottom welcome page)';
+$LNG['admin_ttl_notice1'] = 'Notice Unit 1';
+$LNG['admin_sub_notice1'] = 'Notice Unit 1 (bottom welcome page)';
 
-$LNG['admin_ttl_ad2'] = 'Ad Unit 2';
-$LNG['admin_sub_ad2'] = 'Advertisement Unit 2 (Sidebar [Timeline Page])';
+$LNG['admin_ttl_notice2'] = 'Notice Unit 2';
+$LNG['admin_sub_notice2'] = 'Notice Unit 2 (Sidebar [Timeline Page])';
 
-$LNG['admin_ttl_ad3'] = 'Ad Unit 3';
-$LNG['admin_sub_ad3'] = 'Advertisement Unit 3 (Sidebar [News Feed Page])';
+$LNG['admin_ttl_notice3'] = 'Notice Unit 3';
+$LNG['admin_sub_notice3'] = 'Notice Unit 3 (Sidebar [News Feed Page])';
 
-$LNG['admin_ttl_ad4'] = 'Ad Unit 4';
-$LNG['admin_sub_ad4'] = 'Advertisement Unit 4 (Sidebar [profile page])';
+$LNG['admin_ttl_notice4'] = 'Notice Unit 4';
+$LNG['admin_sub_notice4'] = 'Notice Unit 4 (Sidebar [profile page])';
 
-$LNG['admin_ttl_ad5'] = 'Ad Unit 5';
-$LNG['admin_sub_ad5'] = 'Advertisement Unit 5 (Sidebar [individual messages])';
+$LNG['admin_ttl_notice5'] = 'Notice Unit 5';
+$LNG['admin_sub_notice5'] = 'Notice Unit 5 (Sidebar [individual messages])';
 
-$LNG['admin_ttl_ad6'] = 'Ad Unit 6';
-$LNG['admin_sub_ad6'] = 'Advertisement Unit 6 (Sidebar [people search page])';
+$LNG['admin_ttl_notice6'] = 'Notice Unit 6';
+$LNG['admin_sub_notice6'] = 'Notice Unit 6 (Sidebar [people search page])';
 
 $LNG['admin_ttl_password'] = 'Password';
 $LNG['admin_sub_password'] = 'Leave it intact if you don\'t want to change it';
@@ -622,7 +611,7 @@ $LNG['liked_this'] = 'liked this';
 $LNG['x_liked_y_post'] = 'liked %1$s\'s <a href="%2$s"><strong>message</strong></a>';
 
 // MISC //
-$LNG['sponsored'] = 'Sponsored';
+$LNG['notice'] = 'Notice';
 $LNG['censored'] = '<strong>censored</strong>';
 $LNG['new_like_notification'] = '<strong><a href="%s">%s</a></strong> liked your <strong><a href="%s">message</a></strong>';
 $LNG['new_comment_notification'] = '<strong><a href="%s">%s</a></strong> commented on your <strong><a href="%s">message</a></strong>';
@@ -691,7 +680,7 @@ $LNG['on'] = 'On';
 $LNG['off'] = 'Off';
 $LNG['none'] = 'None';
 $LNG['pages'] = 'Pages';
-$LNG['search_for_people'] = 'search people, hashtags';
+$LNG['search_for_people'] = 'search people, enroll no, batch';
 $LNG['new_message'] = 'New message';
 $LNG['privacy_policy'] = 'Privacy Policy';
 $LNG['terms_of_use'] = 'Terms of Use';

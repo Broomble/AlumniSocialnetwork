@@ -46,7 +46,7 @@
 			<div class="page-input-container">
 				<div class="page-input-title">Phone No</div>
 				<div class="page-input-content">
-					<input type="text" name="phone" placeholder="Phone No"/>
+					<input type="text" name="phone" placeholder="Phone No" required/>
 					<div class="page-input-sub" >Enter Phone no</div>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 			<div class="page-input-container">
 				<div class="page-input-title">{$lng->email}</div>
 				<div class="page-input-content">
-					<input type="email" name="email" placeholder="{$lng->email}"/>
+					<input type="email" name="email" placeholder="{$lng->email}" required/>
 					<div class="page-input-sub" >Enter your email</div>
 				</div>
 			</div>
@@ -68,11 +68,18 @@
 				</div>
 			</div>
 
+			<div class="page-input-container">
+				<div class="page-input-title">City</div>
+				<div class="page-input-content">
+					<input type="text" name="city" placeholder="City" required/>
+					<div class="page-input-sub" >Enter city</div>
+				</div>
+			</div>
 
 			<div class="page-input-container">
 				<div class="page-input-title">Country</div>
 					<div class="page-input-content">
-					<select name="country" id="country" >
+					<select name="country" id="country" required>
 						<option value="IN" selected="selected">India</option>
 								<option value="AF">Afghanistan</option>
 								<option value="AL">Albania</option>
@@ -329,7 +336,7 @@
 				<div class="page-input-content">
                     <input type="text" name="state" class="nIndia" placeholder="State" />
                     <div class="page-input-sub states">Enter your State</div>
-					<select name="state" id="state" class="">
+					<select name="state" id="state" class="" required>
 							<option value="1">Andaman and Nicobar Islands</option>
 							<option value="2">Andhra Pradesh</option>
 							<option value="3">Arunachal Pradesh</option>
@@ -382,14 +389,3 @@
 			</div>
 		</div>
 	</div>
-
-<!--  <div class="welcome-full">
-	<div class="row-body">
-		<div class="welcome-inner">
-					
-
-				
-		</div>
-	</div>
-</div> --> 
-{$ad}

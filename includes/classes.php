@@ -120,6 +120,19 @@ function notificationBox($type, $title, $message, $z = null) {
 			</div>';
 }
 
+function dirnotificationBox($type, $title, $message, $z = null) {
+	if($z) {
+		$z = ' box-transparent';
+		$y = ' close-transparent';
+	}
+	return '<div class="pin"><div class="divider"></div>
+			<div class="notification-box'.$z.' notification-box-'.$type.'">
+			<h5>'.$title.'</h5>
+			<p>'.$message.'</p>
+			<a href="#" class="notification-close notification-close-'.$type.$y.'">x</a>
+			</div></div>';
+}
+
 require_once('classes/register.php');
 require_once('classes/verify.php');
 require_once('classes/contact.php');
@@ -134,6 +147,7 @@ require_once('classes/recover.php');
 require_once('classes/manageUsers.php');
 require_once('classes/manageReports.php');
 require_once('classes/feed.php');
+require_once('classes/alumnidir.php');
 
 function nl2clean($text) {
 	// Replace two or more new lines with two new rows [blank space between them]
@@ -266,6 +280,7 @@ function generateDateForm($type, $current) {
 				$selected = ' selected="selected"';
 			} else {
 				$selected = '';
+				($i < 10) ? $i = '0'.$i : $i;
 			}
 			$rows .= '<option value="'.$i.'"'.$selected.'>'.$i.'</option>';
 		}
@@ -277,7 +292,7 @@ function generateAd($content) {
 	if(empty($content)) {
 		return false;
 	}
-	$ad = '<div class="sidebar-container widget-ad"><div class="sidebar-content"><div class="sidebar-header">'.$LNG['sponsored'].'</div>'.$content.'</div></div>';
+	$ad = '<div class="sidebar-container widget-notice"><div class="sidebar-content"><div class="sidebar-header">'.$LNG['notice'].'</div>'.$content.'</div></div>';
 	return $ad;
 }
 function sortDateDesc($a, $b) {

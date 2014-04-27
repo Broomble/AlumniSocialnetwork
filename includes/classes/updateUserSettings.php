@@ -22,7 +22,7 @@ class updateUserSettings {
 		}
 		
 		if(isset($data['year']) || isset($data['month']) || isset($data['day'])) {
-			if($data['year'] < date('Y') - 100 || $data['year'] > date('Y') || checkdate($data['month'], $data['day'], $data['year']) == false) {
+			if($data['year'] < date('Y') - 50 || $data['year'] > date('Y') || checkdate($data['month'], $data['day'], $data['year']) == false) {
 				return array('incorrect_date');
 			}
 		}
@@ -43,7 +43,7 @@ class updateUserSettings {
 		
 		// add the born value
 		if(isset($data['day']) || isset($data['month']) || isset($data['year'])) {
-			$data['born'] = date("Y-m-d", mktime(0, 0, 0, $data['month'], $data['day'], $data['year']));
+			$data['born'] = $data['day'].'/'.$data['month'].'/'.$data['year'];
 		}
 		
 		// Unset the day/month/verified values

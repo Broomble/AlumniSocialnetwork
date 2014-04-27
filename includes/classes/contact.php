@@ -4,7 +4,8 @@ class contact{
 	public $url; 					// Installation URL Property
 	public $phone;					
 	public $email;					
-	public $address;	
+	public $address;
+	public $city;	
 	public $state;				
 	public $country;
 
@@ -86,14 +87,17 @@ class contact{
 		if (!preg_match('/^[0-9+-]*$/', $this->phone)){
 			$error[] .= 'phone_no_error';
 		}
-		if(empty($this->phone) && empty($this->email) && empty($state) && empty($country)) {
+		if (!preg_match('/^[a-zA-Z\s]*$/', $this->city)){
+			$error[] .= 'city_name_error';
+		}
+		if(empty($this->phone) || empty($this->email) || empty($this->city) || empty($this->state) || empty($this->country)) {
 			$error[] .= 'all_fields';
 		}
 		return $error;
 	}
 
 	function query() {
-		$query = sprintf("INSERT into `contacts` (`enrollno`, `phone`, `email`, `perma_addr`, `state`, `country`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s');", $this->queryEnroll(), $this->db->real_escape_string($this->phone), $this->db->real_escape_string($this->email),  $this->db->real_escape_string($this->address), $this->db->real_escape_string($this->state), $this->db->real_escape_string($this->country));
+		$query = sprintf("INSERT into `contacts` (`enrollno`, `phone`, `email`, `perma_addr`, `city`, `state`, `country`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s');", $this->queryEnroll(), $this->db->real_escape_string($this->phone), $this->db->real_escape_string($this->email),  $this->db->real_escape_string($this->address), $this->db->real_escape_string($this->city), $this->db->real_escape_string($this->state), $this->db->real_escape_string($this->country));
 		$this->db->query($query);
 		// return ($this->db->query($query)) ? 0 : 1;
 	}

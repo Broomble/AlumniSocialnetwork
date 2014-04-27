@@ -29,11 +29,6 @@ $(function () {
            $('.mainchoose').hide();
            $.cookie("visited", 'yesz');
        });
-    $(".noz").click(function(){
-          $('.maindone').show();
-          $('.mainemployz').slideUp();
-          $('.mainchoose').hide();          
-      });
 if($.cookie('visited') === null || $.cookie('visited') === "" 
     || $.cookie('visited') === "null" || $.cookie('visited') === undefined)
 		{
@@ -45,10 +40,9 @@ if($.cookie('visited') === null || $.cookie('visited') === ""
 		}
     
     $( ".Slidedown" ).click(function() {
-  $( ".searchdir" ).slideToggle( "slow" );
-$( this ).toggleClass( "upz" );
-
-});
+		$( ".searchdir" ).slideToggle( "slow" );
+		$( this ).toggleClass( "upz" );
+	});
    
 });
 
@@ -56,7 +50,6 @@ $( this ).toggleClass( "upz" );
 
  $(function(){
    $('.main_container').masonry({
-      isAnimated: true,
     itemSelector : '.pin',
 	isAnimated: true,
 	isFitWidth: true

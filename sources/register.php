@@ -23,6 +23,7 @@ function PageMain() {
 		$reg->chat_notification = $settings['notificationd'];
 		$reg->friend_notification = $settings['notificationf'];
 		$reg->verified = $settings['verified'];
+		$reg->gender = $settings['gender'];
 		$reg->email_like = $settings['email_like'];
 		$reg->email_comment = $settings['email_comment'];
 		$reg->email_new_friend = $settings['email_new_friend'];
