@@ -155,7 +155,7 @@ function dirgetUsers($start) {
 			$last = $row['idu'];
 		}
 		if($loadmore) {
-				$users .= "<div class='pin show-more'><div class='admin-load-more'><div class='message-container' id='more_dirusers'>
+				$users .= "<div class='show-more'><div class='admin-load-more'><div class='message-container' id='more_dirusers'>
 					<div class='load_more' id='".$last."'><a onclick='manage_the_dir(".$last.")'>Load More</a>				
 					</div>
 				</div></div></div>";

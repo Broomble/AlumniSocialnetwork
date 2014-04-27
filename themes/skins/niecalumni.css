@@ -969,11 +969,8 @@ box-shadow: #CCC 0px 1px 3px inset;
 width: 85px;
 }
 #more_dirusers .load_more a{
-padding: 53px;
-margin-top: -9px;
 position: absolute;
-margin-left: -118px;
-font-size: 32px;
+bottom: 0;
 
 }
 .new-message {
