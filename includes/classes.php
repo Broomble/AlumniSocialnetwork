@@ -10,12 +10,12 @@ function menu($user) {
 	if($user !== false) {
 		// If the result is not 0 (int) then show the menu
 		return '
-		<a href="'.$CONF['url'].'/index.php?a=feed&logout=1"><div class="menu_btn tooltipz" title="'.$LNG['log_out'].'"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/logout.png" /></div></a>
-		<a onclick="showNotification(\'\', \'1\')"><div class="menu_btn tooltipz" id="notifications_btn" title="'.$LNG['title_notifications'].'"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/notification.png" id="notifications_img" /></div></a>
-		<a href="'.$CONF['url'].'/index.php?a=messages" id="messages_url"><div class="menu_btn tooltipz" id="messages_btn" title="'.$LNG['title_messages'].'"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/message.png" /></div></a>
-		<a href="'.$CONF['url'].'/index.php?a=timeline"><div class="menu_btn tooltipz" title="'.$LNG['title_timeline'].'"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/timeline.png" /></div></a>
-		<a href="'.$CONF['url'].'/index.php?a=feed"><div class="menu_btn tooltipz" title="'.$LNG['title_feed'].'"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/feed.png" /></div></a>
-        <a href="'.$CONF['url'].'/index.php?a=directory"><div class="menu_btn tooltipz" title="Directory"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/dir.png" /></div></a>
+		<a href="'.$CONF['url'].'/index.php?a=feed&logout=1"><div class="menu_btn tooltipz" data-title="'.$LNG['log_out'].'"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/logout.png" /></div></a>
+		<a onclick="showNotification(\'\', \'1\')"><div class="menu_btn tooltipz" id="notifications_btn" data-title="'.$LNG['title_notifications'].'"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/notification.png" id="notifications_img" /></div></a>
+		<a href="'.$CONF['url'].'/index.php?a=messages" id="messages_url"><div class="menu_btn tooltipz" id="messages_btn" data-title="'.$LNG['title_messages'].'"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/message.png" /></div></a>
+		<a href="'.$CONF['url'].'/index.php?a=timeline"><div class="menu_btn tooltipz" data-title="'.$LNG['title_timeline'].'"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/timeline.png" /></div></a>
+		<a href="'.$CONF['url'].'/index.php?a=feed"><div class="menu_btn tooltipz" data-title="'.$LNG['title_feed'].'"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/feed.png" /></div></a>
+        <a href="'.$CONF['url'].'/index.php?a=directory"><div class="menu_btn tooltipz" data-title="Directory"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/dir.png" /></div></a>
 		<a href="'.$CONF['url'].'/index.php?a=profile&u='.$user['username'].'"><div class="menu"><div class="menu_img"><img src="'.$CONF['url'].'/thumb.php?src='.$user['image'].'&t=a&w=50&h=50" /></div><div class="menu_name"><strong>'.realName($user['username'], $user['first_name'], $user['last_name']).'</strong></div></div></a>
 		<div class="notification-container">
 			<div class="notification-content">
