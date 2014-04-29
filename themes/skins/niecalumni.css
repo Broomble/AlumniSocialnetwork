@@ -5089,6 +5089,8 @@ display: none;
 }
 }
 
+
+
 /* ------------------- !MOBILE ----------------------- */
 @media only screen and (max-device-width: 600px), only screen and (device-width: 600px) and (device-height: 600px), only screen and (width: 600px) and (orientation: landscape), only screen and (device-width: 600px), only screen and (max-width: 600px) {
 .like_btn img{
@@ -6052,4 +6054,19 @@ color: #fff !important;
 
 .menu_visitor:hover {
 color: #32CC40;
+}
+
+@media(max-width:850px)
+{
+   .topbar{height: auto !important;}
+   .menu{
+clear: both !important;
+float: none !important;
+}
+ .tooltipz {float: none !important;padding: 10px;}   
+    
+}
+@media(max-width:530px)
+{
+   .search-input {display: none ;}
 }
