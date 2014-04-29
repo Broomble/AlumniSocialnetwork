@@ -24,9 +24,6 @@ function PageMain() {
 				$con->state = $_POST['state'];
 				$con->country = $_POST['country'];
 
-
-				//$con->dob = $settings['captcha'];
-
 				$TMPL['contactMsg'] = $con->process();
 
 				if($TMPL['contactMsg'] == 1) {

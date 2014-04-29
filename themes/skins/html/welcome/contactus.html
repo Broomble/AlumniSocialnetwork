@@ -1,0 +1,106 @@
+<div class="row-body{$content_class}">
+	<div class="nine columns" id="messages">
+		<div class="page-container">
+		<div class="page-content">
+		<div class="page-header"><strong>Contact Us</strong></div>
+			<div class="page-inner">
+<form action="{$url}/index.php?a=contactus" method="post" autocomplete="on">
+	          {$contactusMsg}
+
+			<div class="page-input-container">
+				<div class="page-input-title">{$lng->ttl_name}</div>
+				<div class="page-input-content">
+					<input type="text" name="name" placeholder="Name*"/>
+					<div class="page-input-sub">{$lng->sub_name}</div>
+				</div>
+			</div>
+			<div class="page-input-container">
+				<div class="page-input-title">{$lng->email}</div>
+				<div class="page-input-content">
+					<input type="email" name="email" placeholder="{$lng->email}*"/>
+					<div class="page-input-sub" >Enter your email</div>
+				</div>
+			</div>
+
+			<div class="page-input-container">
+				<div class="page-input-title">{$lng->ttl_course}</div>
+				<div class="page-input-content">
+					<select name="course" id="course">
+						<option value="">- Select a course -</option>
+						<option value="btech" {$btech}>{$lng->btech}</option>
+						<option value="mca" {$mca}>{$lng->mca}</option>
+						<option value="mba" {$mba}>{$lng->mba}</option>
+					</select>			
+					<div class="page-input-sub">{$lng->sub_course}</div>
+				</div>
+			</div>
+
+			<div class="page-input-container" id="branch">
+				<div class="page-input-title">{$lng->ttl_branch}</div>
+				<div class="page-input-content">
+					<select name="branch">
+						<option value="">- Select a branch -</option>
+						<option value="ece" {$ece}>{$lng->ece}</option>
+						<option value="cse" {$cse}>{$lng->cse}</option>
+						<option value="mae" {$mae}>{$lng->mae}</option>
+						<option value="eee" {$eee}>{$lng->eee}</option>
+						<option value="it" {$it}>{$lng->it}</option>
+						<option value="ce" {$ce}>{$lng->ce}</option>						
+						<option value="ene" {$ene}>{$lng->ene}</option>
+					</select>
+					<div class="page-input-sub">{$lng->sub_branch}</div>
+				</div>
+			</div>
+
+			<div class="page-input-container">
+				<div class="page-input-title">{$lng->ttl_year}</div>
+				<div class="page-input-content">
+					<select name="jyear">
+						<option value="">- Select -</option>
+						{$jyear}
+					</select>
+					-
+					<select name="tyear">
+						<option value="">- Select -</option>
+						{$tyear}
+					</select>
+					<div class="page-input-sub">{$lng->sub_year}</div>
+				</div>
+			</div>
+
+
+			<div class="page-input-container">
+				<div class="page-input-title">{$lng->ttl_enrollno}</div>
+				<div class="page-input-content">
+					<input type="text" name="enrollno" placeholder="Enroll No (optional)"/>
+					<div class="page-input-sub" >{$lng->sub_enrollno}</div>
+				</div>
+			</div>
+
+			<div class="page-input-container">
+				<div class="page-input-title">Message</div>
+				<div class="page-input-content">
+					<textarea name="address" placeholder="Message*" rows="2" cols="10"></textarea>
+					<div class="page-input-sub">Enter your message</div>
+				</div>
+			</div>
+
+			<div class="page-inner">
+				<div class="page-input-title"></div>
+				<input type="submit" name="contactus" value="Send Message">
+			</div>
+
+		</form>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="three columns">
+		<div class="sidebar-container">
+		<div class="sidebar-content">
+		<div class="sidebar-header">Pages</div>
+		<div class="sidebar-link"><a href="{$url}/index.php?a=page&amp;b=disclaimer">Disclaimer</a></div><div class="sidebar-link"><strong><a href="{$url}/index.php?a=page&amp;b=developers">Developed By</a></strong></div><div class="sidebar-link"><a href="{$url}/index.php?a=contactus">Contact Us</a></div>
+	</div>
+	</div>
+	</div>
+	</div>

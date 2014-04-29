@@ -3,7 +3,6 @@ function PageMain() {
 	global $TMPL, $LNG, $CONF, $db, $settings;
 	
 	$title = array( 'disclaimer' => $LNG['disclaimer'],
-					'contact'    => $LNG['contact'],
 					'developers' => $LNG['developers']);
 		
 	$skin = new skin('page/sidebar'); $sidebar = '';
@@ -11,9 +10,11 @@ function PageMain() {
 		if($_GET['b'] == $url) {
 			$TMPL['links'] .= '<div class="sidebar-link"><strong><a href="'.$CONF['url'].'/index.php?a=page&b='.$url.'">'.$header.'</a></strong></div>';
 		} else {
-			$TMPL['links'] .= '<div class="sidebar-link"><a href="'.$CONF['url'].'/index.php?a=page&b='.$url.'">'.$header.'</a></div>';
-		}
+			$TMPL['links'] .= '<div class="sidebar-link"><a href="'.$CONF['url'].'/index.php?a=page&b='.$url.'">'.$header.'</a>';
+		}		
 	}
+	$TMPL['links'] .= '<a href="'.$CONF['url'].'/index.php?a=contactus">Contact Us</a></div>';
+	
 	$sidebar = $skin->make();
 	
 	if(!empty($_GET['b']) && isset($title[$_GET['b']])) {

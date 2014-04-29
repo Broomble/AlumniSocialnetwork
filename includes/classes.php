@@ -148,6 +148,7 @@ require_once('classes/manageUsers.php');
 require_once('classes/manageReports.php');
 require_once('classes/feed.php');
 require_once('classes/alumnidir.php');
+require_once('classes/contactus.php');
 
 function nl2clean($text) {
 	// Replace two or more new lines with two new rows [blank space between them]

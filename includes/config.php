@@ -7,7 +7,7 @@ $CONF = $TMPL = array();
 // The MySQL credentials
 $CONF['host'] = 'localhost';
 $CONF['user'] = 'root';
-$CONF['pass'] = 'root';
+$CONF['pass'] = '';
 $CONF['name'] = 'alumni';
 
 // The Installation URL
@@ -18,7 +18,7 @@ $CONF['email'] = 'notifications@alumni.dev';
 
 // The themes directory
 $CONF['theme_path'] = 'themes';
-
+//$_SERVER['DOCUMENT_ROOT'] = '/var/www/alumni.dev';
 $action = array('admin'			=> 'admin',
 				'feed'			=> 'feed',
 				'verify'		=> 'verify',
@@ -34,6 +34,7 @@ $action = array('admin'			=> 'admin',
 				'notifications'	=> 'notifications',
 				'search'		=> 'search',
 				'page'			=> 'page',
-				'directory'		=> 'alumnidir'
+				'directory'		=> 'alumnidir',
+				'contactus'		=> 'contactus'
 				);
 ?>

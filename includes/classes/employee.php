@@ -81,7 +81,7 @@ class employee{
 			$error[] .= 'phone_no_error';
 		}
 		if(isset($offemail) && !filter_var($this->offemail, FILTER_VALIDATE_EMAIL)) {
-			return array('invalid_email');
+			$error[] .= 'invalid_email';
 		}
 		if (!preg_match('/^[a-zA-Z\s]*$/', $this->city)){
 			$error[] .= 'city_name_error';

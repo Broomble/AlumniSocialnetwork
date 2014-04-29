@@ -5419,90 +5419,7 @@ background-position: center;
 #simple-menu:hover{
 background-color: #384047;
 }
-#sidr{
-overflow: hidden;
-position: fixed;
-background: #384047;
-z-index: 1001;
-height:100%;
-left: 0;
-padding-top: 67px;
-}
-#sidr ul{
-margin: 0;
-padding: 0;
-display: block;
-}
 
-.expander{
-color: #666;
-width: 32px;
-height: 32px;
-display: block;
-text-indent: -9999px;
-background-repeat: no-repeat;
-padding: 5px;
-border-radius: 3px;
-background-image: url(images/expander.png);
-background-position: 7px 5px;
-position: absolute;
-bottom: 70px;
-margin-left: 7px;
-cursor: pointer;
-}
-
-.expander:hover{
-background-position: -28px 5px;
-background-color: #2d3339;
-transition-duration: 0.4s;
-transition-property: background;
-}
-
-#sidr ul li{
-display: block;
-margin: 6px;
-}
-
-#sidr ul li a{
-color: #666;
-width: 32px;
-height: 32px;
-display: block;
-text-indent: -9999px;
-background-repeat: no-repeat;
-padding: 5px;
-border-radius: 3px;
-background-image: url(images/left_menu.png);
-position: relative;
-}
-
-#sidr > ul > li > a >span{
-text-indent: initial;
-position: absolute;
-left: 52px;
-top: 0;
-
-}
-#sidr strong{
-color: #f5f5f5;
-top: 0;
-width: 100px;
-height: 30px;
-padding-top: 12px;
-padding-left: 12px;
-display: block;
-border-radius: 3px;
-}
-
-#sidr strong:hover{
-background-color:#8cc253;
-}
-
-#sidr ul li a:hover{
-background-color: #2d3339;
-transition-duration: 0.4s;
-transition-property: background;
-}
 .pretopbar{
 position: fixed;
 top: 0;
@@ -5766,7 +5683,7 @@ display: inline-block;
 }
 
 .formveri{
-//background: rgba(255, 255, 255, 0.6);
+margin-top: -10px;
 }
 
 .formveri input , .formveri textarea , .formveri select{

@@ -21,6 +21,7 @@ $LNG['city_name_error'] = 'City name only alphabets allowed';
 
 
 $LNG['all_fields'] = 'All fields are required!';
+$LNG['star_fields'] = 'Marked (*) fields are required!';
 $LNG['user_alnum'] = 'The username must consists only from letters and numbers.';
 $LNG['user_too_short'] = 'The username must be between 3 and 32 characters.';
 $LNG['invalid_email'] = 'Invalid e-mail!';
@@ -94,6 +95,7 @@ $LNG['user_created'] = 'Thank you for joining <strong>%s</strong><br /><br />You
 $LNG['recover_mail'] = 'Password Recovery';
 $LNG['recover_content'] = 'A password recover was requested, if you didn\'t make this action please ignore this email. <br /><br />Your Username: <strong>%s</strong><br />Your Reset Key: <strong>%s</strong><br /><br />You can reset your password by accessing the following link: <a href="%s/index.php?a=recover&r=1" target="_blank">%s/index.php?a=recover&r=1</a>';
 $LNG['ttl_comment_email'] = '%s commented on your message';
+$LNG['ttl_admin_email'] = '%s sent you message';
 $LNG['comment_email'] = 'Hello <strong>%s</strong>,<br /><br /><strong><a href="%s">%s</a></strong> has commented on your <strong><a href="%s">message.</a></strong>
 <br /><br /><span style="color: #aaa;">This message was sent automatically, if you don\'t want to receive these type of emails from <strong>%s</strong> in the future, please <a href="%s">Unsubscribe</a>.</span>';
 $LNG['ttl_like_email'] = '%s liked your message';
@@ -101,7 +103,7 @@ $LNG['like_email'] = 'Hello <strong>%s</strong>,<br /><br /><strong><a href="%s"
 <br /><br /><span style="color: #aaa;">This message was sent automatically, if you don\'t want to receive these type of emails from <strong>%s</strong> in the future, please <a href="%s">Unsubscribe</a>.</span>';
 $LNG['ttl_new_friend_email'] = '%s added you as friend';
 $LNG['new_friend_email'] = 'Hello <strong>%s</strong>,<br /><br /><strong><a href="%s">%s</a></strong> added you as friend.
-<<br /><br /><span style="color: #aaa;">This message was sent automatically, if you don\'t want to receive these type of emails from <strong>%s</strong> in the future, please <a href="%s">Unsubscribe</a>.</span>';
+<br /><br /><span style="color: #aaa;">This message was sent automatically, if you don\'t want to receive these type of emails from <strong>%s</strong> in the future, please <a href="%s">Unsubscribe</a>.</span>';
 
 // ADMIN PANEL //
 
@@ -254,8 +256,8 @@ $LNG['sub_course'] = 'Enter your course name';
 $LNG['ttl_branch'] = 'Branch';
 $LNG['sub_branch'] = 'Enter your branch';
 
-$LNG['ttl_year'] = 'Duration';
-$LNG['sub_year'] = 'Enter your duration';
+$LNG['ttl_year'] = 'Passout Batch';
+$LNG['sub_year'] = 'Enter your batch duration';
 
 $LNG['ttl_enrollno'] = 'Enroll No';
 $LNG['sub_enrollno'] = 'Enter your enroll no';
@@ -686,7 +688,7 @@ $LNG['privacy_policy'] = 'Privacy Policy';
 $LNG['terms_of_use'] = 'Terms of Use';
 $LNG['about'] = 'About';
 $LNG['disclaimer'] = 'Disclaimer';
-$LNG['contact'] = 'Contact';
+$LNG['contactus'] = 'Contact Us';
 $LNG['api_documentation'] = 'API Documentation';
 $LNG['developers'] = 'Developed By';
 $LNG['language'] = 'Language';

@@ -12,8 +12,6 @@ function PageMain() {
 				$dir->name = $_POST['name'];
 				$dir->course = $_POST['course'];
 				$dir->branch = $_POST['branch'];
-
-				$dir->jyear = $_POST['jyear'];
 				$dir->tyear = $_POST['tyear'];
 				//$dir->dob = $settings['captcha'];
 

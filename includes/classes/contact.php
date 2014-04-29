@@ -82,7 +82,7 @@ class contact{
 			$error[] .= 'email_exists';
 		}
 		if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-			return array('invalid_email');
+			$error[] .= 'invalid_email';
 		}		
 		if (!preg_match('/^[0-9+-]*$/', $this->phone)){
 			$error[] .= 'phone_no_error';
