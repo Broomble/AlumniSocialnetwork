@@ -6046,3 +6046,7 @@ text-align: left;
 margin: 0 2px;
 width: 23px;
 }
+
+#footer-bottom-right a {
+color: #fff !important;
+}
