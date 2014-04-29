@@ -252,7 +252,7 @@ border-bottom: 1px solid #1e346a;
 }
 .topbar_margin {
 width: 100%;
-height: 65px;
+height: 75px;
 }
 .menu {
 float: right;
@@ -292,7 +292,6 @@ margin-top: 9px;
 .menu_img img {
 width: 26px;
 height: 26px;
-border-radius: 3px;
 }
 .menu_btn {
 padding: 0 6px;
