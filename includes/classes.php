@@ -102,7 +102,7 @@ function menu($user) {
 	} else {
 		// Else show the LogIn Register button
 		return '
-		<a href="'.$CONF['url'].'/index.php?a=welcome"><div class="menu_btn tooltipz" title="'.$LNG['login'].'"><img src="'.$CONF['url'].'/'.$CONF['theme_url'].'/images/register.png" /></div></a>
+		
 		<a href="'.$CONF['url'].'/index.php?a=verify"><div class="menu_visitor"><strong>Sign Up</strong></div></a>
 		<a href="'.$CONF['url'].'/index.php?a=directory"><div class="menu_visitor"><strong>Directory</strong></div></a>';
 	}

@@ -6050,3 +6050,7 @@ width: 23px;
 #footer-bottom-right a {
 color: #fff !important;
 }
+
+.menu_visitor:hover {
+color: #32CC40;
+}
