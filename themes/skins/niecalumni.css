@@ -2307,7 +2307,7 @@ background-size: 25px;
 	float: right;
 	overflow: auto;
 	display: block;
-	width: 65px;
+	width: 80px;
 	}
 	.sidebar-container {
 	padding: 10px;
@@ -2667,7 +2667,7 @@ position: relative;
 .header {
 margin: 0 auto;
 max-width: 900px;
-padding:  9px;
+padding:  17px;
 }
 .topbar {
 position: absolute;
@@ -2675,7 +2675,7 @@ top: 0;
 right: 0;
 left: 0;
 z-index: 1000;
-height: 65px;
+height: 80px;
 box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1),0 1px 0 0 rgba(0, 0, 0, 0.1);
 -webkit-transform: translateZ(0);
 background: #fff;
@@ -5419,7 +5419,7 @@ background-position: center;
 #simple-menu:hover{
 background-color: #384047;
 }
-
+ 
 .pretopbar{
 position: fixed;
 top: 0;
@@ -5683,7 +5683,7 @@ display: inline-block;
 }
 
 .formveri{
-margin-top: -10px;
+    margin-top: -10px;
 }
 
 .formveri input , .formveri textarea , .formveri select{
@@ -5921,7 +5921,7 @@ margin: 0 20%;
 border-bottom-left-radius: 4px; 
     padding: 10px;
     position: relative;
-top: -24px;
+top: -4px;
     background: white;
 }
 
@@ -5935,7 +5935,7 @@ background:#3AC162 url(/themes/skins/images/down.png) center center no-repeat;
 width: 24px;
 height: 24px;
     position: relative;
-top: -24px;
+top: -4px;
     text-align: center;
 margin: 0 72%; 
 border-bottom-right-radius: 4px;
@@ -5993,4 +5993,56 @@ border: 1px solid #888;
 }
 .moredisplay {
  display: none;
+}
+
+#footer-wrapper {
+text-align: center;
+}
+
+#footer {
+background: url("images/footer1.png") repeat-x scroll 0 0 #28739C;
+color: #FFF;
+margin: 0 auto;
+padding: 0 20px 20px;
+text-align: left;
+ }
+
+#footer-top {
+color: #DDD;
+font-weight: bold;
+height: 20px;
+letter-spacing: 1px;
+line-height: 20px;
+text-transform: uppercase;
+}
+
+#footer-mid {
+padding: 20px 0 0;
+}
+
+#footer-bottom-wrapper {
+background: url("images/footer-bottom.gif") repeat-x scroll 0 0 #19212E;
+}
+
+.floatleft {
+display: inline-block;
+}
+
+.floatright {
+display: inline-block;
+float: right;
+}
+
+#footer-bottom {
+color: #888;
+height: 24px;
+line-height: 24px;
+margin: 0 auto;
+padding: 13px 20px;
+text-align: left;
+}
+
+#footer-social img {
+margin: 0 2px;
+width: 23px;
 }
