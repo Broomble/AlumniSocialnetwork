@@ -5919,7 +5919,7 @@ margin: 0 20%;
 border-bottom-left-radius: 4px; 
     padding: 10px;
     position: relative;
-top: -4px;
+top: -10px;
     background: white;
 }
 
@@ -5933,7 +5933,7 @@ background:#3AC162 url(/themes/skins/images/down.png) center center no-repeat;
 width: 24px;
 height: 24px;
     position: relative;
-top: -9px;
+top: -10px;
     text-align: center;
 margin: 0 72%; 
 border-bottom-right-radius: 4px;
