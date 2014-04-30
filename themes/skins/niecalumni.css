@@ -6056,3 +6056,8 @@ color: #32CC40;
 	float: none;
 	margin: 0 auto;
 }
+
+.notice > div {
+margin: 0 auto;
+display: table;
+}
