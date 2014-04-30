@@ -293,7 +293,7 @@ function generateAd($content) {
 	if(empty($content)) {
 		return false;
 	}
-	$ad = '<div class="sidebar-container widget-notice"><div class="sidebar-content"><div class="sidebar-header">'.$LNG['notice'].'</div>'.$content.'</div></div>';
+	$ad = '<div class="sidebar-container widget-notice"><div class="sidebar-content"><div class="sidebar-header">'.$LNG['notice'].'</div>'.stripslashes($content).'</div></div>';
 	return $ad;
 }
 function sortDateDesc($a, $b) {

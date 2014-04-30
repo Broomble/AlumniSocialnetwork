@@ -1,5 +1,11 @@
-$(function () {
-    $('#branch').hide();
+$(function(){
+	var docHeight=$(window).height();
+	var footerHeight=$(".footmains").height();
+	var footerTop=$(".footmains").position().top+footerHeight;
+		if(footerTop<docHeight){
+			$(".footmains").css("margin-top",10+(docHeight-footerTop)+"px")
+		}
+	$('#branch').hide();
      if ($('#course').find(":selected").val() == 'btech' ) {
              $('#branch').slideDown();
      }
