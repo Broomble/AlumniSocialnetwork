@@ -75,7 +75,7 @@ function PageMain() {
 	$TMPL['url'] = $CONF['url'];
 	$TMPL['title'] = $LNG['welcome'].' - '.$settings['title'];
 	
-	$TMPL['ad'] = $settings['ad1'];
+	$TMPL['ad'] = stripslashes($settings['ad1']);
 	
 	$skin = new skin('welcome/content');
 	return $skin->make();

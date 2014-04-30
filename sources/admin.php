@@ -247,7 +247,7 @@ function PageMain() {
 			} elseif($_GET['b'] == 'manage_notices') {
 				$skin = new skin('admin/manage_notices'); $page = '';
 				
-				$TMPL['ad1'] = $settings['ad1']; $TMPL['ad2'] = $settings['ad2']; $TMPL['ad3'] = $settings['ad3']; $TMPL['ad4'] = $settings['ad4']; $TMPL['ad5'] = $settings['ad5']; $TMPL['ad6'] = $settings['ad6']; $TMPL['ad7'] = $settings['ad7'];
+				$TMPL['ad1'] = stripslashes(settings['ad1']); $TMPL['ad2'] = stripslashes($settings['ad2']); $TMPL['ad3'] = stripslashes($settings['ad3']); $TMPL['ad4'] = stripslashes($settings['ad4']); $TMPL['ad5'] = stripslashes($settings['ad5']); $TMPL['ad6'] = stripslashes($settings['ad6']); $TMPL['ad7'] = stripslashes($settings['ad7']);
 				if(!empty($_POST)) {
 					// Unset the submit array element
 					$updateSettings = new updateSettings();
