@@ -1,27 +1,29 @@
 <?php
 
 class alumnidir {
-	public $db;			// Database Property
-	public $url;		// Installation URL Property
-	public $per_page;	// Limit per page
-	public $name;				// The inserted username
-	public $branch;				// The inserted password
-	public $course;					// The inserted email
+	public $db;			
+	public $url;		
+	public $per_page;	
+	public $name;				
+	public $branch;				
+	public $course;					
 	public $jyear;
 	public $tyear;
-
+	public $searchdata;
 function dirgetSearch() {
 			global $LNG;
 			$arr = $this->validate_values(); // Must be stored in a variable before executing an empty condition
 			if(empty($arr)) {
 				$join = $this->jyear.'-'.$this->tyear;
 
-					$query = $this->db->query(sprintf("SELECT * FROM `users` WHERE concat_ws(' ', `first_name`, `last_name`) LIKE '%s' AND `branch` = '%s' AND `course` = '%s'  AND `join` = '%s' ORDER BY `verified` DESC", '%'.$this->db->real_escape_string($this->name).'%', $this->db->real_escape_string($this->branch), $this->db->real_escape_string($this->course), $this->db->real_escape_string($join)));
+					$query = sprintf("SELECT * FROM `users` %s", $this->searchdata);
+					$result = $this->db->query($query);
 
-				while($row = $query->fetch_assoc()) {
-					$rows[] = $row;
-				}
-		
+					if($result) {
+							while($row = $result->fetch_assoc()) {
+								$rows[] = $row;
+							}
+						}
 			$output = ' ';
 			// If there are no results
 			if(empty($rows)) {
@@ -77,12 +79,7 @@ function validate_values() {
 	// Create the array which contains the Language variable
 	$error = array();
 	
-	if(empty($this->name) && empty($this->course) && empty($this->branch) && empty($this->jyear) && empty($this->tyear)) {
-		$error[] .= 'all_fields';
-	}
-	if(strlen($this->name) < 4) {
-		$error[] .= 'user_too_short';
-	}		
+	
 	return $error;
 }
 

@@ -4,18 +4,16 @@
 <div class="dirfield"> 				
      
 		<div class="page-input-content">
-			<input type="text" name="name" class="namz" placeholder="Name" required="required">
+			<input type="text" name="name" class="namz" placeholder="Name">
 		</div>
 	 
     </div>
     
-<div class="dirfield">
-
-    
+<div class="dirfield">    
     <div class="page-input-title  newt">{$lng->ttl_course}</div>
 				<div class="page-input-content">
-					<select name="course" id="course" required>
-						<option value="">- Select -</option>
+					<select name="course" id="course">
+						<option value="">- Any -</option>
 						<option value="btech" {$btech}>B.Tech</option>
 						<option value="mca" {$mca}>MCA</option>
 						<option value="mba" {$mba}>MBA</option>
@@ -27,8 +25,8 @@
 			<div class="dirfield" id="branch">
 				<div class="page-input-title newt">{$lng->ttl_branch}</div>
 				<div class="page-input-content">
-					<select name="branch" required>
-						<option value="0">- Select -</option>
+					<select name="branch">
+						<option value="">- Any -</option>
 						<option value="ece" {$ece}>ECE</option>
 						<option value="cse" {$cse}>CSE</option>
 						<option value="mae" {$mae}>MAE</option>
@@ -41,13 +39,10 @@
 				</div>
 			</div>
     <div class="dirfield">
-				<div class="page-input-title newt">Batch</div>
+				<div class="page-input-title newt">Passout Batch</div>
 				<div class="page-input-content">
-					<select name="jyear">
-						{$jyear}
-					</select>
-					-
 					<select name="tyear">
+						<option value="">- Any -</option>
 						{$tyear}
 					</select>
 				</div>

@@ -15,6 +15,23 @@ function PageMain() {
 				$dir->tyear = $_POST['tyear'];
 				//$dir->dob = $settings['captcha'];
 
+				$searchdata = "";
+
+				if(!empty($_POST['name'])){
+					$searchdata .= "concat_ws(' ', `first_name`, `last_name`) LIKE '%$dir->name%' AND ";
+				}
+				if(!empty($_POST['course'])){
+					$searchdata .= "`course`='$dir->course' AND ";	
+				}
+				if(!empty($_POST['branch'])){
+					$searchdata .= "`branch`='$dir->branch' AND ";
+				}
+				if(!empty($_POST['tyear'])){
+					$searchdata .= "`join` LIKE '_____%$dir->tyear%' AND ";	
+				}
+				if($searchdata != "") $searchdata = " WHERE ".substr($searchdata,0,-5)." LIMIT 0 , 10";
+					else $searchdata = $searchdata ." LIMIT 0 , 10";
+				$dir->searchdata = $searchdata;
 				$TMPL['users'] = $dir->dirgetSearch();
 			}else{
 

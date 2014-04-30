@@ -6052,7 +6052,7 @@ color: #fff !important;
 .menu_visitor:hover {
 color: #32CC40;
 }
-.notice{
-	float: none;
-	margin: 0 auto;
+.notice > div {
+margin: 0 auto;
+display: table;
 }
