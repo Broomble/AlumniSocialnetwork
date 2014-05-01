@@ -80,16 +80,27 @@ class updateUserSettings {
 		if($password) {
 			$data['password'] = md5($data['password']);
 		}
-		
+		$updatedata = '';
 		// If all array keys are valid database columns
 		if($x !== 1) {
-			foreach ($data as $column => $value) {
-				$columns[] = sprintf("`%s` = '%s'", $column, $this->db->real_escape_string($value));
-			}
-			$column_list = implode(',', $columns);
+
+			$updatedata .= "`first_name` = '".$data['first_name']."',";
+			$updatedata .= "`last_name` = '".$data['last_name']."',"; 
+			$updatedata .= "`email` = '".$data['email']."',";
+			$updatedata .= "`born` = '".$data['born']."',";
+			$updatedata .= "`gender` = '".$data['gender']."',";
+			$updatedata .= "`location` = '".$data['location']."',";
+			$updatedata .= "`website` = '".$data['website']."',";
+			$updatedata .= "`private` = '".$data['private']."',";
+			$updatedata .= "`privacy` = '".$data['privacy']."',";
+			$updatedata .= "`offline` = '".$data['offline']."',";
+			$updatedata .= "`facebook` = '".$data['facebook']."',";
+			$updatedata .= "`twitter` = '".$data['twitter']."',";
+			$updatedata .= "`gplus` = '".$data['gplus']."',";
+			$updatedata .= "`bio` = '".$data['bio']."'";
 
 			// Prepare the statement
-			$stmt = $this->db->prepare("UPDATE `$table` SET $column_list WHERE `idu` = '{$this->id}'");		
+			$stmt = $this->db->prepare("UPDATE `$table` SET $updatedata WHERE `idu` = '{$this->id}'");		
 
 			// Execute the statement
 			$stmt->execute();
